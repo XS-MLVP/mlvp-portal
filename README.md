@@ -4,15 +4,15 @@
 
 **测试：**
 ```
-git clone git@github.com:XS-MLVP/mlvp-doc.git                                        # clone 项目
-cd mlvp-doc
+git clone git@github.com:XS-MLVP/mlvp-portal.git                                        # clone 项目
+cd mlvp-portal
 hugo server --theme=hugo-digital-garden-theme --buildDrafts --baseURL="127.0.0.1"    # 开启调试服务器，浏览器打开：http://127.0.0.1:1313/
 ```
 
 
 **部署：**
 ```
-cd mlvp-doc
+cd mlvp-portal
 hugo --theme=hugo-digital-garden-theme --baseURL="https://xs-mlvp.github.io/"
 ```
 
