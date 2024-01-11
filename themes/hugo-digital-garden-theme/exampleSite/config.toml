@@ -1,40 +1,55 @@
 baseURL = "https://www.example.com"
-languageCode = "zh-cn"
-title = "Open verification"
-copyright = "MLVP Group ©"
+languageCode = "en-us"
+title = "My Digital Garden"
+theme = "hugo-digital-garden-theme"
+themesdir = "../../"
+copyright = "Nigalya Ponya ©"
 
 
 [params]
-  name = "开源芯片验证"
-  description = "开源芯片验证的目的是将芯片验证任务拆分成多个子模块，然后以开源分包的方式下发给所有感兴趣的人进行验证."
-  initials = "首页"
-  accesspassword = "123"
+  name = "Nigalya Ponya"
+  description = "Red panda living in the eastern Himalayas."
+  initials = "NP"
   googleAnalytics = ""
 
   [[params.social]]
     name = "Twitter"
     link = "#"
-    icon = "fab fa-weixin"
+    icon = "fab fa-twitter"
 
   [[params.social]]
     name = "Github"
     link = "#"
-    icon = "fab fa-weibo"
+    icon = "fab fa-github"
+
+  [[params.social]]
+    name = "Medium" 
+    link = "#"
+    icon = "fab fa-medium-m"
+
+  [[params.social]]
+    name = "LinkedIn"
+    link = "#"
+    icon = "fab fa-linkedin-in"
 
 
 [menu]
   [[menu.main]]
-    name = "正在进行的验证任务"
-    url = "/crowdsourcing/"
+    name = "Digital Garden"
+    url = "/garden/"
     weight = 1
   [[menu.main]]
-    name = "学习资源"
-    url = "/learningresource/"
+    name = "Projects"
+    url = "/projects/"
     weight = 2
   [[menu.main]]
-    name = "关于我们"
-    url = "/about/"
+    name = "Library"
+    url = "/library/"
     weight = 3
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 4
 
 
 [taxonomies]

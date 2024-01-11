@@ -4,9 +4,13 @@
 
 **测试：**
 ```
-git clone git@github.com:XS-MLVP/mlvp-portal.git                                        # clone 项目
+# clone 项目
+git clone git@github.com:XS-MLVP/mlvp-portal.git
 cd mlvp-portal
-hugo server --theme=hugo-digital-garden-theme --buildDrafts --baseURL="127.0.0.1"    # 开启调试服务器，浏览器打开：http://127.0.0.1:1313/
+
+# 未正式发布前，默认访问密码为 123
+# 开启调试服务器，浏览器打开：http://127.0.0.1:1313/?password=123
+hugo server --theme=hugo-digital-garden-theme --buildDrafts --baseURL="127.0.0.1"
 ```
 
 
