@@ -6,7 +6,8 @@ copyright = "MLVP Group ©"
 
 [params]
   name = "开源芯片验证"
-  description = "开源芯片验证的目的是将芯片验证任务拆分成多个子模块，然后以开源分包的方式下发给所有感兴趣的人进行验证."
+  slog = "会编码就会验证"
+  description = "将芯片验证任务拆分成多个子模块，以开源众包的方式分发给所有感兴趣的人，让人们用自己擅长的编程语言进行验证."
   initials = "首页"
   accesspassword = "123"
   googleAnalytics = ""
@@ -38,9 +39,8 @@ copyright = "MLVP Group ©"
 
 
 [taxonomies]
-  garden_tags = 'garden_tags'
-  project_tags = 'project_tags'
-  library_tags = 'library_tags'
+  fenbao_tags = 'fenbao_tags'
+  resource_tags = 'resource_tags'
 
 
 [markup]

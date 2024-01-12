@@ -1,5 +1,5 @@
 {{ .Scratch.Set "project_tags_list" ""}}
-{{ range .Params.project_tags }}
+{{ range .Params.resource_tags }}
     {{ $.Scratch.Add "project_tags_list" ( . | printf " js-iso-%s") }}
 {{ end }}
 <div class='col {{ $.Scratch.Get "project_tags_list" }}'>
@@ -19,6 +19,9 @@
             <h4 class="card-title pb-3">{{ .Title }}</h4>
             {{ end }}
             <a href="{{ .Permalink }}" class="stretched-link"></a>
+            {{range .Params.resource_tags}}
+            <span class="badge tag-badge">{{ . }}</span>
+            {{end}}
         </div>
     </div>
 </div>

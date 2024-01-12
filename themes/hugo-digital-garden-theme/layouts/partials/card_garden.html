@@ -1,5 +1,5 @@
 {{ .Scratch.Set "garden_tags_list" ""}}
-{{ range .Params.garden_tags }}
+{{ range .Params.fenbao_tags }}
     {{ $.Scratch.Add "garden_tags_list" ( . | printf " js-iso-%s") }}
 {{ end }}
 <div class='col {{ $.Scratch.Get "garden_tags_list" }}'>
@@ -23,6 +23,9 @@
                     {{ partial "status.html" . }} 
                 </div>
             </div>
+            {{range .Params.fenbao_tags}}
+            <span class="badge tag-badge">{{.}}</span>
+            {{end}}
         </div>
     </div>
 </div>
