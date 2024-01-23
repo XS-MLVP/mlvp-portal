@@ -13,7 +13,11 @@
                     </p>
                 </div>
             </div>
+            {{ if .Params.Website }}
+            <a href="{{ .Params.Website }}" class="stretched-link" tab="_blank"></a>
+            {{ else }}
             <a href="{{ .Permalink }}" class="stretched-link"></a>
+            {{ end  }}
         </div>
     </div>   
-</div>   
+</div>

@@ -11,7 +11,11 @@
             {{ else }}
             <h4 class="card-title pb-3">{{ .Title }}</h4>
             {{ end }}
+            {{ if .Params.Website }}
+            <a href="{{ .Params.Website }}" class="stretched-link" tab="_blank"></a>
+            {{ else }}
             <a href="{{ .Permalink }}" class="stretched-link"></a>
+            {{ end  }}
             <hr class="dropdown-divider">
             <div class="row justify-content-between">
                 <div class="col-6">

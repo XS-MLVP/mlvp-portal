@@ -7,6 +7,7 @@ status: "seeding"
 summary: "学习基本验证概念，开源验证工具等"
 weight: 1
 onhomepage: true
+website: "/mlvp/"
 ---
 
 It is super easy to create and update the content of this theme. There are only 2 places that matters depending on waht you need to update:

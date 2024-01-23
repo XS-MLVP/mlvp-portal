@@ -10,7 +10,11 @@
         <div class="card-body">
             <h5 class="card-title">{{ .Title }}</h5>
             <p class="card-text">{{ .Summary }}</p>
+            {{ if .Params.Website }}
+            <a href="{{ .Params.Website }}" class="stretched-link" tab="_blank"></a>
+            {{ else }}
             <a href="{{ .Permalink }}" class="stretched-link"></a>
+            {{ end  }}
             <div class="row justify-content-between">
                 <div class="col align-self-start">
                 {{ with .Params.resource_tags }}
