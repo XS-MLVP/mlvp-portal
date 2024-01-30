@@ -23,3 +23,8 @@ resources/_gen/*
 
 # Go workspace file
 go.work
+
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
