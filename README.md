@@ -3,24 +3,48 @@
 
 
 **测试：**
+本项目依赖 "在线课程、开放验证第一期：BPU文档"，因此需要clone对应项目
+
 ```
 # clone 项目
 git clone git@github.com:XS-MLVP/mlvp-portal.git
+git clone git@github.com:XS-MLVP/course.git
+git clone git@github.com:XS-MLVP/doc-xs-ov-00-bpu.git
 cd mlvp-portal
 
-# 未正式发布前，默认访问密码为 123
-# 开启调试服务器，浏览器打开：http://127.0.0.1:1313/?password=123
+# 开启web服务进行测试
+make test
+
+# 或者用hugo命令开启服务
 hugo server --theme=hugo-digital-garden-theme --buildDrafts --baseURL="127.0.0.1"
 ```
 
+开启web服务后本地访问 http://127.0.0.1:1313/?password=123
+
 
 **部署：**
-```
-cd mlvp-portal
-hugo --theme=hugo-digital-garden-theme --baseURL="https://xs-mlvp.github.io/"
-```
+门户网站的部署分仓库为：xs-mlvp.github.io，因此需要把本项目编译后的文件放入部署仓库
 
-将生成的 public 为拷贝至 web 服务器
+```
+# 编译生成 public 文件夹
+cd mlvp-portal
+make build
+
+# 拉取部署仓库 xs-mlvp.github.io
+cd ..
+git clone git@github.com:XS-MLVP/xs-mlvp.github.io.git
+cd xs-mlvp.github.io
+
+# 删除除CNAME外的所有文件，CNAME用于域名绑定，不能删除
+ls|grep -v CNAME |xargs rm -rf
+
+# 拷贝内容
+cp -r ../mlvp-portal/public/* ./
+
+# 提交
+git commit -m "build23mmdd"
+git push
+```
 
 
 **主题：**
