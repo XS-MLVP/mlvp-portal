@@ -2,7 +2,7 @@
 title: '开源探索'
 date: 2024-01-11T08:50:17+08:00
 draft: false
-resource_tags: ["markdown"]
+resource_tags: ["探索"]
 status: "evergreen"
 weight: 2
 summary: "介绍开源验证的基本概念、目标、可行性探索等"

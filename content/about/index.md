@@ -1,13 +1,10 @@
 ---
-title: "Nigalya Ponya"
+title: "开放芯片验证平台"
 date: 2015-01-01
-summary: "Himalayan red panda"
+summary: "Open verification platform"
 layout: about
 ---
 
-I have a reddish-brown fur, a long, shaggy tail, and a waddling gait due to my shorter front legs; I'm roughly the size of a domestic cat, though with a longer body.
-I live in trees and feed mainly on bamboo, but I also eat eggs, birds, and insects.
+本项目立志于利用开源工具进行开源芯片的验证。这一过程不仅意味着在硬件领域推动开源文化的发展，还将为软件开发者提供参与硬件验证与开发的机会和平台。在这个项目中，我们将探索并推广分包验证方法，开发基础验证工具，并收集验证案例，以便更多的软件开发者能够参与到硬件验证与开发的过程中来。
 
-I joined the IUCN Endangered species red list in 2008 as a result of a constant population decline caused by habitat loss, poaching and inbreed depression.
-
-For more information, you can take a look at my [Wikipedia page](https://en.wikipedia.org/wiki/Red_panda_)
+我们相信，这样的开源芯片验证平台将能够为整个行业带来更多创新和发展机会，推动硬件领域向着更加开放和多样化的方向发展。

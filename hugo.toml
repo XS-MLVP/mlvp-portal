@@ -5,7 +5,7 @@ copyright = "MLVP Group ©"
 
 
 [params]
-  name = "开源芯片验证"
+  name = "开源开放芯片验证"
   slog = "会编码就会验证"
   description = "将芯片验证任务拆分成多个子模块，以开源众包的方式分发给所有感兴趣的人，让人们用自己擅长的编程语言进行验证."
   initials = "首页"
