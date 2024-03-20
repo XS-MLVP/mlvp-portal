@@ -7,4 +7,5 @@ acti_title: "正在进行的验证任务"
 acti_summary: "分包验证火热进行中"
 hist_title: "验证已完成"
 hist_summary: "已经完成验证需求，结束分包验证"
+see_more: "查看所有任务"
 ---

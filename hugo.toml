@@ -3,40 +3,91 @@ languageCode = "zh-cn"
 title = "Open verification"
 copyright = "MLVP Group ©"
 
+defaultContentLanguage = 'cn'
+defaultContentLanguageInSubdir = false
 
 [params]
-  name = "开源开放芯片验证"
-  slog = "会编码就会验证"
-  description = "将芯片验证任务拆分成多个子模块，以开源众包的方式分发给所有感兴趣的人，让人们用自己擅长的编程语言进行验证."
-  initials = "首页"
   accesspassword = "123"
   googleAnalytics = ""
 
   [[params.social]]
-    name = "Twitter"
+    name = "wechat"
     link = "#"
     icon = "fab fa-weixin"
 
   [[params.social]]
-    name = "Github"
+    name = "weibo"
     link = "#"
     icon = "fab fa-weibo"
 
+[languages]
+    [languages.cn]
+      disabled = false
+      LanguageName = "cn" 
+      title = "中文"
+    
+    [languages.cn.params]
+      name = "开源开放芯片验证"
+      slog = "会编码就会验证"
+      description = "将芯片验证任务拆分成多个子模块，以开源众包的方式分发给所有感兴趣的人，让人们用自己擅长的编程语言进行验证."
+      initials = "首页"
 
-[menu]
-  [[menu.main]]
-    name = "正在进行的验证任务"
-    url = "/crowdsourcing/"
-    weight = 1
-  [[menu.main]]
-    name = "学习资源"
-    url = "/learningresource/"
-    weight = 2
-  [[menu.main]]
-    name = "关于我们"
-    url = "/about/"
-    weight = 3
+    [[languages.cn.menu.main]]
+      name = "正在进行的验证任务"
+      url = "/crowdsourcing/"
+      weight = 1
 
+    [[languages.cn.menu.main]]
+      name = "学习资源"
+      url = "/learningresource/"
+      weight = 2
+
+    [[languages.cn.menu.main]]
+      name = "关于我们"
+      url = "/about/"
+      weight = 3
+
+    [[languages.cn.menu.main]]
+      name = "English"
+      url = "/en"
+      weight = 4
+
+    [languages.en]
+      disabled = false
+      title = "English"
+      languageName = "/en"
+    
+    [languages.en.params]
+      name = "Open verification"
+      slog = "If you know how to code, you can verify chips"
+      description = "Split the chip verification task into multiple sub modules and distribute them to all interested parties in an open-source crowdsourcing manner, allowing people to use their programming languages for verification."
+      initials = "Home"
+
+    [[languages.en.menu.main]]
+       identifier = "crowdsourcing"
+       title = "Verification Tasks"
+       name = "Verification Tasks"
+       url = "/en/crowdsourcing/"
+       weight = 1
+
+    [[languages.en.menu.main]]
+       identifier = "learningresource"
+       title = "Learning Resources"
+       name = "Learning Resources"
+       url = "/en/learningresource/"
+       weight = 2
+
+    [[languages.en.menu.main]]
+       identifier = "about"
+       title = "About Us"
+       name = "About Us"
+       url = "/en/about/"
+       weight = 3
+
+    [[languages.en.menu.main]]
+       name = "中文"
+       url = ""
+       weight = 4
 
 [taxonomies]
   fenbao_tags = 'fenbao_tags'
