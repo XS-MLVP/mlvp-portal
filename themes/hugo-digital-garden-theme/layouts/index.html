@@ -20,13 +20,12 @@
 		<div class="col-lg-4">
 			{{ with .Site.GetPage "section" "crowdsourcing" }}
           	<div class="pb-4">
-              	<a class="heading fs-2" href="{{ .RelPermalink }}">{{ .Title }}</a>
+              	<a class="heading fs-2" href="{{ .RelPermalink }}">{{ .Params.acti_title }}</a>
           	</div>      
-			{{ if .Summary }} <p class="subheading">{{ .Summary }}</p> {{ end }}
+			{{ if .Summary }} <p class="subheading">{{ .Params.acti_summary }}</p> {{ end }}
 			{{ end }}
 			<div class="row row-cols-1 g-4 mb-5">
-				{{ $cs_node := (.Site.GetPage "section" "crowdsourcing")}}
-				{{ range ( where $cs_node.Pages "IsNode" "eq" true | first 6 ) }}
+				{{ range ( where (where (where site.Pages "Section" "crowdsourcing") "IsPage" "eq" true) "Params.task_closed" "ne" true | first 6 ) }}
 				{{ partial "home_garden.html" . }}
 				{{ end }}
       		</div>
@@ -35,6 +34,25 @@
         		<a href="{{ .RelPermalink }}" role="button" class="btn btn-sm see-all">查看所有任务</a>
       		</div>
       		{{ end }}
+
+			{{ with .Site.GetPage "section" "crowdsourcing" }}
+          	<div class="pb-4">
+              	<a class="heading fs-2" href="{{ .RelPermalink }}">{{ .Params.hist_title }}</a>
+          	</div>      
+			{{ if .Params.hist_summary }} <p class="subheading">{{ .Params.hist_summary }}</p> {{ end }}
+			{{ end }}
+			
+			<div class="row row-cols-1 g-4 mb-5">
+				{{ range ( where (where (where site.Pages "Section" "crowdsourcing") "IsPage" "eq" true) "Params.task_closed" "eq" true | first 6 ) }}
+				{{ partial "home_garden.html" . }}
+				{{ end }}
+      		</div>
+			{{ with .Site.GetPage "section" "crowdsourcing" }}
+			<div class="d-flex flex-row-reverse">
+        		<a href="{{ .RelPermalink }}" role="button" class="btn btn-sm see-all">查看所有任务</a>
+      		</div>
+      		{{ end }}
+			
 		</div>
     	
 		<!-- Learning Resource -->

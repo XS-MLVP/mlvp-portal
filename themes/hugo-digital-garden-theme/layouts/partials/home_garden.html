@@ -1,5 +1,5 @@
 <div class="col">
-    <div class="card h-100 top-highlight">
+    <div class="card h-100 top-highlight" {{ if .Params.task_closed }} style="filter:grayscale(100%);" {{ end }}>
         <div class="card-body">
             <div class="row justify-content-between">
                 <div class="col-8">

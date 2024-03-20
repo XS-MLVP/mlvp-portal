@@ -2,7 +2,7 @@
 {{ range .Params.fenbao_tags }}
     {{ $.Scratch.Add "garden_tags_list" ( . | printf " js-iso-%s") }}
 {{ end }}
-<div class='col {{ $.Scratch.Get "garden_tags_list" }}'>
+<div class='col {{ $.Scratch.Get "garden_tags_list" }}' {{ if .Params.task_closed }} style="filter:grayscale(100%);" {{ end }}>
     <div class="card top-highlight">
         <div class="card-body">
             {{ if .Summary }} 

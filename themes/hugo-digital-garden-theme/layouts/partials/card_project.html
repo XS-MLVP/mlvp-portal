@@ -5,6 +5,10 @@
 <div class='col {{ $.Scratch.Get "project_tags_list" }}'>
     <div class="card top-highlight">
         {{ $img := (.Resources.ByType "image").GetMatch "*featured*" }}
+        {{ if .Params.cover_image }}
+        {{ $img = (.Parent.Resources.ByType "image").GetMatch .Params.cover_image }}
+        {{ end }}
+        
         {{ if $img }}
         {{ $img = $img.Fit "500x500" }}
         {{ with $img }}
@@ -28,5 +32,6 @@
             {{end}}
         </div>
     </div>
+    <br>
 </div>
 {{ .Scratch.Delete "project_tags_list" }}
