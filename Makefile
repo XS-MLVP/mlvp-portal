@@ -1,8 +1,10 @@
 .DEFAULT_GOAL = test
 
-build:
+build: clean
 	hugo --theme=hugo-digital-garden-theme --baseURL="https://xs-mlvp.github.io/"
+	cd ../course && rm -rf public
 	cd ../course && hugo --baseURL="https://xs-mlvp.github.io/mlvp/"
+	cd ../doc-xs-ov-00-bpu && rm -rf public
 	cd ../doc-xs-ov-00-bpu && hugo --baseURL="https://xs-mlvp.github.io/xs-bpu/"
 	cd public && cp -r ../../course/public ./mlvp
 	cd public && cp -r ../../doc-xs-ov-00-bpu/public ./xs-bpu

@@ -42,6 +42,7 @@ ls|grep -v CNAME |xargs rm -rf
 cp -r ../mlvp-portal/public/* ./
 
 # 提交
+git add .
 git commit -m "build23mmdd"
 git push
 ```
