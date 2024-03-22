@@ -12,24 +12,15 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
-            {{ $current_url := .RelPermalink }}
-            {{ $current_lan :=  (printf "%s%s/" "/" .Site.Language)}}
-            {{ $base_url :=  (strings.Replace $current_url $current_lan "" 1)}}
-
-            {{ if strings.HasPrefix $base_url "/"}}
-            {{ $base_url =  (strings.Replace $base_url "/" "" 1)}}
-            {{ end }}
-
             {{- $currentPage := . -}}
             {{ range .Site.Menus.main -}}
-                <li class='nav-item {{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}'>
-                    {{ if strings.HasSuffix .URL "/" }}
-                    <a class="nav-link" href="{{ .URL }}"> {{ .Name }}</a>
-                    {{ else }}
-                    <a class="nav-link" href="{{ .URL }}/{{ $base_url }}"> {{ .Name }}</a>
-                    {{ end }}
-                </li>
+            <li class='nav-item {{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}'>
+                <a class="nav-link" href="{{ .URL }}"> {{ .Name }}</a>
+            </li>
             {{ end }} 
+            {{ range $.Translations }}
+            <li class='nav-item' ><a class="nav-link" href="{{ .Permalink }}">{{ .Language.Title }}</a></li>
+            {{ end }}
             <li class="nav-item px-2 pt-1">
                 <a class="btn fas fa-moon" id="dark-mode-toggle"></a>
             </li>

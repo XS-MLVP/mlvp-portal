@@ -47,11 +47,6 @@ defaultContentLanguageInSubdir = false
       url = "/about/"
       weight = 3
 
-    [[languages.cn.menu.main]]
-      name = "English"
-      url = "/en"
-      weight = 4
-
     [languages.en]
       disabled = false
       title = "English"
@@ -83,11 +78,6 @@ defaultContentLanguageInSubdir = false
        name = "About Us"
        url = "/en/about/"
        weight = 3
-
-    [[languages.en.menu.main]]
-       name = "中文"
-       url = ""
-       weight = 4
 
 [taxonomies]
   fenbao_tags = 'fenbao_tags'
