@@ -1,6 +1,6 @@
 baseURL = "https://www.example.com"
 languageCode = "zh-cn"
-title = "Open verification"
+title = "UnityChip Verification"
 copyright = "MLVP Group ©"
 
 defaultContentLanguage = 'cn'
@@ -28,7 +28,7 @@ defaultContentLanguageInSubdir = false
       title = "中文"
     
     [languages.cn.params]
-      name = "开源开放芯片验证"
+      name = "万众一芯开放验证平台"
       slog = "会编码就会验证"
       description = "将芯片验证任务拆分成多个子模块，以开源众包的方式分发给所有感兴趣的人，让人们用自己擅长的编程语言进行验证."
       initials = "首页"
@@ -54,9 +54,9 @@ defaultContentLanguageInSubdir = false
       languageName = "/en"
     
     [languages.en.params]
-      name = "Open verification"
-      slog = "If you know how to code, you can verify chips"
-      description = "Split the chip verification task into multiple sub modules and distribute them to all interested parties in an open-source crowdsourcing manner, allowing people to use their programming languages for verification."
+      name = "UnityChip Verification"
+      slog = "If you can code, you can verify chips."
+      description = "Split the chip verification task into multiple sub modules and distribute them to all interested parties in an open-source crowdsourcing manner, allowing people to use their preferred programming languages for verification."
       initials = "Home"
 
     [[languages.en.menu.main]]

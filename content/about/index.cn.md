@@ -1,7 +1,7 @@
 ---
-title: "开放芯片验证平台"
+title: "万众一芯开放验证平台"
 date: 2015-01-01
-summary: "Open verification platform"
+summary: "UnityChip Verification Platform"
 layout: about
 ---
 

@@ -1,7 +1,7 @@
 ---
-title: "Open verification platform"
+title: "UnityChip Verification"
 date: 2015-01-01
-summary: "Open verification platform"
+summary: "UnityChip Verification"
 layout: about
 ---
 
