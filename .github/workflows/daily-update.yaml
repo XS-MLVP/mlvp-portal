@@ -1,0 +1,44 @@
+name: Build Website and Push
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - name: Checkout other repository
+      uses: actions/checkout@v2
+      with:
+        repository: 'XS-MLVP/course'
+        token: ${{ secrets.COMMIT_KEY }}
+
+    - name: Checkout other repository
+      uses: actions/checkout@v2
+      with:
+        repository: 'XS-MLVP/doc-xs-ov-00-bpu'
+        token: ${{ secrets.COMMIT_KEY }}
+
+    - name: Checkout mlvp-portal
+      uses: actions/checkout@v2
+
+    - name: Run make commands
+      run: |
+        cd ../course && make init && cd ../mlvp-portal
+        make build
+
+    - name: Checkout other repository
+      uses: actions/checkout@v2
+      with:
+        repository: 'XS-MLVP/xs-mlvp.github.io'
+        token: ${{ secrets.COMMIT_KEY }}
+
+    - name: Configure git and sync
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "22570332+github-actions[bot]@users.noreply.github.com"
+        make sync
