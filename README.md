@@ -8,9 +8,8 @@
 ```
 # clone 项目
 git clone git@github.com:XS-MLVP/mlvp-portal.git
-git clone git@github.com:XS-MLVP/course.git
-git clone git@github.com:XS-MLVP/doc-xs-ov-00-bpu.git
 cd mlvp-portal
+make init
 
 # 开启web服务进行测试
 make test

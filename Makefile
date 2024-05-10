@@ -1,13 +1,17 @@
 .DEFAULT_GOAL = test
 
+init:
+	git clone git@github.com:XS-MLVP/course.git --depth 1 ../course
+	git clone git@github.com:XS-MLVP/doc-xs-ov-00-bpu.git --depth 1 ../doc-xs-ov-00-bpu
+
 build: clean
 	hugo --theme=hugo-digital-garden-theme --baseURL="https://xs-mlvp.github.io/"
-	cd ../course && rm -rf public && git pull
-	cd ../course && hugo --baseURL="https://xs-mlvp.github.io/mlvp/"
-	cd ../doc-xs-ov-00-bpu && rm -rf public && git pull
-	cd ../doc-xs-ov-00-bpu && hugo --baseURL="https://xs-mlvp.github.io/xs-bpu/"
-	cd public && cp -r ../../course/public ./mlvp
-	cd public && cp -r ../../doc-xs-ov-00-bpu/public ./xs-bpu
+# mlvp build
+	cd ../course && rm -rf public && git pull && hugo --baseURL="https://xs-mlvp.github.io/mlvp/"
+	cp -r ../course/public ./public/mlvp
+# xs-bpu build
+	cd ../doc-xs-ov-00-bpu && rm -rf public && git pull && hugo --baseURL="https://xs-mlvp.github.io/xs-bpu/"
+	cp -r ../doc-xs-ov-00-bpu/public ./public/xs-bpu
 
 test: clean
 	hugo --theme=hugo-digital-garden-theme --baseURL="http://127.0.0.1:1313/"
