@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+  schedule:
+    - cron: '0 23 * * *'
 
 jobs:
   build:
@@ -11,14 +13,14 @@ jobs:
 
     steps:
 
-    - name: Checkout other repository
+    - name: Checkout course
       uses: actions/checkout@v2
       with:
         repository: 'XS-MLVP/course'
         token: ${{ secrets.COMMIT_KEY }}
         path: 'course'
 
-    - name: Checkout other repository
+    - name: Checkout doc-xs-ov-00-bpu
       uses: actions/checkout@v2
       with:
         repository: 'XS-MLVP/doc-xs-ov-00-bpu'
@@ -30,10 +32,28 @@ jobs:
       with:
         path: 'mlvp-portal'
 
-    - name: Run make commands
+    - name: Check if there are commits today
+      id: check-commits
       run: |
-        cd /home/runner/work/mlvp-portal/mlvp-portal/course && make init
-        cd /home/runner/work/mlvp-portal/mlvp-portal/doc-xs-ov-00-bpu && make init
+        skip=true
+        for repo in course doc-xs-ov-00-bpu mlvp-portal; do
+          cd $repo
+          if [ "$(git log --since='1 day ago' --oneline | wc -l)" -ne "0" ]; then
+            skip=false
+            break
+          fi
+          cd ..
+        done
+        echo "::set-output name=skip::$skip"
+      shell: bash
+
+    - name: Run make commands
+      if: steps.check-commits.outputs.skip == 'false'
+      run: |
+        cd /home/runner/work/mlvp-portal/mlvp-portal/course
+        make init
+        cd /home/runner/work/mlvp-portal/mlvp-portal/doc-xs-ov-00-bpu
+        make init
         cd /home/runner/work/mlvp-portal/mlvp-portal/mlvp-portal 
         npm install -D autoprefixer
         npm install -D postcss-cli
@@ -41,6 +61,7 @@ jobs:
         make build
 
     - name: Checkout other repository
+      if: steps.check-commits.outputs.skip == 'false'
       uses: actions/checkout@v2
       with:
         repository: 'XS-MLVP/xs-mlvp.github.io'
@@ -48,6 +69,7 @@ jobs:
         path: 'xs-mlvp.github.io'
 
     - name: Configure git and sync
+      if: steps.check-commits.outputs.skip == 'false'
       run: |
         cd /home/runner/work/mlvp-portal/mlvp-portal/xs-mlvp.github.io
         git config user.name "github-actions[bot]"

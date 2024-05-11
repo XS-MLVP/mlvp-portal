@@ -5,7 +5,7 @@ init:
 	git clone git@github.com:XS-MLVP/doc-xs-ov-00-bpu.git --depth 1 ../doc-xs-ov-00-bpu
 
 build: clean
-	hugo --theme=hugo-digital-garden-theme --baseURL="https://xs-mlvp.github.io/"
+	hugo --minify --theme=hugo-digital-garden-theme --baseURL="https://xs-mlvp.github.io/"
 # mlvp build
 	cd ../course && rm -rf public && git pull && hugo --baseURL="https://xs-mlvp.github.io/mlvp/"
 	cp -r ../course/public ./public/mlvp
