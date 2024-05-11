@@ -16,19 +16,28 @@ jobs:
       with:
         repository: 'XS-MLVP/course'
         token: ${{ secrets.COMMIT_KEY }}
+        path: 'course'
 
     - name: Checkout other repository
       uses: actions/checkout@v2
       with:
         repository: 'XS-MLVP/doc-xs-ov-00-bpu'
         token: ${{ secrets.COMMIT_KEY }}
+        path: 'doc-xs-ov-00-bpu'
 
     - name: Checkout mlvp-portal
       uses: actions/checkout@v2
+      with:
+        path: 'mlvp-portal'
 
     - name: Run make commands
       run: |
-        cd ../course && make init && cd ../mlvp-portal
+        cd /home/runner/work/mlvp-portal/mlvp-portal/course && make init
+        cd /home/runner/work/mlvp-portal/mlvp-portal/doc-xs-ov-00-bpu && make init
+        cd /home/runner/work/mlvp-portal/mlvp-portal/mlvp-portal 
+        npm install -D autoprefixer
+        npm install -D postcss-cli
+        npm install -D postcss
         make build
 
     - name: Checkout other repository
@@ -36,9 +45,11 @@ jobs:
       with:
         repository: 'XS-MLVP/xs-mlvp.github.io'
         token: ${{ secrets.COMMIT_KEY }}
+        path: 'xs-mlvp.github.io'
 
     - name: Configure git and sync
       run: |
+        cd /home/runner/work/mlvp-portal/mlvp-portal/xs-mlvp.github.io
         git config user.name "github-actions[bot]"
         git config user.email "22570332+github-actions[bot]@users.noreply.github.com"
         make sync
