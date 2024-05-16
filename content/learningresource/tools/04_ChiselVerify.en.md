@@ -1,8 +1,7 @@
 ---
 title: 'ChiselVerify'
-date: 2024-05-14T08:47:18+08:00
 draft: false
-weight: 7
+weight: 98
 resource_tags: ["Tools"]
 # status: "evergreen"
 summary: "ChiselVerify: A Hardware Verification Library for Chisel"

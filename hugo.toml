@@ -7,7 +7,7 @@ defaultContentLanguage = 'cn'
 defaultContentLanguageInSubdir = false
 
 [params]
-  accesspassword = "123"
+  # accesspassword = "123"
   googleAnalytics = ""
   baiduAnalytics = "6aacb1c7ca0a3ef4e3aa84c1eaa237dd"
 
@@ -28,7 +28,7 @@ defaultContentLanguageInSubdir = false
       title = "中文"
     
     [languages.cn.params]
-      name = "万众一芯开放验证平台"
+      name = "万众一芯开放验证"
       slog = "会编码就会验证"
       description = "将芯片验证任务拆分成多个子模块，以开源众包的方式分发给所有感兴趣的人，让人们用自己擅长的编程语言进行验证."
       initials = "首页"

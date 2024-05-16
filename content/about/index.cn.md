@@ -1,5 +1,5 @@
 ---
-title: "万众一芯开放验证平台"
+title: "万众一芯开放验证"
 date: 2015-01-01
 summary: "UnityChip Verification Platform"
 layout: about

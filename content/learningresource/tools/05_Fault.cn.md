@@ -1,8 +1,6 @@
 ---
 title: 'Fault'
-date: 2024-05-14T08:47:18+08:00
-draft: false
-weight: 8
+weight: 99
 resource_tags: ["工具"]
 # status: "evergreen"
 summary: "Fault：一种用于元编程可移植硬件验证组件的Python嵌入式领域特定语言"
