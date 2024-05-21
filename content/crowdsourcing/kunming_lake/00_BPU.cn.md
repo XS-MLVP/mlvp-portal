@@ -12,8 +12,6 @@ summary: "通过验证来学习香山BPU的微架构设计"
 开源开放验证项目通过git进行任务分发和数据统计，本次活动链接如下：
 
 
-1. **Gitlink活动地址：**[https://www.gitlink.org.cn/glcc/2023/subjects/detail/473](https://www.gitlink.org.cn/glcc/2023/subjects/detail/473)
-
 1. **Gitlink项目地址：**[https://www.gitlink.org.cn/XS-MLVP/env-xs-ov-00-bpu](https://www.gitlink.org.cn/XS-MLVP/env-xs-ov-00-bpu)
 
 1. **Github项目地址：**[https://github.com/XS-MLVP/env-xs-ov-00-bpu](https://github.com/XS-MLVP/env-xs-ov-00-bpu)

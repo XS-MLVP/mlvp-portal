@@ -11,9 +11,8 @@ summary: "Learning the microarchitecture design of the Xiangshan BPU through ver
 
 The open-verify project distributes tasks and collect statistics data through git. The links of this activity is as follows：
 
-1. **Gitlink Event：**[https://www.gitlink.org.cn/glcc/2023/subjects/detail/473](https://www.gitlink.org.cn/glcc/2023/subjects/detail/473)
 
-1. **Gitlink Repository**[https://www.gitlink.org.cn/XS-MLVP/env-xs-ov-00-bpu](https://www.gitlink.org.cn/XS-MLVP/env-xs-ov-00-bpu)
+1. **Gitlink Repository：**[https://www.gitlink.org.cn/XS-MLVP/env-xs-ov-00-bpu](https://www.gitlink.org.cn/XS-MLVP/env-xs-ov-00-bpu)
 
 1. **Github Repository：**[https://github.com/XS-MLVP/env-xs-ov-00-bpu](https://github.com/XS-MLVP/env-xs-ov-00-bpu)
 
