@@ -7,5 +7,4 @@ status: "seeding"
 summary: "学习基本验证概念，开源验证工具等"
 weight: 1
 onhomepage: true
-website: "/mlvp/"
 ---
