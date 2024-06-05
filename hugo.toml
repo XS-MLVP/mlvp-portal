@@ -8,7 +8,7 @@ defaultContentLanguageInSubdir = false
 
 [params]
   # accesspassword = "123"
-  googleAnalytics = ""
+  googleAnalytics = "G-4Z2ZY6ZE84"
   baiduAnalytics = "6aacb1c7ca0a3ef4e3aa84c1eaa237dd"
 
   [[params.social]]
