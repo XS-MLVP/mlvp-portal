@@ -6,5 +6,5 @@ resource_tags: ["Docs", "Learning materials"]
 status: "seeding"
 summary: "Learn How to Perform Chip Verification Based on Picker"
 weight: 100
-website: "/mlvp/"
+website: "/mlvp/en/"
 ---

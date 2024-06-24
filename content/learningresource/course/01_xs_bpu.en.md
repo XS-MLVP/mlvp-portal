@@ -6,5 +6,5 @@ resource_tags: ["Docs", "Learning materials"]
 status: "seeding"
 summary: "Learn About What a Branch Prediction Unit Is and the design of Kunminghu BPU"
 weight: 1
-website: "/xs-bpu/"
+website: "/xs-bpu/en"
 ---
