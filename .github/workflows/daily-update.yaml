@@ -5,13 +5,17 @@ on:
     branches:
       - main
   schedule:
-    - cron: '0 23 * * *'
+    - cron: '55 15 * * *'
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Set Up timezone
+      uses: szenius/set-timezone@v2.0
+      with:
+        timezoneLinux: "Asia/Shanghai"
 
     - name: Checkout course
       uses: actions/checkout@v2
