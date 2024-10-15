@@ -31,6 +31,13 @@ jobs:
         token: ${{ secrets.COMMIT_KEY }}
         path: 'doc-xs-ov-00-bpu'
 
+    - name: Checkout UnityChipForXiangShan
+      uses: actions/checkout@v2
+      with:
+        repository: 'XS-MLVP/UnityChipForXiangShan'
+        token: ${{ secrets.COMMIT_KEY }}
+        path: 'UnityChipForXiangShan'
+
     - name: Checkout mlvp-portal
       uses: actions/checkout@v2
       with:
@@ -48,6 +55,16 @@ jobs:
           fi
           cd ..
         done
+        cd UnityChipForXiangShan
+        LAST_COMMIT=$(git rev-parse HEAD^1)
+        DIRECTORY="documents"
+        if git diff --quiet $LAST_COMMIT HEAD -- $DIRECTORY; then
+          echo "No new commits in $DIRECTORY"
+        else
+          echo "New commits found in $DIRECTORY"
+          skip=false
+        fi
+        cd ..
         echo "SKIP=$skip" >> $GITHUB_ENV
       shell: bash
 
@@ -57,6 +74,8 @@ jobs:
         cd /home/runner/work/mlvp-portal/mlvp-portal/course
         make init
         cd /home/runner/work/mlvp-portal/mlvp-portal/doc-xs-ov-00-bpu
+        make init
+        cd /home/runner/work/mlvp-portal/mlvp-portal/UnityChipForXiangShan
         make init
         cd /home/runner/work/mlvp-portal/mlvp-portal/mlvp-portal 
         npm install -D autoprefixer
