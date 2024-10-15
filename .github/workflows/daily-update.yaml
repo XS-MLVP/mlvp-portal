@@ -57,7 +57,7 @@ jobs:
           cd ..
         done
         cd UnityChipForXiangShan
-        LAST_COMMIT=$(git rev-parse HEAD^1)
+        LAST_COMMIT=$(git rev-parse HEAD~1)
         DIRECTORY="documents"
         if git diff --quiet $LAST_COMMIT HEAD -- $DIRECTORY; then
           echo "No new commits in $DIRECTORY"
