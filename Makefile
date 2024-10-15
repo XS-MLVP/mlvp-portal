@@ -14,7 +14,7 @@ build: clean
 	cp -r ../doc-xs-ov-00-bpu/public ./public/xs-bpu
 # UnityChipForXiangShan
 	cd ../UnityChipForXiangShan/documents && rm -rf public && git pull && hugo --baseURL="https://xs-mlvp.github.io/UnityChipForXiangShan/"
-	cp -r ../UnityChipForXiangShan/documents/public ./public/UnityChipForXiangShan
+	cp -r ../UnityChipForXiangShan/documents/public ./public/unitychipforxiangshan
 
 test: clean
 	hugo --theme=hugo-digital-garden-theme --baseURL="http://127.0.0.1:1313/"
