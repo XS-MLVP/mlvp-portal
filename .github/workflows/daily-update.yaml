@@ -57,13 +57,12 @@ jobs:
           cd ..
         done
         cd UnityChipForXiangShan
-        LAST_COMMIT=$(git rev-parse HEAD~1)
         DIRECTORY="documents"
-        if git diff --quiet $LAST_COMMIT HEAD -- $DIRECTORY; then
-          echo "No new commits in $DIRECTORY"
-        else
+        if [ "$(git log -1 --format=%ct -- $DIRECTORY)" -ne "0" ]; then
           echo "New commits found in $DIRECTORY"
           skip=false
+        else
+          echo "No new commits in $DIRECTORY"
         fi
         cd ..
         echo "SKIP=$skip" >> $GITHUB_ENV
