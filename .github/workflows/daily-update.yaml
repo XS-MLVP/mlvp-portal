@@ -75,7 +75,7 @@ jobs:
         make init
         cd /home/runner/work/mlvp-portal/mlvp-portal/doc-xs-ov-00-bpu
         make init
-        cd /home/runner/work/mlvp-portal/mlvp-portal/UnityChipForXiangShan
+        cd /home/runner/work/mlvp-portal/mlvp-portal/UnityChipForXiangShan/documents
         make init
         cd /home/runner/work/mlvp-portal/mlvp-portal/mlvp-portal 
         npm install -D autoprefixer
