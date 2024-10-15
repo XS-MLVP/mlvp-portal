@@ -51,6 +51,7 @@ jobs:
           cd $repo
           if [ "$(git log --since='1 day ago' --oneline | wc -l)" -ne "0" ]; then
             skip=false
+            cd ..
             break
           fi
           cd ..
