@@ -13,7 +13,7 @@ build: clean
 	cd ../doc-xs-ov-00-bpu && rm -rf public && git pull && hugo --baseURL="https://xs-mlvp.github.io/xs-bpu/"
 	cp -r ../doc-xs-ov-00-bpu/public ./public/xs-bpu
 # UnityChipForXiangShan
-	cd ../UnityChipForXiangShan/documents && rm -rf public && git pull && hugo --baseURL="https://xs-mlvp.github.io/UnityChipForXiangShan/"
+	cd ../UnityChipForXiangShan/documents && rm -rf public && git pull && mkdir static/data/reports && touch static/data/reports/_.txt && hugo --baseURL="https://xs-mlvp.github.io/UnityChipForXiangShan/"
 	cp -r ../UnityChipForXiangShan/documents/public ./public/UnityChipForXiangShan
 
 test: clean
