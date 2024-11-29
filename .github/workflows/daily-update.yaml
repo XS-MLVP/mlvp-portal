@@ -43,6 +43,13 @@ jobs:
       with:
         path: 'mlvp-portal'
 
+    - name: Checkout xs-mlvp.github.io
+      uses: actions/checkout@v2
+      with:
+        repository: 'XS-MLVP/xs-mlvp.github.io'
+        token: ${{ secrets.COMMIT_KEY }}
+        path: 'xs-mlvp.github.io'
+
     - name: Check if there are commits today
       id: check-commits
       run: |
@@ -65,16 +72,15 @@ jobs:
           echo "No new commits in $DIRECTORY"
         fi
         cd ..
+        cd xs-mlvp.github.io
+        DIRECTORY="UnityChipForXiangShan/data/reports"
+        if [ "$(git log -1 --format=%ct -- $DIRECTORY)" -ne "0" ]; then
+          echo "New commits found in $DIRECTORY"
+          skip=false
+        fi
+        cd ..
         echo "SKIP=$skip" >> $GITHUB_ENV
       shell: bash
-
-    - name: Checkout xs-mlvp.github.io repository
-      if: env.SKIP == 'false'
-      uses: actions/checkout@v2
-      with:
-        repository: 'XS-MLVP/xs-mlvp.github.io'
-        token: ${{ secrets.COMMIT_KEY }}
-        path: 'xs-mlvp.github.io'
 
     - name: Run make commands
       if: env.SKIP == 'false'
