@@ -4,8 +4,8 @@ date: 2024-01-11T08:47:18+08:00
 draft: false
 fenbao_tags: ["验证案例", "BPU", "UT验证"]
 #website: "/xs-bpu/"
-status: "growing"
-task_closed: false
+status: "Completed"
+task_closed: true
 summary: "通过验证来学习香山BPU的微架构设计"
 ---
 
