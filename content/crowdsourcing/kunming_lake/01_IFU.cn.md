@@ -1,0 +1,92 @@
+---
+title: '第二期：昆明湖IFU模块UT验证实战(进行中)'
+date: 2024-01-11T08:47:18+08:00
+draft: false
+fenbao_tags: ["验证案例", "IFU", "UT验证"]
+#website: "/xs-bpu/"
+status: "Continuing"
+task_closed: false
+summary: "在验证中学习香山IFU的微架构设计"
+---
+
+在本期验证任务中，我们将走近香山昆明湖架构的IFU模块，在验证实战中体会香山取指模块的设计思路，加深对RISCV指令集架构的理解。欢迎各位朋友报名参加！
+
+
+IFU（Instuction Fetch Unit）即取指单元，负责接收FTQ的请求并从ICache或Instr Uncache获取指令缓存行作为输入，以完成取指、预译码、RVC指令扩展为RVI指令、BPU预测错误预检等多项功能，最终向IBuffer输出初步译码信息和指令码，向FTQ写回检查结果。 
+
+本期任务中，我们根据香山IFU模块的功能特点，先提取出其中5个子模块（PreDecode、F3Predecoder、RVCExpander、PredChecker和FrontendTrigger），合计发布4个子任务供各位报名参与，所有的任务都将通过<a href="https://github.com/XS-MLVP/UnityChipForXiangShan/issues" target="_blank">万众一芯之香山处理器的issue</a>分配。 
+
+本期任务可以用多种语言完成验证，对于纯软件方式的验证，我们提供了<a href="https://github.com/XS-MLVP/picker/" target="_blank">picker</a>支持将硬件待测单元转化为python、java、cpp等语言并对外提供调用接口。如果使用python，推荐基于我们提供的<a href="https://github.com/XS-MLVP/UnityChipForXiangShan" target="_blank">验证框架</a>完成验证工作并向我们的仓库提交PR。
+
+每个子任务需要提交以下成果：
+1. 验证环境+API：验证环境和API是代码成果，是针对待验证对象（DUT）的数据职责（引脚）和行为职责（逻辑）的封装，需要提供特定的可复用的接口、
+测试套件、测试覆盖率等的定义。其中，搭建验证环境可以参考<a href="https://xs-mlvp.github.io/UnityChipForXiangShan/docs/03_add_test/02_build_env/" target="_blank">验证环境搭建教程</a>，测试覆盖率相关的文档可以参考这两篇：<a href="https://xs-mlvp.github.io/UnityChipForXiangShan/docs/03_add_test/04_cover_line/" target="_blank">行覆盖率</a>、<a href="https://xs-mlvp.github.io/UnityChipForXiangShan/docs/03_add_test/05_cover_func/" target="_blank">功能覆盖率</a>。
+2. 测试用例：测试用例是代码成果，定义了用于测试的输入组合，以及预期的输出组合。构建测试用例可以参考<a href="https://xs-mlvp.github.io/UnityChipForXiangShan/docs/03_add_test/03_add_test/" target="_blank">测试用例添加教程</a>
+3. 验证报告：验证报告是文字成果，包括对环境、测试点和测试用例的介绍，复现代码所需的环境和指令，以及对测试覆盖率等衡量指标的报告。
+验证报告的书写可以参考这篇教程：<a href="https://open-verify.cc/mlvp/docs/basic/report/" target="_blank">验证报告教程</a>
+
+本期任务在我们的<a href="https://github.com/XS-MLVP/UnityChipForXiangShan" target="_blank">验证框架</a>中已经提供了初步的环境，各位也可以自行搭建验证环境和提炼API。
+
+任务难度是根据理解难度、工作量等因素综合得出的，一般来说难度1～3的任务是简单的任务，4～7的任务难度一般，或许工作量较大，或许需要花费一定时间理解任务隐藏信息，8～10的任务较为困难，一般同时具有较大的工作量和较高的理解难度。
+
+最终我们将根据任务的难度和各位的完成情况，酌情发放数额不等的奖金。此外，如果为IFU模块找出bug并反馈给我们确认后，有机会得到更多奖金。
+
+请填写[报名问卷](https://www.wjx.cn/vm/tUcQ4Fs.aspx#)参与本期任务.
+
+以下是本期各个子任务的详细介绍：
+
+## 任务 2.1：PreDecode、F3Predecpder子模块
+
+PreDecode即预译码模块，负责对初始指令码进行拼接并对拼接后的每条指令提取预译码信息，该模块时序优化出了PreDecode和F3Predecoder两个子模块。
+
+PreDecode模块负责针对输入的17x2B初始指令码，完成指令拼接，转移地址计算等功能，返回拼接指令码和预译码信息。
+
+F3Predecoder模块是PreDecode子模块的时序优化部分，负责CFI指令的识别和判定。
+
+预期奖金额度：1000～1350元
+
+预期任务难度：5/10
+
+功能文档参考：<a href="https://open-verify.cc/UnityChipForXiangShan/docs/98_ut/01_frontend/01_ifu/01_predecode/" target="_blank">PreDecode功能</a>、<a href="https://open-verify.cc/UnityChipForXiangShan/docs/98_ut/01_frontend/01_ifu/02_f3predecoder/" target="_blank">F3Predecoder功能</a>
+
+issue link：
+
+## 任务2.2：RVCExpander子模块
+
+该模块负责针对输入的4B指令码，进行指令扩展和非法指令判定。
+
+预期奖金额度：1100～1450
+
+预期任务难度：6/10
+
+功能文档参考：<a href="https://open-verify.cc/UnityChipForXiangShan/docs/98_ut/01_frontend/01_ifu/03_ifu_rvc_exp/" target="_blank">RVCExpander功能</a>
+
+issue link：
+
+## 任务2.3：PredChecker模块：
+
+该模块负责针对输入的指令码和预译码信息，检出预测错误并修正预测结果。
+
+预期任务难度：4/10
+
+预期奖金额度：900～1250元
+
+功能文档参考：<a href="https://open-verify.cc/UnityChipForXiangShan/docs/98_ut/01_frontend/01_ifu/04_pred_checker/" target="_blank">PredChecker功能</a>
+
+issue link：
+
+备注：已有环境和API，需自行添加覆盖率和测试用例，可以对API作出调整     
+
+## 验证任务2.4：FrontendTrigger子模块验证
+
+该模块负责根据输入信息设置和判定前端断点触发。
+
+预期奖金额度：1200～1550元
+
+预期任务难度：7/10
+
+功能文档参考：<a href="https://open-verify.cc/UnityChipForXiangShan/docs/98_ut/01_frontend/01_ifu/05_frontend_trigger/" target="_blank">FrontendTrigger功能</a>
+
+issue link：
+
+
