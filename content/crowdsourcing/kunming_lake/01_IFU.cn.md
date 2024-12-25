@@ -31,7 +31,9 @@ IFU（Instuction Fetch Unit）即取指单元，负责接收FTQ的请求并从IC
 
 最终我们将根据任务的难度和各位的完成情况，酌情发放数额不等的奖金。此外，如果为IFU模块找出bug并反馈给我们确认后，有机会得到更多奖金。
 
-请填写[报名问卷](https://www.wjx.cn/vm/tUcQ4Fs.aspx#)参与本期任务.
+请填写[报名问卷](https://www.wjx.cn/vm/tUcQ4Fs.aspx#)参与本期任务，也欢迎加入我们的qq群：600480230。
+
+如有疑问或其他需要请联系我们：anxu@bosc.ac.cn。
 
 以下是本期各个子任务的详细介绍：
 
