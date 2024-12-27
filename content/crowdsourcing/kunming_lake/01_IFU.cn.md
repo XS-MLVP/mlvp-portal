@@ -16,9 +16,17 @@ IFU（Instuction Fetch Unit）即取指单元，负责接收FTQ的请求并从IC
 
 本期任务中，我们根据香山IFU模块的功能特点，先提取出其中5个子模块（PreDecode、F3Predecoder、RVCExpander、PredChecker和FrontendTrigger），合计发布4个子任务供各位报名参与，所有的任务都将通过<a href="https://github.com/XS-MLVP/UnityChipForXiangShan/issues" target="_blank">万众一芯之香山处理器的issue</a>分配。 
 
-## 验证方式
+## 参与验证
 
-本期任务可以用多种语言完成验证，对于纯软件方式的验证，我们提供了<a href="https://github.com/XS-MLVP/picker/" target="_blank">picker</a>支持将硬件待测单元转化为python、java、cpp等语言并对外提供调用接口。如果使用python，推荐基于我们提供的<a href="https://github.com/XS-MLVP/UnityChipForXiangShan" target="_blank">验证框架</a>完成验证工作并向我们的仓库提交PR。
+本次验证任务请基于我们提供的<a href="https://github.com/XS-MLVP/UnityChipForXiangShan" target="_blank">验证框架</a>完成验证工作并向我们的仓库提交PR。
+
+### 成果提交
+
+请fork我们的仓库之后向我们的仓库提交PR以提交成果。
+
+### bug报告
+
+请直接在我们的仓库下使用bug report模板提issue，或者快捷点击[这里](https://github.com/XS-MLVP/UnityChipForXiangShan/issues/new?assignees=&labels=&projects=&template=bug_report.md&title=%5BBUG%5D+)：
 
 ## 成果需求
 
