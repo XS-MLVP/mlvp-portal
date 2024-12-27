@@ -16,7 +16,11 @@ IFU（Instuction Fetch Unit）即取指单元，负责接收FTQ的请求并从IC
 
 本期任务中，我们根据香山IFU模块的功能特点，先提取出其中5个子模块（PreDecode、F3Predecoder、RVCExpander、PredChecker和FrontendTrigger），合计发布4个子任务供各位报名参与，所有的任务都将通过<a href="https://github.com/XS-MLVP/UnityChipForXiangShan/issues" target="_blank">万众一芯之香山处理器的issue</a>分配。 
 
+## 验证方式
+
 本期任务可以用多种语言完成验证，对于纯软件方式的验证，我们提供了<a href="https://github.com/XS-MLVP/picker/" target="_blank">picker</a>支持将硬件待测单元转化为python、java、cpp等语言并对外提供调用接口。如果使用python，推荐基于我们提供的<a href="https://github.com/XS-MLVP/UnityChipForXiangShan" target="_blank">验证框架</a>完成验证工作并向我们的仓库提交PR。
+
+## 成果需求
 
 每个子任务需要提交以下成果：
 1. 验证环境+API：验证环境和API是代码成果，是针对待验证对象（DUT）的数据职责（引脚）和行为职责（逻辑）的封装，需要提供特定的可复用的接口、
@@ -27,21 +31,19 @@ IFU（Instuction Fetch Unit）即取指单元，负责接收FTQ的请求并从IC
 
 本期任务在我们的<a href="https://github.com/XS-MLVP/UnityChipForXiangShan" target="_blank">验证框架</a>中已经提供了初步的环境，各位也可以自行搭建验证环境和提炼API。
 
+## 任务难度
+
 任务难度是根据理解难度、工作量等因素综合得出的，一般来说难度1～3的任务是简单的任务，4～7的任务难度一般，或许工作量较大，或许需要花费一定时间理解任务隐藏信息，8～10的任务较为困难，一般同时具有较大的工作量和较高的理解难度。
 
+## 奖励信息
+
 最终我们将根据任务的难度和各位的完成情况，酌情发放数额不等的奖金。此外，如果为IFU模块找出bug并反馈给我们确认后，有机会得到更多奖金。
-
-## 报名方式
-
-请填写[报名问卷](https://www.wjx.cn/vm/tUcQ4Fs.aspx#)参与本期任务，也欢迎加入我们的qq群：**600480230**。
-
-如有疑问或其他需要请联系我们：anxu@bosc.ac.cn。
 
 ## 任务详情
 
 以下是本期各个子任务的详细介绍：
 
-### 任务 2.1：PreDecode、F3Predecpder子模块
+### 任务 2.1：PreDecode、F3Predecoder子模块
 
 PreDecode即预译码模块，负责对初始指令码进行拼接并对拼接后的每条指令提取预译码信息，该模块时序优化出了PreDecode和F3Predecoder两个子模块。
 
@@ -87,4 +89,8 @@ issue link：<a href="https://github.com/XS-MLVP/UnityChipForXiangShan/issues/11
 
 issue link：<a href="https://github.com/XS-MLVP/UnityChipForXiangShan/issues/12">FrontendTrigger issue</a>
 
+## 报名方式
 
+请填写[报名问卷](https://www.wjx.cn/vm/tUcQ4Fs.aspx#)参与本期任务，也欢迎加入我们的qq群：**600480230**。
+
+如有疑问可在qq群中联系群主，或邮件联系我们：anxu@bosc.ac.cn。
