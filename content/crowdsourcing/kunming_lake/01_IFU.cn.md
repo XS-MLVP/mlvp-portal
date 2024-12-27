@@ -49,8 +49,6 @@ PreDecode模块负责针对输入的17x2B初始指令码，完成指令拼接，
 
 F3Predecoder模块是PreDecode子模块的时序优化部分，负责CFI指令的识别和判定。
 
-预期奖金额度：1000～1350元
-
 预期任务难度：5/10
 
 功能文档参考：<a href="https://open-verify.cc/UnityChipForXiangShan/docs/98_ut/01_frontend/01_ifu/01_predecode/" target="_blank">PreDecode功能</a>、<a href="https://open-verify.cc/UnityChipForXiangShan/docs/98_ut/01_frontend/01_ifu/02_f3predecoder/" target="_blank">F3Predecoder功能</a>
@@ -60,8 +58,6 @@ issue link：<a href="https://github.com/XS-MLVP/UnityChipForXiangShan/issues/9"
 ### 任务2.2：RVCExpander子模块
 
 该模块负责针对输入的4B指令码，进行指令扩展和非法指令判定。
-
-预期奖金额度：1100～1450
 
 预期任务难度：6/10
 
@@ -75,8 +71,6 @@ issue link：<a href="https://github.com/XS-MLVP/UnityChipForXiangShan/issues/10
 
 预期任务难度：4/10
 
-预期奖金额度：900～1250元
-
 功能文档参考：<a href="https://open-verify.cc/UnityChipForXiangShan/docs/98_ut/01_frontend/01_ifu/04_pred_checker/" target="_blank">PredChecker功能</a>
 
 issue link：<a href="https://github.com/XS-MLVP/UnityChipForXiangShan/issues/11">PredChecker issue</a>
@@ -86,8 +80,6 @@ issue link：<a href="https://github.com/XS-MLVP/UnityChipForXiangShan/issues/11
 ### 验证任务2.4：FrontendTrigger子模块验证
 
 该模块负责根据输入信息设置和判定前端断点触发。
-
-预期奖金额度：1200～1550元
 
 预期任务难度：7/10
 
