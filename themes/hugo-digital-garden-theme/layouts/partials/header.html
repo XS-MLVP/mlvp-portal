@@ -19,7 +19,7 @@
             </li>
             {{ end }} 
             {{ range $.Translations }}
-            <li class='nav-item' ><a class="nav-link" href="{{ .Permalink }}">{{ .Language.Title }}</a></li>
+            <li class='nav-item' ><a class="nav-link" href="{{ .Permalink }}">{{ .Language.Params.text }}</a></li>
             {{ end }}
             <li class="nav-item px-2 pt-1">
                 <a class="btn fas fa-moon" id="dark-mode-toggle"></a>
