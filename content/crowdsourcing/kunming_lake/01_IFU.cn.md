@@ -28,7 +28,7 @@ IFU（Instuction Fetch Unit）即取指单元，负责接收FTQ的请求并从IC
 
 请直接在我们的仓库下使用bug report模板提issue，或者快捷点击[这里](https://github.com/XS-MLVP/UnityChipForXiangShan/issues/new?assignees=&labels=&projects=&template=bug_report.md&title=%5BBUG%5D+)。
 
-提交bug时，请先在label中选择bug neet to confirm标签。然后从我们提供的四种bug分级（minor、normal、serious、critical）中选择您认为最符合的一种标签。最后，请选择您发现bug的模块，本次验证的是前端的ifu模块，可以统一打上ut\_frontend\.ifu
+提交bug时，请先在label中选择bug need to confirm标签。然后从我们提供的四种bug分级（minor、normal、serious、critical）中选择您认为最符合的一种标签。最后，请选择您发现bug的模块，本次验证的是前端的ifu模块，可以统一打上ut\_frontend\.ifu标签。
 
 ## 成果需求
 
