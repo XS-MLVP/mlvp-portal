@@ -1,7 +1,7 @@
 ---
 title: '第一期昆明湖回归测试任务'
 date: 2024-01-11T08:47:18+08:00
-draft: true
+draft: false
 fenbao_tags: ["bug复现","回归测试"]
 #website: "/xs-bpu/"
 task_closed: false
@@ -48,7 +48,7 @@ summary: "根据已发布的bug任务，设计回归测试用例复现bug"
 
 对每个bug，我们将提供bug的描述、bug发生的原因和该bug被修复的commit的id，方便复现者对应到具体的commit。
 
-以下是本期的bug描述：
+以下是本期的bug描述（等待更新）：
 
 | id | bug描述 | 修复bug的commit id | 原因 |
 | --- | ------ | -------------- | ------ |
