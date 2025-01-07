@@ -10,7 +10,7 @@ home_page_show: true
 summary: "在验证中学习香山IFU的微架构设计"
 ---
 
-在本期验证任务中，我们将走近香山昆明湖架构的IFU模块，在验证实战中体会香山取指模块的设计思路，加深对RISCV指令集架构的理解。欢迎各位朋友报名参加（报名表填写[这里](https://www.wjx.cn/vm/tUcQ4Fs.aspx#)，qq群：**600480230**。）！
+在本期验证任务中，我们将走近香山昆明湖架构的IFU模块，在验证实战中体会香山取指模块的设计思路，加深对RISCV指令集架构的理解。欢迎各位朋友报名参加（报名填写[这里](https://www.wjx.cn/vm/tUcQ4Fs.aspx#)，qq群：**600480230**。）！
 
 
 IFU（Instuction Fetch Unit）即取指单元，负责接收FTQ的请求并从ICache或Instr Uncache获取指令缓存行作为输入，以完成取指、预译码、RVC指令扩展为RVI指令、BPU预测错误预检等多项功能，最终向IBuffer输出初步译码信息和指令码，向FTQ写回检查结果。 
