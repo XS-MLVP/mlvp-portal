@@ -10,7 +10,7 @@ home_page_show: true
 summary: "在验证中学习香山IFU的微架构设计"
 ---
 
-在本期验证任务中，我们将走近香山昆明湖架构的IFU模块，在验证实战中体会香山取指模块的设计思路，加深对RISCV指令集架构的理解。欢迎各位朋友报名参加！
+在本期验证任务中，我们将走近香山昆明湖架构的IFU模块，在验证实战中体会香山取指模块的设计思路，加深对RISCV指令集架构的理解。欢迎各位朋友报名参加（报名表填写[这里](https://www.wjx.cn/vm/tUcQ4Fs.aspx#)，qq群：**600480230**。）！
 
 
 IFU（Instuction Fetch Unit）即取指单元，负责接收FTQ的请求并从ICache或Instr Uncache获取指令缓存行作为输入，以完成取指、预译码、RVC指令扩展为RVI指令、BPU预测错误预检等多项功能，最终向IBuffer输出初步译码信息和指令码，向FTQ写回检查结果。 
@@ -62,7 +62,7 @@ PreDecode模块负责针对输入的17x2B初始指令码，完成指令拼接，
 
 F3Predecoder模块是PreDecode子模块的时序优化部分，负责CFI指令的识别和判定。
 
-预期任务难度：5/10
+预期任务难度：4/10
 
 功能文档参考：<a href="https://open-verify.cc/UnityChipForXiangShan/docs/98_ut/01_frontend/01_ifu/01_predecode/" target="_blank">PreDecode功能</a>、<a href="https://open-verify.cc/UnityChipForXiangShan/docs/98_ut/01_frontend/01_ifu/02_f3predecoder/" target="_blank">F3Predecoder功能</a>
 
@@ -72,7 +72,7 @@ issue link：<a href="https://github.com/XS-MLVP/UnityChipForXiangShan/issues/9"
 
 该模块负责针对输入的4B指令码，进行指令扩展和非法指令判定。
 
-预期任务难度：6/10
+预期任务难度：5/10
 
 功能文档参考：<a href="https://open-verify.cc/UnityChipForXiangShan/docs/98_ut/01_frontend/01_ifu/03_ifu_rvc_exp/" target="_blank">RVCExpander功能</a>
 
@@ -94,7 +94,7 @@ issue link：<a href="https://github.com/XS-MLVP/UnityChipForXiangShan/issues/11
 
 该模块负责根据输入信息设置和判定前端断点触发。
 
-预期任务难度：7/10
+预期任务难度：6/10
 
 功能文档参考：<a href="https://open-verify.cc/UnityChipForXiangShan/docs/98_ut/01_frontend/01_ifu/05_frontend_trigger/" target="_blank">FrontendTrigger功能</a>
 
