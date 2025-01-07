@@ -6,6 +6,7 @@ fenbao_tags: ["验证案例", "IFU", "UT验证"]
 #website: "/xs-bpu/"
 status: "Continuing"
 task_closed: false
+home_page_show: true
 summary: "在验证中学习香山IFU的微架构设计"
 ---
 

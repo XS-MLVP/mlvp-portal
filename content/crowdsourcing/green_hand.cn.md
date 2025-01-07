@@ -6,6 +6,8 @@ resource_tags: ["文档", "学习资料"]
 status: "seeding"
 summary: "万众一芯活动的新手任务，了解基于我们的框架和工具完成验证的全流程"
 weight: 1
+task_closed: false
+home_page_show: false
 ---
 
 在这次新手任务中，您将：

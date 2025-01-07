@@ -5,6 +5,7 @@ draft: false
 fenbao_tags: ["bug复现","回归测试"]
 #website: "/xs-bpu/"
 task_closed: false
+home_page_show: true
 summary: "根据已发布的bug任务，设计回归测试用例复现bug"
 ---
 

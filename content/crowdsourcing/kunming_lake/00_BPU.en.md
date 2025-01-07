@@ -6,6 +6,7 @@ fenbao_tags: ["verification case", "BPU", "UT test"]
 #website: "/xs-bpu/"
 status: "Completed"
 task_closed: true
+home_page_show: true
 summary: "Learning the microarchitecture design of the Xiangshan BPU through verification"
 ---
 
