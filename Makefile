@@ -1,19 +1,22 @@
 .DEFAULT_GOAL = test
 
+BASE_URL = "https://open-verify.cc"
+#BASE_URL = "https://xs-mlvp.github.io"
+
 init:
 	git clone git@github.com:XS-MLVP/course.git --depth 1 ../course
 	git clone git@github.com:XS-MLVP/doc-xs-ov-00-bpu.git --depth 1 ../doc-xs-ov-00-bpu
 
 build: clean
-	hugo --minify --theme=hugo-digital-garden-theme --baseURL="https://xs-mlvp.github.io/"
+	hugo --minify --theme=hugo-digital-garden-theme --baseURL="$(BASE_URL)"
 # mlvp build
-	cd ../course && rm -rf public && git pull && hugo --baseURL="https://xs-mlvp.github.io/mlvp/"
+	cd ../course && rm -rf public && git pull && hugo --baseURL="$(BASE_URL)/mlvp/"
 	cp -r ../course/public ./public/mlvp
 # xs-bpu build
-	cd ../doc-xs-ov-00-bpu && rm -rf public && git pull && hugo --baseURL="https://xs-mlvp.github.io/xs-bpu/"
+	cd ../doc-xs-ov-00-bpu && rm -rf public && git pull && hugo --baseURL="$(BASE_URL)/xs-bpu/"
 	cp -r ../doc-xs-ov-00-bpu/public ./public/xs-bpu
 # UnityChipForXiangShan
-	cd ../UnityChipForXiangShan/documents && rm -rf public && git pull && mkdir -p static/data/reports && touch static/data/reports/_.txt && hugo --baseURL="https://xs-mlvp.github.io/UnityChipForXiangShan/"
+	cd ../UnityChipForXiangShan/documents && rm -rf public && git pull && mkdir -p static/data/reports && touch static/data/reports/_.txt && hugo --baseURL="$(BASE_URL)/UnityChipForXiangShan/"
 	cp -r ../UnityChipForXiangShan/documents/public ./public/UnityChipForXiangShan
 
 test: clean
