@@ -1,5 +1,5 @@
 ---
-title: '第二期：昆明湖IFU模块UT验证实战(进行中)'
+title: '第二期：第三代香山(昆明湖）架构IFU模块UT验证实战(进行中)'
 date: 2024-01-11T08:47:18+08:00
 draft: false
 fenbao_tags: ["验证案例", "IFU", "UT验证"]
@@ -7,6 +7,7 @@ fenbao_tags: ["验证案例", "IFU", "UT验证"]
 status: "Continuing"
 task_closed: false
 home_page_show: true
+Weight: 11
 summary: "在验证中学习香山IFU的微架构设计"
 ---
 

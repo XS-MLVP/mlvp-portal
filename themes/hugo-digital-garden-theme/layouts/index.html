@@ -25,7 +25,7 @@
 			{{ if .Summary }} <p class="subheading">{{ .Params.acti_summary }}</p> {{ end }}
 			{{ end }}
 			<div class="row row-cols-1 g-4 mb-5">
-				{{ range ( where (where (where (where site.Pages "Section" "crowdsourcing") "IsPage" "eq" true ) "Params.home_page_show" true) "Params.task_closed" "ne" true | first 6 ) }}
+				{{ range sort ( where (where (where (where site.Pages "Section" "crowdsourcing") "IsPage" "eq" true ) "Params.home_page_show" true) "Params.task_closed" "ne" true) "Params.Weight" "desc" |first 6 }}
 				{{ partial "home_garden.html" . }}
 				{{ end }}
       		</div>

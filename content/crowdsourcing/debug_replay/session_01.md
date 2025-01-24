@@ -1,5 +1,5 @@
 ---
-title: '第一期“第三代香山(昆明湖）”回归测试任务(进行中)'
+title: '第一期回归验证：第三代香山(昆明湖）Bug用例复现(进行中)'
 date: 2024-01-11T08:47:18+08:00
 draft: false
 fenbao_tags: ["Bug复现","回归测试"]
@@ -8,6 +8,7 @@ task_closed: false
 status: "Continuing"
 task_closed: false
 home_page_show: true
+Weight: 10
 summary: "根据已发布的Bug任务，设计回归测试用例复现Bug"
 ---
 

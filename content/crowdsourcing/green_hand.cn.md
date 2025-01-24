@@ -1,13 +1,13 @@
 ---
-title: '新手任务'
+title: '新手入门任务'
 date: 2025-01-02T08:50:39+08:00
 draft: false
 resource_tags: ["文档", "学习资料"]
 status: "seeding"
 summary: "万众一芯活动的新手任务，了解基于万众一芯的框架和工具完成验证的全流程"
-weight: 1
+weight: 99
 task_closed: false
-home_page_show: false
+home_page_show: true
 ---
 
 在这次新手任务中，您将：
