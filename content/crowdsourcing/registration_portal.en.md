@@ -1,0 +1,22 @@
+---
+title: 'Summary of Registration Links'
+date: 2025-01-02T08:50:39+08:00
+draft: false
+resource_tags: ["Document", "Study Materials"]
+status: "seeding"
+summary: "Summary of Registration Links for Various Tasks"
+weight: 98
+task_closed: false
+home_page_show: true
+---
+
+
+|Serial Number|Task Name|Registration Address|Submission Method|
+|-|-|-|-|
+|1|[Beginner's Tasks](/crowdsourcing/green_hand/)|No Registration Required|Submit directly in [the gitHub Discussion](https://github.com/XS-MLVP/UnityChipForXiangShan/discussions/13)|
+|2|[UT Practical Session Phase 2: Third Generation Xiangshan (Kunming Lake) Architecture IFU Module UT Verification Practice](/crowdsourcing/kunming_lake/01_ifu/)|[https://www.wjx.cn/vm/tUcQ4Fs.aspx](https://www.wjx.cn/vm/tUcQ4Fs.aspx)|Submit via PR in the repository [UnityChipForXiangShan](https://github.com/XS-MLVP/UnityChipForXiangShan)|
+|3|[Regression Verification Phase 1: Third Generation Xiangshan (Kunming Lake) Bug Case Reproduction (In Progress)](/crowdsourcing/debug_replay/session_01/)|No Registration Required|Submit via PR in the repository [UnityChipForXiangShan](https://github.com/XS-MLVP/UnityChipForXiangShan)|
+|4|[UT Practical Session Phase 1: Third Generation Xiangshan (Kunming Lake) BPU Module UT Verification Practice](/crowdsourcing/kunming_lake/00_bpu/)|No Registration Required|The task is complete, and the code will be merged into the repository [UnityChipForXiangShan](https://github.com/XS-MLVP/UnityChipForXiangShan)|
+
+
+Please join the QQ group (600480230) to stay updated on the latest news.

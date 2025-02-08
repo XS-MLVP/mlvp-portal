@@ -24,5 +24,3 @@ As such, we choose to base our work on Chisel and ChiselTest, and aim to raise t
 As a showcase, we have verified an industrial use case, a min-heap, utilizing ChiselVerify to check as many features of the min-heap with as few lines of verification code as possible.
 
 The main contribution of this paper is ChiselVerify 1, an open-source verification library for hardware designs.
-
-The paper is organized into 6 sections. Section II describes related work. Section III describes background on hardware verification. Section IV describes our solution for enabling verification in Chisel, namely ChiselVerify. Section V explores ChiselVerify on an industry-provided use case. Section VI concludes.
