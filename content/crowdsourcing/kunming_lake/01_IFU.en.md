@@ -1,6 +1,6 @@
 ---
 title: 'UT Practical Training Phase 2: Third Generation Xiangshan (Kunming Lake) Architecture IFU Module UT Verification Practice (In Progress)'
-date: 2024-01-11T08:47:18+08:00
+date: 2024-12-11T10:47:18+08:00
 draft: false
 fenbao_tags: ["Verification Cases", "IFU", "UT Verification"]
 #website: "/xs-bpu/"
