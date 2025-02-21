@@ -35,7 +35,7 @@ Publish prepared modules on the "UnityChip" platform, lead crowdsourced verifica
 ## Incentives  
 
 Qualified participants will have the opportunity to be officially appointed as **Xiangshan UT Module Maintainers** and receive:
-- **1v1 Expert Guidance**: Code review sessions with Xiangshan core developers.  
+
 - **Maintainer Identity Badge**: GitHub account listed in the project’s maintainer roster.  
 - **Module Attribution Rights**: Verification modules you lead may be labeled "Maintained by {your_name}".  
 - **Community Contribution Certificate**: Electronic certificate issued by the Xiangshan core team.  
