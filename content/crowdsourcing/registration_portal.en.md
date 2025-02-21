@@ -14,7 +14,7 @@ home_page_show: true
 |Serial Number|Task Name|Registration Address|Submission Method|
 |-|-|-|-|
 |1|[Beginner's Tasks](/crowdsourcing/green_hand/)|No Registration Required|Submit directly in [the gitHub Discussion](https://github.com/XS-MLVP/UnityChipForXiangShan/discussions/13)|
-|2|[Xiangshan Open Source·Module Maintainer Program—UT Verification Crowdsourcing Initiative](/crowdsourcing/ut-maintainer/)|https://www.wjx.top/vm/rxGeUKU.aspx#|No submission required|
+|2|[Recruitment of Xiangshan UT Module Maintainers](/crowdsourcing/ut-maintainer/)|https://www.wjx.top/vm/rxGeUKU.aspx#|No submission required|
 |3|[UT Practical Session Phase 3: Third Generation Xiangshan (Kunming Lake) Architecture ITLB Module UT Verification Practice](/crowdsourcing/kunming_lake/02_itlb/)|[https://www.wjx.top/vm/P4mhRDX.aspx#](https://www.wjx.top/vm/P4mhRDX.aspx#)|Submit via PR in the repository [UnityChipForXiangShan](https://github.com/XS-MLVP/UnityChipForXiangShan)|
 |4|[UT Practical Session Phase 2: Third Generation Xiangshan (Kunming Lake) Architecture IFU Module UT Verification Practice](/crowdsourcing/kunming_lake/01_ifu/)|[https://www.wjx.cn/vm/tUcQ4Fs.aspx](https://www.wjx.cn/vm/tUcQ4Fs.aspx)|Submit via PR in the repository [UnityChipForXiangShan](https://github.com/XS-MLVP/UnityChipForXiangShan)|
 |5|[Regression Verification Phase 1: Third Generation Xiangshan (Kunming Lake) Bug Case Reproduction (In Progress)](/crowdsourcing/debug_replay/session_01/)|No Registration Required|Submit via PR in the repository [UnityChipForXiangShan](https://github.com/XS-MLVP/UnityChipForXiangShan)|
