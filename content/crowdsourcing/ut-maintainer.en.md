@@ -1,7 +1,7 @@
 ---
 title: 'Xiangshan Open Source · Module Maintainer Program — UT Verification Crowd Innovation Initiative'
 date: 2025-02-19T11:07:20+08:00
-draft: false
+draft: true
 resource_tags: ["Documentation", "Learning Resources"]
 status: "seeding"
 summary: "— Participate in Core Module Verification, Co-build a Trusted Verification System"

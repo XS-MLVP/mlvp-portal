@@ -1,7 +1,7 @@
 ---
 title: '香山开源·模块维护者计划——UT验证众创行动'
 date: 2025-02-19T11:07:20+08:00
-draft: false
+draft: true
 resource_tags: ["文档", "学习资料"]
 status: "seeding"
 summary: "——参与核心模块验证，共建可信验证体系"
