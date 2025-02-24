@@ -1,5 +1,5 @@
 ---
-title: 'Recruitment of Xiangshan UT Module Maintainers'  
+title: 'Recruitment of XiangShan UT Verification Module Maintainer'  
 date: 2025-02-19T11:07:20+08:00  
 draft: true  
 resource_tags: ["Documentation", "Verification Recruitment"]  

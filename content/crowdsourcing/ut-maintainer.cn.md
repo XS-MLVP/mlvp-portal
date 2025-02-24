@@ -1,5 +1,5 @@
 ---
-title: '香山UT模块维护者招录'
+title: '香山UT验证模块维护'
 date: 2025-02-19T11:07:20+08:00
 draft: true
 resource_tags: ["文档", "验证招录"]
