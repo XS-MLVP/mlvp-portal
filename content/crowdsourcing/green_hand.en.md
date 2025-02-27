@@ -129,3 +129,6 @@ You can refer to the format of the <a href="https://github.com/XS-MLVP/Example-N
 ## Other Considerations
 
 When you participate in any activities organized by "One Chip for All," you can earn a reward of around 1,000 yuan for identifying bugs in the Xiangshan processor, depending on the nature of the bugs.
+
+## Registration Link
+[Click here](https://www.wjx.top/vm/YEbqmTM.aspx) to fill out the application form. After submission, join the QQ group (Group ID: <b>1033196714</b>) to contact us.
