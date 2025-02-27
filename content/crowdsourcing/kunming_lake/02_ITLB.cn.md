@@ -54,7 +54,9 @@ TLB模块为translation lookaside buffer的缩写，是MMU模块的一部分。M
 
 3、验证报告。
 
-将上述三项内容打包并提交即可，最终提交的目录结构要求如下：
+4、测试点表。验证工作中常用表格记录测试点及其完成情况，在 QQ 群文档中将给出示例的表格，在验证过程中请及时填写与维护。
+
+将上述四项内容打包并提交即可，最终提交的目录结构要求如下：
 
 ```
 姓名_ut_fronted_mmu_itlb/
@@ -70,6 +72,7 @@ TLB模块为translation lookaside buffer的缩写，是MMU模块的一部分。M
 │
 └── report/
       └── file.pdf
+      └── 测试点表格.excel
 ```
 
 ### 奖励说明
