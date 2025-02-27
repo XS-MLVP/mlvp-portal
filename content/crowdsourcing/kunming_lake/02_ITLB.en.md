@@ -19,7 +19,7 @@ The TLB (Translation Lookaside Buffer) module is part of the MMU (Memory Managem
 ### Participate in Verification  
 This verification task uses the [verification framework](https://github.com/XS-MLVP/UnityChipForXiangShan) provided by the UnityChipForXiangShan repository. After verification, submit a Pull Request (PR) to the repository.  
 
-For this ITLB verification task, since the ITLB is a submodule of the MMU, the entire ITLB module will be verified as a whole. Grading will be based on testing completeness (e.g., coverage metrics). During verification, you will need to define test points based on self-selected functional areas. Functional points and their difficulty levels are as follows:  
+In this ITLB verification task, since the ITLB itself is an MMU submodule, tasks will no longer be divided by submodules. Participants will be required to validate the entire ITLB module. Grading will be based on testing completeness (e.g., coverage metrics). During verification, you must define test points by self-selecting functional areas based on the detailed descriptions provided in the [ITLB Documentation](https://open-verify.cc/UnityChipForXiangShan/docs/98_ut/01_frontend/02_itlb/). All functional points and their corresponding difficulty levels are as follows:  
 
 | **Functional Category** | **Feature** | **Description** | **Difficulty** |  
 |-------------------------|---------------------|-----------------------------------------------------------------------|-----|  
