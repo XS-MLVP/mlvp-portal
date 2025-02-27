@@ -1,74 +1,74 @@
----
-title: 'UT Practical Session 3: UT Verification Practice for 3rd-gen Xiangshan (Kunminghu) Architecture ITLB Module (In Progress)'
-date: 2025-02-19T10:47:15+08:00
-draft: false
-fenbao_tags: ["Verification Case", "ITLB", "UT Verification"]
-#website: "/xs-bpu/"
-status: "Continuing"
-task_closed: false
-home_page_show: true
-Weight: 11
-summary: "Learning Xiangshan ITLB's Microarchitecture Design Through Verification"
----
+---  
+title: 'UT Practical Session Phase 3: UT Verification Practice for the ITLB Module of the 3rd-Generation Xiangshan (Kunminghu) Architecture (Ongoing)'  
+date: 2025-02-19T10:47:39+08:00  
+draft: false  
+fenbao_tags: ["Verification Case", "ITLB", "UT Verification"]  
+#website: "/xs-bpu/"  
+status: "Continuing"  
+task_closed: false  
+home_page_show: true  
+Weight: 11  
+summary: "Learn the Microarchitecture Design of Xiangshan’s ITLB Through Verification"  
 
-This verification practice session will help participants learn the TLB module design in Xiangshan Kunminghu architecture and explore other components of the MMU module, while understanding general RISC-V instruction architecture design principles. [Click here to register](https://www.wjx.top/vm/P4mhRDX.aspx# ) and join the QQ group (Group ID: <b>976081653</b>) after submission for further communication.
+---  
 
-The TLB (Translation Lookaside Buffer) module, part of the MMU (Memory Management Unit), handles virtual-to-physical address translation through multi-level page tables stored in memory. As a hardware accelerator, TLB caches frequently used page table entries to optimize memory access. For details, refer to [ITLB Documentation](https://open-verify.cc/UnityChipForXiangShan/docs/98_ut/01_frontend/02_itlb/).
+This practical verification task will help you study the design of the TLB module in the Kunminghu architecture of Xiangshan and explore other components of the MMU module beyond the TLB. You will gain insights into the general approach for designing modules using the RISC-V instruction set architecture. [Click here to register](https://www.wjx.top/vm/P4mhRDX.aspx#) and submit the form. After registration, join the QQ group (Group ID: **976081653**) for further communication.  
 
-### Participation Guidelines
+The TLB (Translation Lookaside Buffer) module is part of the MMU (Memory Management Unit), responsible for mapping virtual memory addresses to physical memory addresses. This mapping is stored in multi-level page tables in memory, and the TLB acts as a hardware accelerator for accessing these tables by caching frequently used page table entries. During operation, the TLB receives and temporarily stores page table mappings, enabling rapid results upon subsequent accesses. For details, refer to the [ITLB Documentation](https://open-verify.cc/UnityChipForXiangShan/docs/98_ut/01_frontend/02_itlb/).  
 
-Complete verification tasks using the [verification framework](https://github.com/XS-MLVP/UnityChipForXiangShan) from the UnityChipForXiangShan repository. Submit your work via PR after completion.
+### Participate in Verification  
+This verification task uses the [verification framework](https://github.com/XS-MLVP/UnityChipForXiangShan) provided by the UnityChipForXiangShan repository. After verification, submit a Pull Request (PR) to the repository.  
 
-This ITLB verification requires full-module validation. Tasks will be graded by coverage metrics. Participants should self-select functional points for testing using the following difficulty matrix:
+For this ITLB verification task, since the ITLB is a submodule of the MMU, the entire ITLB module will be verified as a whole. Grading will be based on testing completeness (e.g., coverage metrics). During verification, you will need to define test points based on self-selected functional areas. Functional points and their difficulty levels are as follows:  
 
-| **Category**         | **Function Point**  | **Description**                                                                 | **Difficulty** |
-|-----------------------|---------------------|---------------------------------------------------------------------------------|----------------|
-| **Request Handling**  | TLB Request Receiving | Process virtual address translation requests (read/write/execute)               | 2              |
-| **Hit/Miss Handling** | TLB Miss Handling    | Trigger page table walk on missing entries, reload TLB, and retry               | 3              |
-|                       | TLB Hit Handling     | Return physical address and permissions directly                                | 2              |
-| **Cache Management**  | Replacement Policy   | Implement PLRU algorithm for entry eviction                                     | 5              |
-|                       | TLB Capacity         | Support maximum entry count (impacts hit rate/hardware cost)                    | 3              |
-|                       | TLB Compression      | Merge adjacent entries/encoding optimization                                    | 3              |
-| **Maintenance**       | Flush Operations     | Full/partial TLB flush via ASID switching/INVTLB instructions                   | 3              |
-|                       | Reset                | Clear entries and reset state on power-up                                       | 1              |
-| **Security & Exceptions** | Permission Check  | Validate access permissions (R/W/Execute) against page table attributes         | 4              |
-|                       | Exception Handling   | Handle Page Faults (permission violations/page misses) and TLB exceptions       | 3              |
-|                       | Isolation            | ASID-based isolation for process/VM TLB entries                                 | 3              |
-| **Performance**       | Parallel Access      | Fully associative structure supports concurrent lookups                         | 2              |
-|                       | Multi-page Support   | Mixed page sizes (4KB/2MB/1GB) to reduce coverage bottlenecks                    | 4              |
-| **Physical Design**   | Timing Constraints   | Meet pipeline timing requirements (1-3 cycle latency)                           | 2              |
+| **Functional Category** | **Feature** | **Description** | **Difficulty** |  
+|-------------------------|---------------------|-----------------------------------------------------------------------|-----|  
+| **Request Handling**     | TLB Request Reception | Receive virtual address translation requests from the CPU; parse request types (read/write/execute) | 2/10 |  
+| **Hit/Miss Handling**    | TLB Miss Handling    | Trigger Page Table Walk (PTW) on miss; load missing entries and retry translation | 4/10 |  
+|                          | TLB Hit Handling     | Return physical address and permissions directly on hit | 4/10 |  
+| **Cache Management**     | Replacement Policy   | Use PLRU algorithm to evict old entries and make space for new ones | 8/10 |  
+|                          | TLB Cache Size       | Maximum number of entries supported, impacting hit rate and hardware cost | 6/10 |  
+|                          | TLB Compression      | Merge adjacent entries or optimize encoding to improve space efficiency | 4/10 |  
+| **Maintenance Operations** | Flush              | Support full TLB flush (e.g., ASID switch) or selective entry invalidation (via INVTLB instruction) | 5/10 |  
+|                          | Reset               | Clear all entries and reset state on power-up or reset | 1/10 |  
+| **Security & Exceptions** | Permission Checks   | Verify if request type (read/write/execute) aligns with page table entry permissions | 6/10 |  
+|                          | Exception Handling   | Trigger Page Fault (permission violation/missing page) or TLB exceptions (invalid entry); forward to exception handler | 3/10 |  
+|                          | Isolation            | Use ASID (Address Space Identifier) to isolate entries across processes/VMs, preventing leaks | 5/10 |  
+| **Performance Optimization** | Parallel Access    | Fully associative structure supports concurrent lookups to reduce latency | 3/10 |  
+|                          | Mixed Page Sizes     | Support hybrid page sizes (e.g., 4KB/2MB/1GB) to mitigate TLB coverage bottlenecks | 4/10 |  
+| **Physical Design**      | Timing               | Meet pipeline timing requirements; design for 1-3 cycle latency to balance critical path and clock frequency | 3/10 |  
 
-Note: Supplementary functional points are allowed.
+*Note: You may propose additional functional points.*  
 
-### Bug Reporting
+### Bug Reporting  
+If you identify bugs during verification, report them via the BUG REPORT template in the UnityChipForXiangShan repository by submitting an issue. Label the issue with `bug need to confirm` and select a severity level (`minor`, `normal`, `serious`, or `critical`) along with the `ut_fronted.mmu.itlb` tag. For GitHub usage issues, raise concerns directly in the QQ group (ID: 976081653). We protect intellectual property rights—only the first-reported bug is valid. Additional rewards may be granted upon confirmation.  
 
-Report bugs via GitHub issues using the BUG REPORT template. Label issues with `bug need to confirm` and appropriate severity (`minor/normal/serious/critical`). Use `ut_fronted.mmu.itlb` tag. Alternatively, report in QQ group (976081653). First valid bug reports may receive additional rewards.
+### Submission Guidelines  
+After verification, submit a PR to the UnityChip repository and provide the following:  
 
-### Submission Requirements
+1. **Code Repository Link/Archive**: Host code on GitHub (preferred) or submit a ZIP. Ensure code runs correctly and include a `README.md` with execution instructions. Specify the version if using GitHub.  
+2. **Test Cases & Documentation**: Describe each test case concisely.  
+3. **Verification Report**.  
+4. **Test Point Table**: Maintain a table (example in QQ group files) tracking test points.  
 
-Submit the following packaged as:
+Package all items and email to `bidingjun21@mails.ucas.ac.cn` with the directory structure:  
 
-```
-Name_ut_fronted_mmu_itlb/
-│
-├── code/
-│     ├── link.md
-│     └── code.zip
-│
-├── cases/
-│     ├── Function_Point/
-│     │      └── Test_Case_Description.md
-│     └── Function_Point/
-│
-└── report/
-      └── file.pdf
-```
+```  
+Name_ut_fronted_mmu_itlb/  
+│  
+├── code/  
+│     ├── link.md  
+│     └── code.zip  
+│  
+├── cases/  
+│     ├── Feature_Name/  
+│     │      └── Test_Case_Description.md  
+│     └── ...  
+│  
+└── report/  
+      └── report.pdf  
+      └── Test_Point_Table.xlsx  
+```  
 
-Include:
-1. Code repository link/zip with executable tests and README
-2. Test case documentation
-3. Verification report
-
-### Rewards
-
-Compensation will be awarded based on task difficulty and completion quality. Additional bonuses granted for first-confirmed bug reports. Intellectual property rights strictly protected.
+### Rewards  
+Rewards will be allocated based on task difficulty and completion quality. Confirmed first-reported bugs may earn additional bonuses.
