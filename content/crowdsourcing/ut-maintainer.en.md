@@ -1,7 +1,7 @@
 ---
 title: 'Recruitment of XiangShan UT Verification Module Maintainer'  
 date: 2025-02-19T11:07:20+08:00  
-draft: true  
+draft: false 
 resource_tags: ["Documentation", "Verification Recruitment"]  
 status: "seeding"  
 summary: "— Participate in Core Module Verification, Co-build a Trusted Verification System"  

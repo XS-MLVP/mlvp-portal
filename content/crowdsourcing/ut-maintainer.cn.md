@@ -1,7 +1,7 @@
 ---
 title: '香山UT验证模块维护'
 date: 2025-02-19T11:07:20+08:00
-draft: true
+draft: false
 resource_tags: ["文档", "验证招录"]
 status: "seeding"
 summary: "——参与核心模块验证，共建可信验证体系"
