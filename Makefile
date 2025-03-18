@@ -4,8 +4,8 @@ BASE_URL = "https://open-verify.cc"
 #BASE_URL = "https://xs-mlvp.github.io"
 
 init:
-	git clone git@github.com:XS-MLVP/course.git --depth 1 ../course
-	git clone git@github.com:XS-MLVP/doc-xs-ov-00-bpu.git --depth 1 ../doc-xs-ov-00-bpu
+	git clone https://github.com/XS-MLVP/course.git --depth 1 ../course
+	git clone https://github.com/XS-MLVP/doc-xs-ov-00-bpu.git --depth 1 ../doc-xs-ov-00-bpu
 
 build: clean
 	hugo --minify --theme=hugo-digital-garden-theme --baseURL="$(BASE_URL)"
@@ -25,7 +25,7 @@ test: clean
 	cd ../doc-xs-ov-00-bpu && git pull && hugo --baseURL="http://127.0.0.1:1313/xs-bpu/"
 	cd public && cp -r ../../course/public ./mlvp
 	cd public && cp -r ../../doc-xs-ov-00-bpu/public ./xs-bpu
-	cd public && python -m http.server 1313
+	cd public && python3 -m http.server 1313
 
 clean:
 	rm -rf public
