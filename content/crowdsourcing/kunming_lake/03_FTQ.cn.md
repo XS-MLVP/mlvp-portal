@@ -15,6 +15,8 @@ summary: "在验证中学习香山FTQ的微架构设计"
 
 在本次任务中，你将了解FTQ的设计，同时也会了解IFU, BPU中所涉及到的相关内容，以及学习如何使用由我们提供的验证框架进行处理器验证的工作，是一项知行结合的综合性任务。
 
+[FTQ验证文档：更详细地为你介绍关于FTQ的内容](https://open-verify.cc/UnityChipForXiangShan/docs/98_ut/01_frontend/03_ftq/)
+
 
 # 参与
 
@@ -38,7 +40,7 @@ summary: "在验证中学习香山FTQ的微架构设计"
     
     - 编译脚本：目前已经提供了相应的编译脚本，但你也可以定义自己的编译脚本
     
-    - 测试环境：有classic和toffee两种版本
+    - 测试环境：你可以提供classic和toffee两种版本的验证环境
     
     - 测试用例：你需要在README.md中对如何运行你的测试用例做一定说明
 
