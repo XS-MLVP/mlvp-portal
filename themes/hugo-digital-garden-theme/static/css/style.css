@@ -20,6 +20,13 @@ body {
   color: var(--dark);
   background-color: var(--white);
 }
+@media screen and (min-width: 1000px) {
+  body {
+    max-width: 90%;
+    min-width: 575px;
+    margin: auto;
+  }
+}
 
 #content {
   position: relative;
