@@ -10,32 +10,6 @@ task_closed: false
 home_page_show: true
 ---
 
-<style>
-@media (max-width: 1000px) {
-    table {
-        width: 100%;
-    }
-    table td {
-        word-break: break-word; /* 允许长单词/URL换行 */
-        overflow-wrap: break-word; /* 更安全的换行方式 */
-    }
-    table th, table td {
-        padding: 8px 10px;
-    }
-    table td:nth-child(1) {
-        width: 2%;
-    }
-    table td:nth-child(2) {
-        width: 33%;
-    }
-    table td:nth-child(3) {
-        width: 33%;
-    }
-    table td:nth-child(4) {
-        width: 32%;
-    }
-}
-</style>
 
 |Serial Number|Task Name|Registration Address|Submission Method|
 |-|-|-|-|
