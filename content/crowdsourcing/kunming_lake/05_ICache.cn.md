@@ -24,7 +24,7 @@ ICache（Instuction Cache）即指令缓存，负责接收FTQ的取指和预取�
     <center>	
     <img src="/crowdsourcing/activity_process.png"
          alt="任务流程"
-         style="zoom:30%"/>
+         style="zoom:26%"/>
     <br>		
     任务流程	
     </center>
