@@ -13,7 +13,7 @@ summary: "在验证中学习香山ICache的微架构设计"
 
 在本期验证任务中，各位朋友将走近香山昆明湖架构的 ICache 模块，在验证实战中体会香山取指模块的设计思路，加深对 RISCV 指令集架构的理解。欢迎各位报名参加（报名填写[这里](https://www.wjx.top/vm/e1nEX25.aspx#)，qq 群：**600480230**。）！
 
-ICache（Instuction Cache）即指令缓存，负责接收 FTQ 的取指和预取请求并从向 ITLB 获取物理地址和通过 Tilelink 获取指令数据，最终将指令数据或者异常数据发送给 IFU。
+ICache（Instruction Cache）即指令缓存，负责接收 FTQ 的取指和预取请求并从向 ITLB 获取物理地址和通过 Tilelink 获取指令数据，最终将指令数据或者异常数据发送给 IFU。
 
 本期任务中，合计发布 6 个子任务，涵盖 ICache 的 7 个子模块（IPrefetchPipe、MainPipe、WayLookup、FIFO、MissUnit、CtrlUnit 和 ICache），所有的任务都将通过<a href="https://github.com/XS-MLVP/UnityChipForXiangShan/issues" target="_blank">万众一芯之香山处理器的 issue</a>分配。
 
