@@ -1,6 +1,6 @@
 ---
 title: 'UT实战第五期：第三代香山(昆明湖）架构IFU top模块UT验证实战(进行中)'
-date: 2024-12-11T10:47:18+08:00
+date: 2025-03-31T10:47:18+08:00
 draft: false
 fenbao_tags: ["验证案例", "IFU", "top", "UT验证"]
 status: "Continuing"
