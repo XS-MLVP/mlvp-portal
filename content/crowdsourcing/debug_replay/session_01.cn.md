@@ -20,7 +20,7 @@ summary: "根据已发布的Bug任务，设计回归测试用例复现Bug"
 
 本期任务将会提供18个待回归的Bug，参与者需使用指定工具链(<a href="https://github.com/XS-MLVP/picker" target="_blank">picker</a>,<a href="https://github.com/XS-MLVP/toffee" target="_blank">toffee</a>(可选))，构建测试用例对Bug进行回归。
 
-对于大多数的Bug，我们会提供详细的Bug描述，包括Bug所在的模块，发生原因，如何复现等，对于部分Bug，可能需要根据描述自行定位相关模块或搭建验证环境。根据工作量的不同，会获得不同等级的奖金。每完成1个Bug的回归并向<a href="https://github.com/XS-MLVP/UnityChipForXiangShan" target="_blank">UnityChipForXiangShan</a>仓库提交Pull Request(PR)，将获得100元的奖金作为奖励，若贡献bug验证基础环境，可以获得额外奖励。希望大家能够积极参与并完成任务！([点击此处](https://www.wjx.top/vm/ryUKH5T.aspx)填写报名表即可报名。)
+对于大多数的Bug，我们会提供详细的Bug描述，包括Bug所在的模块，发生原因，如何复现等，对于部分Bug，可能需要根据描述自行定位相关模块或搭建验证环境。根据工作量的不同，会获得不同等级的奖金。每完成1个Bug的回归并向<a href="https://github.com/XS-MLVP/UnityChipForXiangShan" target="_blank">UnityChipForXiangShan</a>仓库提交Pull Request(PR)，将获得100元的奖金作为奖励，若贡献bug验证基础环境，可以获得额外奖励。希望大家能够积极参与并完成任务！([点击此处](https://www.wjx.top/vm/PpYDDM7.aspx)填写报名表即可报名。)
 
 ## 测试内容
 
