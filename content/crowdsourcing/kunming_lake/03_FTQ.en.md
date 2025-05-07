@@ -176,18 +176,18 @@ Expected task difficulty：3/10
 
 ### Task 10: FTQ-to-BPU Update and Redirection
 
-*FTQ将已提交指令的更新信息发往BPU进行训练，同时转发重定向信号。*
+*FTQ sends the update information of committed instructions to the BPU for training, and also forwards redirect signals.*
 
-| 任务                | 功能点       | 描述                      |
-| ----------------- | --------- | ----------------------- |
-| FTQ向BPU发送更新和重定向信息 | 转发重定向信息   | 转发来自IFU或者后端的重定向信号       |
-|                   | 提交指令块     | 判断指令块是否能够提交             |
-|                   | 发送BPU更新信息 | FTQ需要向BPU发送更新信息，对其进行训练  |
-|                   | 更新FTB表项   | FTQ需要对旧的FTB表项更新，转发到更新接口 |
+| Task                                 | Feature            | Description                                         |
+| ------------------------------------- | ------------------ | --------------------------------------------------- |
+| FTQ sends updates and redirects to BPU | Forward redirect   | Forwards redirect signals from IFU or backend       |
+|                                       | Commit instruction block | Determines whether the instruction block can be committed |
+|                                       | Send BPU update    | FTQ needs to send update information to BPU for training |
+|                                       | Update FTB entry   | FTQ needs to update old FTB entries and forward them to the update interface |
 
-Expected task difficulty：8/10
+Expected Difficulty: 8/10
 
-### 报名方式
+### Registration
 
-请填写报名问卷参与本期任务，也欢迎加入活动官方qq群：600480230。
-如有疑问可在qq群中联系群主，或联系万众一芯官方邮箱：anxu@bosc.ac.cn。
+Please fill out the registration questionnaire to participate in this task. You are also welcome to join the official QQ group: 600480230.  
+If you have any questions, you can contact the group owner in the QQ group, or email UnityChip at anxu@bosc.ac.cn.

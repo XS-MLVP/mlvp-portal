@@ -120,15 +120,15 @@ Once the environment is set up, you can start writing test cases. In this learni
 
 **Functional Checkpoints**: How can you determine the quality of a test? **Test coverage** is a commonly used metric for evaluating test quality. Among these, line coverage can be analyzed automatically, but functional coverage requires manually adding checkpoints for assessment. Therefore, Toffee provides a set of checkpoint mechanisms. Please read <a href="/mlvp/docs/mlvp/cases/cov/" target="_blank">this tutorial</a> to learn more.
 
-## Learning Task 4: BPU Practice
+## Learning Task 4: NutShell Cache Practice
 
-After learning the aforementioned concepts, you should have a certain understanding of hardware verification methods. Now, let’s put it into practice! Please select at least one submodule of the validated Xiangshan BPU for verification. Write the verification code and a test report, and submit the verification report and code in the <a href="https://github.com/XS-MLVP/UnityChipForXiangShan/discussions/13" target="_blank">GitHub discussion section</a> for UnityChipForXiangShan. The report should include functional analysis, breakdown of test points, test case development, analysis of verification results, and verification conclusions.
+After learning the above knowledge, you should have a certain understanding of hardware verification methods. Please do a hands-on practice! Please verify the NutShell Cache that has been completed, write verification code and a test report, and submit the verification report and code to the [github discussion board](https://github.com/XS-MLVP/UnityChipForXiangShan/discussions/13) of UnityChipForXiangShan. The report should include function breakdown, test point decomposition, test case writing, verification result analysis, and verification conclusions.
 
-You can refer to the format of the <a href="https://github.com/XS-MLVP/Example-NutShellCache/blob/master/nutshell_cache_report_demo.pdf" target="_blank">NutShell Cache verification case</a> to complete your validation report.
+You can refer to the previous [NutShell Cache verification case](https://github.com/XS-MLVP/Example-NutShellCache/blob/master/nutshell_cache_report_demo.pdf) for the format of the verification report.
 
 ## Other Considerations
 
-When you participate in any activities organized by "One Chip for All," you can earn a reward of around 1,000 yuan for identifying bugs in the Xiangshan processor, depending on the nature of the bugs.
+When you participate in any activity organized by UnityChip, as long as you can find a bug for the XiangShan processor, you can get a reward of about 1000 yuan depending on the bug.
 
 ## Registration Link
-[Click here](https://www.wjx.top/vm/wAGPNJ8.aspx) to fill out the application form. After submission, join the QQ group (Group ID: <b>1033196714</b>) to contact us.
+[Click here](https://www.wjx.top/vm/wAGPNJ8.aspx) to fill out the registration form. After registration, join the QQ group (Group ID: <b>1033196714</b>) to contact us.
