@@ -1,0 +1,81 @@
+<div style="padding: 2.5rem">
+    <div
+        style="margin-bottom: 1.12rem;"
+        class="d-flex justify-content-between align-items-center">
+        <div class="d-flex align-items-center">
+            {{ with .Resources.GetMatch "img.png" }}
+            <img src="{{ .RelPermalink }}" width="32" height="32" />
+            {{ end }}
+            <div class="verify-title">{{ .Params.Title }}</div>
+        </div>
+        <div class="d-flex align-items-center">
+            {{ if .Params.See_more }}
+            <img src="/images/arrow_icon.png" style="margin-right: 0.5rem"/>
+            <a class="verify-link" href="{{ .RelPermalink }}">{{ .Params.See_more }}</a>
+            {{ end }}
+        </div>
+    </div>
+    {{ if .Params.summary }}
+    <div class="verify-summary">——{{.Params.summary}}</div>
+    {{ end }}
+
+    <div class="d-flex gap-4">
+        {{ range .Pages |first 3 }}
+        {{ $page := . }}
+        <div style="width: 33.33%">
+            {{ with $page.Parent.Resources.GetMatch "bg.png" }}
+            <div
+                    class="bg-cover verify-card d-flex flex-column"
+                    style="position: relative;background-image: url('{{ .RelPermalink }}')"
+            >
+                {{ if $page.Params.title }}
+                <div class="verify-card-title">{{ $page.Params.title }}</div>
+                {{ end }}
+                {{ if $page.Params.difficult }}
+                <div
+                        class="star-container d-flex align-items-start">
+                    <div style="line-height: 1;">难度：</div>
+                    {{ range $i := (seq $page.Params.difficult) }}
+                    <img src="/images/star.png" style="margin-right: 0.4rem;margin-top: 1px">
+                    {{ end }}
+                </div>
+                {{ end }}
+                {{ if $page.Params.desc }}
+                <div class="desc-container">
+                    {{$page.Params.desc}}
+                </div>
+                {{ end }}
+                <!--0即将上线 1正在进行 2报名中-->
+                <div class="verify-schedule flex-grow-1 d-flex align-items-end">
+                    {{ if eq $page.Params.schedule "即将上线" }}
+                    <img src="{{ "/images/verify_waiting.png" | relURL }}">
+                    {{ else if eq $page.Params.schedule "正在进行" }}
+                    <img src="{{ "/images/verify_inprogress.png" | relURL }}">
+                    {{ else if eq $page.Params.schedule "已经完成" }}
+                    <img src="{{ "/images/verify_finished.png" | relURL }}">
+                    {{ end }}
+                </div>
+
+                <div class="mt-auto d-flex justify-content-between align-items-center">
+                    <div>
+                        {{ if .Params.resource_tags }}
+                        {{ with .Params.resource_tags }}
+                        {{ range . }}
+                        <span class="badge tag-badge">{{ . }}</span>
+                        {{ end }}
+                        {{ end }}
+                        {{ end }}
+                    </div>
+                </div>
+
+                {{ if .Params.Website }}
+                <a href="{{ $page.Params.Website }}" class="stretched-link" tab="_blank"></a>
+                {{ else }}
+                <a href="{{ $page.RelPermalink }}" class="stretched-link"></a>
+                {{ end  }}
+            </div>
+            {{ end }}
+        </div>
+        {{ end }}
+    </div>
+</div>

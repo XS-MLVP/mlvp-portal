@@ -1,0 +1,333 @@
+{{ define "main" }}
+
+<!--introduce-->
+<div class="intro-container">
+	<div
+			class="intro-section bg-cover"
+			style="
+		    background-image: url('{{ "/images/intro_bg.jpg" | relURL }}');
+	"
+	>
+	{{ with .Site.GetPage "section" "introduce" }}
+	<div class="intro-word" style="margin-top: 5rem">
+		<div class="intro-font fw-bold">{{ .Params.title }}</div>
+		<div class="d-flex align-items-center">
+			<img src="{{ "/images/RISC-V.png" | relURL }}" />
+			<span class="intro-font fw-bold">{{ .Params.sub }}</span>
+		</div>
+		{{ if .Params.Description }}
+		<div class="intro-text" style="margin-top: 1.5rem">
+			{{ .Params.Description }}
+		</div>
+		{{ end }}
+		{{ if .Params.Description_sub }}
+		<div class="intro-text" style="margin-top: 1rem">
+			{{ .Params.Description_sub }}
+		</div>
+		{{ end }}
+		{{ if .Params.quick_start_text }}
+		<a
+				href="{{.Params.quick_start_url}}"
+				class="quick-start d-flex align-items-center bg-cover"
+				style="background-image: url('{{ "/images/Btn_Frame.png" | relURL }}');"
+		>
+		{{ .Params.quick_start_text }}
+		</a>
+		{{ end }}
+	</div>
+	{{ end }}
+</div>
+</div>
+
+<!--banner-->
+<div style="position: relative;">
+	<div
+			class="banner bg-cover d-flex align-items-center justify-content-between"
+			style="background-image: url('{{ "/images/banner_bg.png" | relURL }}');"
+	>
+	{{ $section := .Site.GetPage "section" "banner" }}
+	{{ range $section.Pages }}
+	<div class="d-flex align-items-center">
+		<div>
+			{{ if .Params.title }}
+			<div class="banner-title">{{ .Params.title }}</div>
+			{{ end  }}
+			{{ if .Params.intro }}
+			<div class="banner-intro">{{ .Params.intro }}</div>
+			{{ end  }}
+		</div>
+		<div>
+			{{ $img := .Resources.GetMatch "*img*" }}
+			{{ with $img }}
+			<img
+					src="{{.RelPermalink }}"
+					style="max-width: 100%; height: auto;"
+			/>
+			{{ end }}
+		</div>
+	</div>
+	{{ end }}
+</div>
+</div>
+
+<div
+		class="d-flex justify-content-center bg-cover"
+		style="
+		background-image: url('{{ "/images/bg_02.jpg" | relURL }}');
+padding-top: 7rem;
+padding-bottom: 2rem"
+>
+<div style="width: 65%; min-width: 1250px">
+	<!--beginner 新手入门-->
+	<div>
+		<div
+				class="section-bg d-flex flex-column align-items-center"
+				style="background-image: url('{{ "/images/title_decoration.png" | relURL }}')"
+		>
+		<div class="section-title">新手入门</div>
+		<div class="section-desc">全面了解万众一芯，完成一次验证全流程</div>
+	</div>
+	{{ $section := .Site.GetPage "section" "beginner" }}
+	<div class="d-flex justify-content-center">
+		{{ range $section.Pages.ByWeight.Reverse }}
+		{{ $img := .Resources.GetMatch "img.png" }}
+		<div
+				class="position-relative flex-grow-1 bg-cover"
+				style="
+							padding: 8rem 2.5rem 2.5rem 2.5rem;
+							{{ with $img }}
+							background-image: url('{{ .RelPermalink }}');
+							width: 26.4rem;
+							height: 21.3rem;
+							{{ end }}
+						"
+		>
+			{{ if .Params.title }}
+			<div class="beginner-title">{{ .Params.title }}</div>
+			{{ end }}
+			{{ if .Params.summary }}
+			<div class="beginner-desc">{{ .Params.summary }}</div>
+			{{ end }}
+			<!--0即将上线 1正在进行 2报名中-->
+			{{ if eq .Params.schedule "即将上线" }}
+			<img src="{{ "/images/beginner_0.png" | relURL }}">
+			{{ else if eq .Params.schedule "正在进行" }}
+			<img src="{{ "/images/beginner_1.png" | relURL }}">
+			{{ else if eq .Params.schedule "报名中" }}
+			<img src="{{ "/images/beginner_2.png" | relURL }}">
+			{{ end }}
+
+			{{ if .Params.Website }}
+			<a href="{{ .Params.Website }}" class="stretched-link" tab="_blank"></a>
+			{{ else }}
+				{{ if ne .Params.schedule "即将上线" }}
+				<a href="{{ .RelPermalink }}" class="stretched-link"></a>
+				{{ end }}
+			{{ end  }}
+		</div>
+		{{ end }}
+	</div>
+</div>
+
+<div style="margin-top: 5rem">
+	<div
+			class="section-bg d-flex flex-column align-items-center"
+			style="background-image: url('{{ "/images/title_decoration.png" | relURL }}')"
+	>
+	<div class="section-title">验证任务</div>
+	<div class="section-desc">通过任务，逐步加深对RISC-V指令集架构的理解</div>
+</div>
+
+<!--verify 模块验证任务-->
+<div
+		class="verify-container bg-cover"
+		style="background-image: url('{{ "/images/module_frame_bg.png" | relURL }}');"
+>
+{{ with .Site.GetPage "section" "verifytask" }}
+{{ partial "home_list.html" . }}
+{{ end }}
+</div>
+
+<!--crowdsourcingtask 文档众包任务-->
+<div
+		class="verify-container bg-cover"
+		style="background-image: url('{{ "/images/module_frame_bg.png" | relURL }}');margin-top: 1.6rem"
+>
+{{ with .Site.GetPage "section" "crowdsourcingtask" }}
+{{ partial "home_list.html" . }}
+{{ end }}
+</div>
+
+<!--bugreappeartask Bug复现任务-->
+<div
+		class="verify-container bg-cover"
+		style="background-image: url('{{ "/images/module_frame_bg.png" | relURL }}');margin-top: 1.6rem"
+>
+{{ with .Site.GetPage "section" "bugreappeartask" }}
+{{ partial "home_list.html" . }}
+{{ end }}
+</div>
+</div>
+</div>
+</div>
+
+<div
+		class="d-flex justify-content-center bg-cover"
+		style="
+		background-image: url('{{ "/images/bg_03.jpg" | relURL }}');
+padding-bottom: 3.5rem"
+>
+<div style="width: 65%; min-width: 1250px">
+	<!--learningresource 学习资源-->
+	<div style="margin-top: 5rem">
+		<div
+				class="section-bg d-flex flex-column align-items-center"
+				style="background-image: url('{{ "/images/title_decoration.png" | relURL }}')"
+		>
+		<div class="section-title">学习资源</div>
+		<div class="section-desc">开启万众一芯学习之旅</div>
+	</div>
+	{{ $section := .Site.GetPage "section" "learningresource" }}
+	<div class="d-flex gap-5">
+		{{ range $section.Pages }}
+		<div
+				class="learning-card bg-cover"
+				style="position: relative;background-image: url('{{ "/images/learningresource_frame.png" | relURL }}')"
+		>
+		<div class="d-flex justify-content-between">
+			{{ if .Params.title }}
+			<div class="learning-title">{{ .Params.title }}</div>
+			{{ end  }}
+			{{ $img := .Resources.GetMatch "*img*" }}
+			{{ with $img }}
+			<img
+					src="{{.RelPermalink }}"
+					style="max-width: 100%; height: auto;"
+			/>
+			{{ end }}
+		</div>
+		{{ if .Params.summary }}
+		<div class="learning-summary">{{ .Params.summary }}</div>
+		{{ end  }}
+
+		{{ if .Params.Website }}
+		<a href="{{ .Params.Website }}" class="stretched-link" tab="_blank"></a>
+		{{ else }}
+		<a href="{{ .RelPermalink }}" class="stretched-link"></a>
+		{{ end  }}
+	</div>
+	{{ end }}
+</div>
+
+<!--recruit 招募信息-->
+<div style="margin-top: 5rem">
+	<div
+			class="section-bg d-flex flex-column align-items-center"
+			style="background-image: url('{{ "/images/title_decoration.png" | relURL }}')"
+	>
+	<div class="section-title">招募信息</div>
+</div>
+{{ $section := .Site.GetPage "section" "recruit" }}
+<div class="d-flex gap-5">
+	{{ range $section.Pages.ByWeight }}
+	{{ $bgImage := "" }}
+	{{ if eq .Params.open true }}
+	{{ with .Resources.GetMatch "img.png" }}
+	{{ $bgImage = .RelPermalink }}
+	{{ end }}
+	{{ else }}
+	{{ with .Resources.GetMatch "waiting_img.png" }}
+	{{ $bgImage = .RelPermalink }}
+	{{ end }}
+	{{ end }}
+	<div
+			class="recruit-card bg-cover"
+			style="position: relative;
+				background-image: url('{{ $bgImage }}');background-size: contain"
+	>
+
+		{{ if .Params.Website }}
+		<a href="{{ .Params.Website }}" class="stretched-link" tab="_blank"></a>
+		{{ else }}
+			{{ if eq .Params.open true }}
+			<a href="{{ .RelPermalink }}" class="stretched-link"></a>
+			{{ end }}
+		{{ end  }}
+	</div>
+	{{ end }}
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!--communication 互动交流与咨询-->
+<div
+		class="d-flex justify-content-center bg-cover"
+		style="
+		background-image: url('{{ "/images/bg_04.jpg" | relURL }}');
+padding-bottom: 2.5rem"
+>
+<div style="width: 65%; min-width: 1250px">
+	<div style="margin-top: 2.5rem">
+		<div
+				class="section-bg d-flex flex-column align-items-center"
+		>
+			<div class="section-title" style="color: #ffffff;text-shadow: none">互动交流与咨询</div>
+		</div>
+		{{ $section := .Site.GetPage "section" "communication" }}
+		<div class="d-flex gap-5 justify-content-between">
+			{{ range $section.Pages.ByWeight }}
+			<div style="position: relative">
+				{{ with .Resources.ByType "image" }}
+				{{ range first 1 . }}
+				<img src="{{ .RelPermalink }}">
+				{{ end }}
+				{{ end }}
+				{{ if .Params.Website }}
+				<a href="{{ .Params.Website }}" class="stretched-link" target="_blank"></a>
+				{{end}}
+			</div>
+			{{end}}
+		</div>
+	</div>
+</div>
+</div>
+
+<!--partners 合作伙伴-->
+<div
+		class="d-flex justify-content-center bg-cover"
+		style="
+		background-image: url('{{ "/images/bg_05.jpg" | relURL }}');
+padding-bottom: 3.5rem"
+>
+<div style="width: 65%; min-width: 1250px">
+	<div style="margin-top: 2.5rem">
+		<div
+				class="section-bg d-flex flex-column align-items-center"
+		>
+			<div class="section-title">合作伙伴</div>
+		</div>
+		{{ $section := .Site.GetPage "section" "partners" }}
+		<div class="d-flex justify-content-center gap-5">
+			{{ range ( where (where site.RegularPages "Section" "partners") "Params.Onhomepage" "eq" true ) }}
+			<div style="position: relative">
+				{{ $images := .Resources.ByType "image" }}
+				{{ range $img := $images }}
+				{{ $resized := $img.Fit "200x250" }}
+				<img
+						src="{{ .RelPermalink }}"
+						alt="{{ $.Title }}"
+						class="card-img-top"
+						width="{{ $resized.Width }}"
+						height="{{ $resized.Height }}"
+				>
+				{{ end }}
+				<a href="{{ .Params.Website }}" class="stretched-link" target="_blank"></a>
+			</div>
+			{{end}}
+		</div>
+	</div>
+</div>
+
+{{ end }}

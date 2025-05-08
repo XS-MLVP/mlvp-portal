@@ -1,0 +1,36 @@
+{{ .Scratch.Set "garden_tags_list" ""}}
+{{ range .Params.fenbao_tags }}
+{{ $.Scratch.Add "garden_tags_list" ( . | printf " js-iso-%s") }}
+{{ end }}
+<div class='col {{ $.Scratch.Get "garden_tags_list" }}' {{ if .Params.task_closed }} style="filter:grayscale(100%);" {{ end }}>
+    <div class="card top-highlight">
+        <div class="card-body">
+            {{ if .Summary }}
+            <h4 class="card-title">{{ .Title }}</h4>
+            <p class="card-text pb-3">{{ .Summary }}</p>
+            {{ else }}
+            <h4 class="card-title pb-3">{{ .Title }}</h4>
+            {{ end }}
+            {{ if .Params.Website }}
+            <a href="{{ .Params.Website }}" class="stretched-link" tab="_blank"></a>
+            {{ else }}
+            <a href="{{ .Permalink }}" class="stretched-link"></a>
+            {{ end  }}
+            <hr class="dropdown-divider">
+            <div class="row justify-content-between">
+                <div class="col-6">
+                    {{ $dateTime := .Lastmod.Format "2006-01-02" }}
+                    {{ $dateFormat := .Site.Params.dateFormat | default "Jan 2, 2006" }}
+                    <span style="font-size: small"> {{ .Lastmod.Format $dateFormat }}</span>
+                </div>
+                <div class="col-6" style="text-align: right">
+                    {{ partial "status.html" . }}
+                </div>
+            </div>
+            {{range .Params.fenbao_tags}}
+            <span class="badge tag-badge">{{.}}</span>
+            {{end}}
+        </div>
+    </div>
+</div>
+{{ .Scratch.Delete "garden_tags_list" }}

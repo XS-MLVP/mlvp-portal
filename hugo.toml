@@ -1,0 +1,98 @@
+baseURL = "https://www.example.com"
+languageCode = "zh-cn"
+title = "UnityChip Verification"
+copyright = "MLVP Group ©"
+
+defaultContentLanguage = 'cn'
+defaultContentLanguageInSubdir = false
+
+[params]
+  # accesspassword = "123"
+  googleAnalytics = "G-4Z2ZY6ZE84"
+  baiduAnalytics = "6aacb1c7ca0a3ef4e3aa84c1eaa237dd"
+
+  [[params.social]]
+    name = "wechat"
+    link = "#"
+    icon = "fab fa-weixin"
+
+  [[params.social]]
+    name = "weibo"
+    link = "#"
+    icon = "fab fa-weibo"
+
+[languages]
+    [languages.cn]
+      disabled = false
+      LanguageName = "cn" 
+      title = "万众一芯开放验证"
+
+    [languages.cn.params]
+      text = "中文"
+      initials = "首页"
+
+    [[languages.cn.menu.main]]
+      name = "报名入口汇总"
+      url = "/registration_portal/"
+      weight = 1
+
+    [[languages.cn.menu.main]]
+      name = "学习资源"
+      url = "/learningresource/"
+      weight = 2
+
+    [[languages.cn.menu.main]]
+      name = "关于我们"
+      url = "/about/"
+      weight = 3
+
+    [languages.en]
+      disabled = false
+      title = "UnityChip Verification"
+      languageName = "/en"
+
+    [languages.en.params]
+      initials = "Home"
+      text = "English"
+
+    [[languages.en.menu.main]]
+       identifier = "crowdsourcing"
+       title = "Verification Tasks"
+       name = "Verification Tasks"
+       url = "/en/crowdsourcing/"
+       weight = 1
+
+    [[languages.en.menu.main]]
+       identifier = "learningresource"
+       title = "Learning Resources"
+       name = "Learning Resources"
+       url = "/en/learningresource/"
+       weight = 2
+
+    [[languages.en.menu.main]]
+       identifier = "about"
+       title = "About Us"
+       name = "About Us"
+       url = "/en/about/"
+       weight = 3
+
+[taxonomies]
+  fenbao_tags = 'fenbao_tags'
+  resource_tags = 'resource_tags'
+
+
+[markup]
+  defaultMarkdownHandler = 'goldmark'
+  [markup.goldmark.renderer]
+    unsafe = true
+  [markup.goldmark.extensions]
+    definitionList = true
+    footnote = true
+    linkify = true
+    strikethrough = true
+    table = true
+    taskList = true
+    typographer = true
+  [markup.highlight]
+    # Choose from https://xyproto.github.io/splash/docs/all.html
+    style = 'monokailight'
