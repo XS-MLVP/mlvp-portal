@@ -1,6 +1,6 @@
 ---
-title: 'UT实战第五期：第三代香山(昆明湖）架构IFU top模块UT验证实战(进行中)'
-date: 2025-03-31T10:47:18+08:00
+title: 'UT实战第五期：第三代香山(昆明湖）架构IFUtop模块UT验证实战(进行中)'
+date: 2025-04-12T10:47:18+08:00
 draft: false
 fenbao_tags: ["验证案例", "IFU", "top", "UT验证"]
 status: "Continuing"
@@ -10,7 +10,7 @@ Weight: 11
 summary: "在验证中学习香山IFU的微架构设计"
 ---
 
-本期验证任务将会进一步了解IFUtop模块的设计思路，在验证实战中体会香山取指模块的设计思路，加深对RISCV指令集架构的理解。欢迎各位报名参加（报名填写[这里](https://www.wjx.top/vm/mKbmTqL.aspx#)，qq群：**600480230**。）！
+本期验证任务将会进一步了解IFUtop模块的设计思路，在验证实战中体会香山取指模块的设计思路，加深对RISCV指令集架构的理解。欢迎各位报名参加（报名填写[这里](https://www.wjx.top/vm/mKbmTqL.aspx#)，qq群：**600480230**）！
 
 IFU（Instuction Fetch Unit）即取指单元，负责接收FTQ的请求并从ICache或Instr Uncache获取指令缓存行作为输入，以完成取指、预译码、RVC指令扩展为RVI指令、BPU预测错误预检等多项功能，最终向IBuffer输出初步译码信息和指令码，向FTQ写回检查结果。 
 
