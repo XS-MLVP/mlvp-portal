@@ -1,5 +1,5 @@
 ---
-title: "UT实战第六期：第三代香山(昆明湖）架构ICache模块UT验证实战(进行中)"
+title: "UT实战第六期：第三代香山(昆明湖)架构ICache模块UT验证实战(进行中)"
 date: 2025-04-01T16:00:00+08:00
 draft: false
 fenbao_tags: ["验证案例", "ICache", "UT验证"]

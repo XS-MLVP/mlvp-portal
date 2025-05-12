@@ -1,5 +1,5 @@
 ---
-title: 'UT实战第一期：第三代香山(昆明湖）BPU模块UT验证实战(已完成)'
+title: 'UT实战第一期：第三代香山(昆明湖)BPU模块UT验证实战(已完成)'
 date: 2024-01-11T08:47:18+08:00
 draft: false
 fenbao_tags: ["验证案例", "BPU", "UT验证"]

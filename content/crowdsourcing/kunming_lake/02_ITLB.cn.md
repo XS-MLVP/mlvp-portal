@@ -1,5 +1,5 @@
 ---
-title: 'UT实战第三期：第三代香山(昆明湖）架构ITLB模块UT验证实战(进行中)'
+title: 'UT实战第三期：第三代香山(昆明湖)架构ITLB模块UT验证实战(进行中)'
 date: 2025-02-19T10:47:39+08:00
 draft: false
 fenbao_tags: ["验证案例", "ITLB", "UT验证"]

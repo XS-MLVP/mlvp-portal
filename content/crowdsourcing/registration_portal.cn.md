@@ -41,13 +41,13 @@ home_page_show: true
 |-|-|-|-|
 |1|[新手入门任务](/crowdsourcing/green_hand/)|[https://www.wjx.top/vm/wAGPNJ8.aspx](https://www.wjx.top/vm/wAGPNJ8.aspx)|在[github讨论区](https://github.com/XS-MLVP/UnityChipForXiangShan/discussions/13)中直接提交|
 |2|[香山UT验证模块维护](/crowdsourcing/ut-maintainer/)|[https://www.wjx.top/vm/rxGeUKU.aspx#](https://www.wjx.top/vm/rxGeUKU.aspx#)|无需提交|
-|3|[回归验证第一期：第三代香山(昆明湖）Bug用例复现(进行中)](/crowdsourcing/debug_replay/session_01/)|[https://www.wjx.top/vm/PpYDDM7.aspx](https://www.wjx.top/vm/PpYDDM7.aspx)|在仓库[UnityChipForXiangShan](https://github.com/XS-MLVP/UnityChipForXiangShan)中通过PR提交|
-|4|[验证文档众包第一期：第三代香山(昆明湖）架构CPL2模块文档众包](/crowdsourcing/document_task/01_cpl2/)|[https://www.wjx.top/vm/hh9x0mE.aspx](https://www.wjx.top/vm/hh9x0mE.aspx)|在仓库[XiangShan-Design-Doc](https://github.com/XS-MLVP/XiangShan-Design-Doc)中通过PR提交|
-|5|[UT实战第六期：第三代香山(昆明湖）架构ICache模块UT验证实战](/crowdsourcing/kunming_lake/05_ICache/)|[https://www.wjx.top/vm/e1nEX25.aspx](https://www.wjx.top/vm/e1nEX25.aspx)|在仓库[UnityChipForXiangShan](https://github.com/XS-MLVP/UnityChipForXiangShan)中通过PR提交|
-|6|[UT实战第五期：第三代香山(昆明湖）架构IFU_top模块UT验证实战](/crowdsourcing/kunming_lake/04_IFU_top/)|[https://www.wjx.top/vm/mKbmTqL.aspx](https://www.wjx.top/vm/mKbmTqL.aspx)|在仓库[UnityChipForXiangShan](https://github.com/XS-MLVP/UnityChipForXiangShan)中通过PR提交|
-|7|[UT实战第四期：第三代香山(昆明湖）架构FTQ模块UT验证实战](/crowdsourcing/kunming_lake/03_ftq/)|[https://www.wjx.top/vm/Qfk3XlW.aspx](https://www.wjx.top/vm/Qfk3XlW.aspx)|在仓库[UnityChipForXiangShan](https://github.com/XS-MLVP/UnityChipForXiangShan)中通过PR提交|
-|8|[UT实战第三期：第三代香山(昆明湖）架构ITLB模块UT验证实战](/crowdsourcing/kunming_lake/02_itlb/)|[https://www.wjx.top/vm/P4mhRDX.aspx#](https://www.wjx.top/vm/P4mhRDX.aspx#)|在仓库[UnityChipForXiangShan](https://github.com/XS-MLVP/UnityChipForXiangShan)中通过PR提交|
-|9|[UT实战第二期：第三代香山(昆明湖）架构IFU模块UT验证实战](/crowdsourcing/kunming_lake/01_ifu/)|[https://www.wjx.cn/vm/tUcQ4Fs.aspx](https://www.wjx.cn/vm/tUcQ4Fs.aspx)|在仓库[UnityChipForXiangShan](https://github.com/XS-MLVP/UnityChipForXiangShan)中通过PR提交|
-|10|[UT实战第一期：第三代香山(昆明湖）BPU模块UT验证实战](/crowdsourcing/kunming_lake/00_bpu/)|无需报名|任务已结束，代码将在仓库[UnityChipForXiangShan](https://github.com/XS-MLVP/UnityChipForXiangShan)中合并|
+|3|[回归验证第一期：第三代香山(昆明湖)Bug用例复现(进行中)](/crowdsourcing/debug_replay/session_01/)|[https://www.wjx.top/vm/PpYDDM7.aspx](https://www.wjx.top/vm/PpYDDM7.aspx)|在仓库[UnityChipForXiangShan](https://github.com/XS-MLVP/UnityChipForXiangShan)中通过PR提交|
+|4|[验证文档众包第一期：第三代香山(昆明湖)架构CPL2模块文档众包](/crowdsourcing/document_task/01_cpl2/)|[https://www.wjx.top/vm/hh9x0mE.aspx](https://www.wjx.top/vm/hh9x0mE.aspx)|在仓库[XiangShan-Design-Doc](https://github.com/XS-MLVP/XiangShan-Design-Doc)中通过PR提交|
+|5|[UT实战第六期：第三代香山(昆明湖)架构ICache模块UT验证实战](/crowdsourcing/kunming_lake/05_ICache/)|[https://www.wjx.top/vm/e1nEX25.aspx](https://www.wjx.top/vm/e1nEX25.aspx)|在仓库[UnityChipForXiangShan](https://github.com/XS-MLVP/UnityChipForXiangShan)中通过PR提交|
+|6|[UT实战第五期：第三代香山(昆明湖)架构IFU_top模块UT验证实战](/crowdsourcing/kunming_lake/04_IFU_top/)|[https://www.wjx.top/vm/mKbmTqL.aspx](https://www.wjx.top/vm/mKbmTqL.aspx)|在仓库[UnityChipForXiangShan](https://github.com/XS-MLVP/UnityChipForXiangShan)中通过PR提交|
+|7|[UT实战第四期：第三代香山(昆明湖)架构FTQ模块UT验证实战](/crowdsourcing/kunming_lake/03_ftq/)|[https://www.wjx.top/vm/Qfk3XlW.aspx](https://www.wjx.top/vm/Qfk3XlW.aspx)|在仓库[UnityChipForXiangShan](https://github.com/XS-MLVP/UnityChipForXiangShan)中通过PR提交|
+|8|[UT实战第三期：第三代香山(昆明湖)架构ITLB模块UT验证实战](/crowdsourcing/kunming_lake/02_itlb/)|[https://www.wjx.top/vm/P4mhRDX.aspx#](https://www.wjx.top/vm/P4mhRDX.aspx#)|在仓库[UnityChipForXiangShan](https://github.com/XS-MLVP/UnityChipForXiangShan)中通过PR提交|
+|9|[UT实战第二期：第三代香山(昆明湖)架构IFU模块UT验证实战](/crowdsourcing/kunming_lake/01_ifu/)|[https://www.wjx.cn/vm/tUcQ4Fs.aspx](https://www.wjx.cn/vm/tUcQ4Fs.aspx)|在仓库[UnityChipForXiangShan](https://github.com/XS-MLVP/UnityChipForXiangShan)中通过PR提交|
+|10|[UT实战第一期：第三代香山(昆明湖)BPU模块UT验证实战](/crowdsourcing/kunming_lake/00_bpu/)|无需报名|任务已结束，代码将在仓库[UnityChipForXiangShan](https://github.com/XS-MLVP/UnityChipForXiangShan)中合并|
 
 请加入QQ群（600480230）了解最新动态。
