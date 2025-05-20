@@ -56,10 +56,10 @@ defaultContentLanguageInSubdir = false
       text = "English"
 
     [[languages.en.menu.main]]
-       identifier = "crowdsourcing"
-       title = "Verification Tasks"
-       name = "Verification Tasks"
-       url = "/en/crowdsourcing/"
+       identifier = "registration_portal"
+       title = "Registration entrance summary"
+       name = "Registration entrance summary"
+       url = "/en/registration_portal/"
        weight = 1
 
     [[languages.en.menu.main]]
