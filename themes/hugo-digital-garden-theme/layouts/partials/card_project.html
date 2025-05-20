@@ -1,6 +1,6 @@
 {{ .Scratch.Set "project_tags_list" ""}}
 {{ range .Params.resource_tags }}
-    {{ $.Scratch.Add "project_tags_list" ( . | printf " js-iso-%s") }}
+{{ $.Scratch.Add "project_tags_list" ( . | printf " js-iso-%s") }}
 {{ end }}
 <div class='col {{ $.Scratch.Get "project_tags_list" }}'>
     <div class="card top-highlight">
@@ -8,7 +8,7 @@
         {{ if .Params.cover_image }}
         {{ $img = (.Parent.Resources.ByType "image").GetMatch .Params.cover_image }}
         {{ end }}
-        
+
         {{ if $img }}
         {{ $img = $img.Fit "500x500" }}
         {{ with $img }}
@@ -16,7 +16,7 @@
         {{ end }}
         {{ end }}
         <div class="card-body">
-            {{ if .Summary }} 
+            {{ if .Summary }}
             <h4 class="card-title">{{ .Title }}</h4>
             <p class="card-text pb-3">{{ .Summary }}.</p>
             {{ else }}

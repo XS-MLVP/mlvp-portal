@@ -1,11 +1,11 @@
 {{ .Scratch.Set "garden_tags_list" ""}}
 {{ range .Params.fenbao_tags }}
-    {{ $.Scratch.Add "garden_tags_list" ( . | printf " js-iso-%s") }}
+{{ $.Scratch.Add "garden_tags_list" ( . | printf " js-iso-%s") }}
 {{ end }}
 <div class='col {{ $.Scratch.Get "garden_tags_list" }}' {{ if .Params.task_closed }} style="filter:grayscale(100%);" {{ end }}>
     <div class="card top-highlight">
         <div class="card-body">
-            {{ if .Summary }} 
+            {{ if .Summary }}
             <h4 class="card-title">{{ .Title }}</h4>
             <p class="card-text pb-3">{{ .Summary }}</p>
             {{ else }}
@@ -24,7 +24,7 @@
                     <span style="font-size: small"> {{ .Lastmod.Format $dateFormat }}</span>
                 </div>
                 <div class="col-6" style="text-align: right">
-                    {{ partial "status.html" . }} 
+                    {{ partial "status.html" . }}
                 </div>
             </div>
             {{range .Params.fenbao_tags}}

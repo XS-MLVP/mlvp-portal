@@ -1,0 +1,9 @@
+{{ if eq "报名中" . }}
+<span class="badge schedule-registration-badge">
+  {{ . }}
+</span>
+{{ else if eq "已完结" . }}
+<span class="text-end mt-auto badge schedule-finish-badge">
+  {{ . }}
+</span>
+{{ end }}

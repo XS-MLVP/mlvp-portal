@@ -1,18 +1,36 @@
 :root {
-    --blue: #0A94C8;
-    --lighter-blue: #addbec;
-    --yellow: #FFB603;
-    --red: #FF2F03;
-    --dark: #233044;
-    --grey: #454963;
-    --white: #fff;
-    --offwhite: #fafafa;
-    --title: 'Mulish', sans-serif;
-    --summary: 'Frank Ruhl Libre', serif;
-    --headings: 'Encode Sans Semi Condensed', sans-serif;
+  --blue: #0A94C8;
+  --lighter-blue: #addbec;
+  --yellow: #FFB603;
+  --red: #FF2F03;
+  --dark: #233044;
+  --grey: #454963;
+  --white: #fff;
+  --offwhite: #fafafa;
+  --title: 'Mulish', sans-serif;
+  --summary: 'Frank Ruhl Libre', serif;
+  --headings: 'Encode Sans Semi Condensed', sans-serif;
 }
 
 /********************* General *********************/
+
+/* 基础大小 16px 在 1920px 宽度 */
+html {
+  font-size: 16px;
+  min-width: 1350px;
+}
+
+@media (max-width: 576px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 1920px) {
+  html {
+    font-size: calc(16px + (100vw - 1920px) * 0.0078); /* 每超出1920px 1px，增加0.0078px */
+  }
+}
 
 body {
   font-family: var(--summary);
@@ -67,12 +85,24 @@ table td{
   color: var(--grey);
 }
 
+.logo-img {
+  width: 100%;
+  width: 350px;
+  height: auto;
+}
+
+@media (min-width: 2000px) {
+  .logo-img {
+    width: 420px;
+  }
+}
+
 .card{
   border-radius: 4px;
   background: var(--offwhite);
   box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
   transition: 1s transform cubic-bezier(.155,1.105,.295,1.12),1s box-shadow,1s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
-/* padding: 14px 80px 18px 36px; */
+  /* padding: 14px 80px 18px 36px; */
   cursor: pointer;
   font-family: var(--headings);
 }
@@ -87,7 +117,7 @@ table td{
   transform: scale(1.05);
   box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
 }
-.top-highlight:hover { 
+.top-highlight:hover {
   border-top-color: var(--blue);
   border-top-width: 2px;
 }
@@ -102,12 +132,26 @@ table td{
   color: var(--grey);
   font-size: x-small;
 }
+.card-height-inner {
+  min-height: 190px;
+}
+/*任务进行中*/
+.schedule-registration-badge {
+  color: #389e0d;
+  background: #f6ffed;
+  border: 1px solid #b7eb8f;
+}
+.schedule-finish-badge {
+  color: #0958d9;
+  background: #e6f4ff;
+  border: 1px solid #91caff;
+}
 
 @media(max-width: 990px){
   .card{
     margin: 20px;
   }
-} 
+}
 
 blockquote {
   font-family: var(--summary);
@@ -150,16 +194,19 @@ code {
   background: var(--white) !important;
   color: var(--dark);
   font-family: var(--title);
+  height: 90px;
+  padding: 0 92px;
+  box-shadow: 0 5px 10px 5px #ecf4fa;
 }
 .navbar-nav .nav-item .nav-link {
-    color: var(--grey);
-    font-weight: 300;
-    transition: color 1s;
-    display: block;
-    position: relative;
-    margin-left: 1em;
-    margin-right: 1em;
-    padding: 0.2em 0;
+  color: var(--grey);
+  font-weight: 300;
+  transition: color 1s;
+  display: block;
+  position: relative;
+  margin-left: 1em;
+  margin-right: 1em;
+  padding: 0.2em 0;
 }
 /* Fade in */
 .nav-link::after {
@@ -179,25 +226,257 @@ code {
   transform: translate3d(0, 0.2em, 0);
 }
 
+/*introduce*/
+.bg-cover {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 
+.intro-container {
+  width: 100%;
+  height: 40.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.intro-container::before {
+  content: '';
+  display: block;
+  padding-top: 40.5rem; /* 16:9 比例 = 9/16*100% */
+}
+
+.intro-section {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 1200px) {
+  .intro-word {
+    margin-left: 3%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .intro-word {
+    margin-left: 10%;
+  }
+}
+
+@media (min-width: 1500px) {
+  .intro-word {
+    margin-left: 18.8%;
+  }
+}
+
+.intro-font {
+  font-size: 3.5rem;
+  color: #000000;
+  font-family: 'SourceHanSansCN-Bold';
+}
+
+.intro-text {
+  width: 37rem;
+  font-size: 1.25rem;
+  color: #000000;
+  font-family: 'SourceHanSansCN-Regular';
+  font-weight: 500;
+}
+
+.quick-start {
+  font-size: 1.25rem;
+  color: #FFFFFF;
+  font-family: 'SourceHanSansCN-Bold';
+  width: 21.5rem;
+  height: 3rem;
+  line-height: 3rem;
+  padding-left: 1.5rem;
+  margin-top: 2rem
+}
+
+.quick-start:hover {
+  color: #FFFFFF !important;
+}
+
+/********************* Banner *********************/
+.banner {
+  width: 84.56rem;
+  height: 11.38rem;
+  padding: 1.63rem 4rem;
+  position: absolute;
+  z-index: 99;
+  left: 50%;
+  top: -50%;
+  transform: translate(-50%, -50%);
+}
+
+.banner-title {
+  font-family: 'SourceHanSansCN-Bold';
+  font-size: 1.38rem;
+  font-weight: bold;
+  color: #000000;
+}
+
+.banner-intro {
+  margin-top: 0.8rem;
+  font-family: 'SourceHanSansCN-Regular';
+  font-size: 0.875rem;
+  width: 12.5rem;
+  color: #000000;
+}
+
+/********************* 新手入门 *********************/
+.section-bg {
+  padding-top: 3rem;
+  background-repeat: no-repeat;
+  background-position: center top;
+  margin-bottom: 3rem;
+}
+
+.section-title {
+  font-family: 'SourceHanSansCN-Regular';
+  font-size: 2.63rem;
+  font-weight: bold;
+  text-shadow: 0 0 16px #f6faff;
+  color: #000000;
+  margin-bottom: 1.25rem;
+  line-height: 1;
+}
+
+.section-desc {
+  font-family: 'SourceHanSansCN-Regular';
+  font-size: 1.25rem;
+  color: #000000;
+}
+
+.beginner-title {
+  font-family: 'SourceHanSansCN-Bold';
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #000000;
+  margin-bottom: 1.25rem;
+}
+
+.beginner-desc {
+  font-family: 'SourceHanSansCN-Regular';
+  font-size: 1.25rem;
+  color: #000000;
+  margin-bottom: 1.8rem;
+}
+
+/********************* 验证任务 *********************/
+.verify-container {
+  width: 100%;
+  height: 28.13rem;
+}
+
+.verify-title {
+  font-family: 'SourceHanSansCN-Medium';
+  font-size: 2rem;
+  font-weight: bold;
+  color: #000000;
+  margin-left: 1.25rem;
+}
+
+.verify-link {
+  color: #000000;
+  font-family: 'SourceHanSansCN-Medium';
+  font-size: 1.125rem;
+}
+
+.verify-link:hover {
+  color: #000000 !important;
+  text-decoration-color: #000000 !important;
+}
+
+.verify-summary {
+  margin-left: 3.25rem;
+  font-family: 'SourceHanSansCN-Regular';
+  font-size: 1.25rem;
+  color: #000000;
+  margin-bottom: 1.25rem;
+}
+
+.verify-card {
+  padding: 1.5rem;
+  border-radius: 5px;
+  min-height: 244px;
+  height: 100%;
+}
+
+.verify-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #b5d4f2;
+}
+
+.verify-card-title {
+  font-family: 'SourceHanSansCN-Regular';
+  font-size: 1.25rem;
+  color: #ffffff;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.star-container {
+  font-family: 'SourceHanSansCN-Regular';
+  font-size: 1.25rem;
+  color: #b4daf3;
+}
+
+.desc-container {
+  font-family: 'SourceHanSansCN-Regular';
+  font-size: 1.25rem;
+  color: #ffffff;
+}
+
+/********************* 学习资源 *********************/
+.learning-card {
+  width: 100%;
+  height: 12.56rem;
+  border-radius: 5px;
+  padding: 1.5rem;
+}
+
+.learning-title {
+  font-family: 'SourceHanSansCN-Regular';
+  font-size: 1.25rem;
+  color: #000000;
+  font-weight: bold;
+}
+
+.learning-summary {
+  margin-top: 1.5rem;
+  font-family: 'SourceHanSansCN-Regular';
+  font-size: 1.25rem;
+  color: #000000;
+}
+
+/********************* 招募信息 *********************/
+.recruit-card {
+  width: 100%;
+  height: 7rem;
+}
 
 /********************* Home *********************/
 
 .name {
   font-family: var(--title);
-  font-weight: 800;
+  font-weight: 600;
 }
 
 .bio {
-  max-width: 750px;
+  /*max-width: 750px;*/
   font-weight: 200;
   font-family: var(--summary);
 }
 .heading {
-    font-weight: 400;
-    color: var(--grey);
-    font-family: var(--headings);
-    text-decoration: none;
+  font-weight: 400;
+  color: var(--grey);
+  font-family: var(--headings);
+  text-decoration: none;
 }
 .heading:hover {
   transition: 0.6s;
@@ -255,10 +534,10 @@ code {
   background-color: var(--lighter-blue);
   color:var(--dark);
 }
-.btn-check:active+.button, 
-.btn-check:checked+.button, 
-.button.active, 
-.button.dropdown-toggle.show, 
+.btn-check:active+.button,
+.btn-check:checked+.button,
+.button.active,
+.button.dropdown-toggle.show,
 .button:active {
   color: #fff;
   background-color: var(--lighter-blue);
