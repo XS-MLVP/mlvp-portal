@@ -17,12 +17,15 @@
 /* 基础大小 16px 在 1920px 宽度 */
 html {
   font-size: 16px;
-  min-width: 1350px;
+  min-width: 1250px
 }
 
-@media (max-width: 576px) {
+@media (max-width: 1919px) {
   html {
-    font-size: 12px;
+    font-size: max(
+            12px,
+            calc(16px - (1920px - 100vw) * 0.0078) /* 原公式 */
+    );
   }
 }
 
@@ -233,6 +236,12 @@ code {
   background-position: center;
 }
 
+.bg-contain {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 .intro-container {
   width: 100%;
   height: 40.5rem;
@@ -254,36 +263,37 @@ code {
   height: 100%;
 }
 
-@media (max-width: 1200px) {
-  .intro-word {
-    margin-left: 3%;
-  }
-}
-
-@media (min-width: 1200px) {
-  .intro-word {
-    margin-left: 10%;
-  }
-}
-
-@media (min-width: 1500px) {
-  .intro-word {
-    margin-left: 18.8%;
-  }
+.intro-word {
+  margin-left: 12%;
 }
 
 .intro-font {
-  font-size: 3.5rem;
   color: #000000;
   font-family: 'SourceHanSansCN-Bold';
 }
 
+.chinese .intro-font {
+  font-size: 3.5rem;
+}
+
+.english .intro-font {
+  font-size: 3rem;
+}
+
 .intro-text {
-  width: 37rem;
-  font-size: 1.25rem;
   color: #000000;
   font-family: 'SourceHanSansCN-Regular';
   font-weight: 500;
+}
+
+.chinese .intro-text {
+  width: 37rem;
+  font-size: 1.25rem;
+}
+
+.english .intro-text {
+  width: 40rem;
+  font-size: 1.2rem;
 }
 
 .quick-start {
@@ -315,17 +325,31 @@ code {
 
 .banner-title {
   font-family: 'SourceHanSansCN-Bold';
-  font-size: 1.38rem;
   font-weight: bold;
   color: #000000;
+}
+
+.chinese .banner-title {
+  font-size: 1.38rem;
+}
+
+.english .banner-title {
+  font-size: 1.2rem;
 }
 
 .banner-intro {
   margin-top: 0.8rem;
   font-family: 'SourceHanSansCN-Regular';
   font-size: 0.875rem;
-  width: 12.5rem;
   color: #000000;
+}
+
+.chinese .banner-intro {
+  width: 12.5rem;
+}
+
+.english .banner-intro {
+  width: 13.5rem;
 }
 
 /********************* 新手入门 *********************/
@@ -352,6 +376,19 @@ code {
   color: #000000;
 }
 
+.beginner-bg {
+  display: flex;
+  flex-direction: column;
+}
+
+.chinese .beginner-bg {
+  padding: 8rem 2.5rem 2.5rem 2.5rem;
+}
+
+.english .beginner-bg {
+  padding: 6.2rem 2.5rem 2.5rem 2.5rem;
+}
+
 .beginner-title {
   font-family: 'SourceHanSansCN-Bold';
   font-weight: bold;
@@ -362,15 +399,24 @@ code {
 
 .beginner-desc {
   font-family: 'SourceHanSansCN-Regular';
-  font-size: 1.25rem;
   color: #000000;
-  margin-bottom: 1.8rem;
+  flex: 1;
+  /*margin-bottom: 1.8rem;*/
+}
+
+.chinese .beginner-desc {
+  font-size: 1.25rem;
+}
+
+.english .beginner-desc {
+  font-size: 1.1rem;
 }
 
 /********************* 验证任务 *********************/
 .verify-container {
   width: 100%;
-  height: 28.13rem;
+  /*height: 28.13rem;*/
+  height: 100%;
 }
 
 .verify-title {
@@ -414,10 +460,17 @@ code {
 
 .verify-card-title {
   font-family: 'SourceHanSansCN-Regular';
-  font-size: 1.25rem;
   color: #ffffff;
   font-weight: bold;
   margin-bottom: 0.5rem;
+}
+
+.chinese .verify-card-title {
+  font-size: 1.25rem;
+}
+
+.english .verify-card-title {
+  font-size: 1.05rem;
 }
 
 .star-container {
