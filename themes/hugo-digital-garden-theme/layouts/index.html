@@ -1,6 +1,5 @@
 {{ define "main" }}
 
-<div class="{{ if eq .Language.Lang "cn" }}chinese{{ else }}english{{ end }}">
 <!--introduce-->
 <div class="intro-container">
 	<div
@@ -48,7 +47,7 @@
 	>
 	{{ $section := .Site.GetPage "section" "banner" }}
 	{{ range $section.Pages }}
-	<div class="d-flex align-items-center" style="flex: 1">
+	<div class="d-flex align-items-center">
 		<div>
 			{{ if .Params.title }}
 			<div class="banner-title">{{ .Params.title }}</div>
@@ -80,21 +79,22 @@ padding-bottom: 2rem"
 >
 <div style="width: 65%; min-width: 1250px">
 	<!--beginner 新手入门-->
-	{{ $section := .Site.GetPage "section" "beginner" }}
 	<div>
 		<div
 				class="section-bg d-flex flex-column align-items-center"
 				style="background-image: url('{{ "/images/title_decoration.png" | relURL }}')"
 		>
-		<div class="section-title">{{ $section.Params.title }}</div>
-		<div class="section-desc">{{ $section.Params.summary }}</div>
+		<div class="section-title">新手入门</div>
+		<div class="section-desc">全面了解万众一芯，完成一次验证全流程</div>
 	</div>
+	{{ $section := .Site.GetPage "section" "beginner" }}
 	<div class="d-flex justify-content-center">
 		{{ range $section.Pages.ByWeight.Reverse }}
 		{{ $img := .Resources.GetMatch "img.png" }}
 		<div
-				class="position-relative flex-grow-1 bg-cover beginner-bg"
+				class="position-relative flex-grow-1 bg-cover"
 				style="
+							padding: 8rem 2.5rem 2.5rem 2.5rem;
 							{{ with $img }}
 							background-image: url('{{ .RelPermalink }}');
 							width: 26.4rem;
@@ -110,19 +110,19 @@ padding-bottom: 2rem"
 			{{ end }}
 			<!--0即将上线 1正在进行 2报名中-->
 			{{ if eq .Params.schedule "即将上线" }}
-			<img src="{{ "/images/beginner_0.png" | relURL }}" width=98>
+			<img src="{{ "/images/beginner_0.png" | relURL }}">
 			{{ else if eq .Params.schedule "正在进行" }}
-			<img src="{{ "/images/beginner_1.png" | relURL }}" width=98>
+			<img src="{{ "/images/beginner_1.png" | relURL }}">
 			{{ else if eq .Params.schedule "报名中" }}
-			<img src="{{ "/images/beginner_2.png" | relURL }}" width=98>
+			<img src="{{ "/images/beginner_2.png" | relURL }}">
 			{{ end }}
 
 			{{ if .Params.Website }}
 			<a href="{{ .Params.Website }}" class="stretched-link" tab="_blank"></a>
 			{{ else }}
-			{{ if ne .Params.schedule "即将上线" }}
-			<a href="{{ .RelPermalink }}" class="stretched-link"></a>
-			{{ end }}
+				{{ if ne .Params.schedule "即将上线" }}
+				<a href="{{ .RelPermalink }}" class="stretched-link"></a>
+				{{ end }}
 			{{ end  }}
 		</div>
 		{{ end }}
@@ -130,16 +130,15 @@ padding-bottom: 2rem"
 </div>
 
 <div style="margin-top: 5rem">
-	{{ $section := .Site.GetPage "section" "verify_task_title" }}
 	<div
 			class="section-bg d-flex flex-column align-items-center"
 			style="background-image: url('{{ "/images/title_decoration.png" | relURL }}')"
 	>
-	<div class="section-title">{{ $section.Params.title }}</div>
-	<div class="section-desc">{{ $section.Params.summary }}</div>
+	<div class="section-title">验证任务</div>
+	<div class="section-desc">通过任务，逐步加深对RISC-V指令集架构的理解</div>
 </div>
 
-<!--verifytask 模块验证任务-->
+<!--verify 模块验证任务-->
 <div
 		class="verify-container bg-cover"
 		style="background-image: url('{{ "/images/module_frame_bg.png" | relURL }}');"
@@ -180,15 +179,15 @@ padding-bottom: 3.5rem"
 >
 <div style="width: 65%; min-width: 1250px">
 	<!--learningresource 学习资源-->
-	{{ $section := .Site.GetPage "section" "learningresource" }}
 	<div style="margin-top: 5rem">
 		<div
 				class="section-bg d-flex flex-column align-items-center"
 				style="background-image: url('{{ "/images/title_decoration.png" | relURL }}')"
 		>
-		<div class="section-title">{{ $section.Params.title }}</div>
-		<div class="section-desc">{{ $section.Params.summary }}</div>
+		<div class="section-title">学习资源</div>
+		<div class="section-desc">开启万众一芯学习之旅</div>
 	</div>
+	{{ $section := .Site.GetPage "section" "learningresource" }}
 	<div class="d-flex gap-5">
 		{{ range $section.Pages }}
 		<div
@@ -221,14 +220,14 @@ padding-bottom: 3.5rem"
 </div>
 
 <!--recruit 招募信息-->
-{{ $section := .Site.GetPage "section" "recruit" }}
 <div style="margin-top: 5rem">
 	<div
 			class="section-bg d-flex flex-column align-items-center"
 			style="background-image: url('{{ "/images/title_decoration.png" | relURL }}')"
 	>
-	<div class="section-title">{{ $section.Params.title }}</div>
+	<div class="section-title">招募信息</div>
 </div>
+{{ $section := .Site.GetPage "section" "recruit" }}
 <div class="d-flex gap-5">
 	{{ range $section.Pages.ByWeight }}
 	{{ $bgImage := "" }}
@@ -250,9 +249,9 @@ padding-bottom: 3.5rem"
 		{{ if .Params.Website }}
 		<a href="{{ .Params.Website }}" class="stretched-link" tab="_blank"></a>
 		{{ else }}
-		{{ if eq .Params.open true }}
-		<a href="{{ .RelPermalink }}" class="stretched-link"></a>
-		{{ end }}
+			{{ if eq .Params.open true }}
+			<a href="{{ .RelPermalink }}" class="stretched-link"></a>
+			{{ end }}
 		{{ end  }}
 	</div>
 	{{ end }}
@@ -271,12 +270,12 @@ padding-bottom: 2.5rem"
 >
 <div style="width: 65%; min-width: 1250px">
 	<div style="margin-top: 2.5rem">
-		{{ $section := .Site.GetPage "section" "communication" }}
 		<div
 				class="section-bg d-flex flex-column align-items-center"
 		>
-			<div class="section-title" style="color: #ffffff;text-shadow: none">{{ $section.Params.title }}</div>
+			<div class="section-title" style="color: #ffffff;text-shadow: none">互动交流与咨询</div>
 		</div>
+		{{ $section := .Site.GetPage "section" "communication" }}
 		<div class="d-flex gap-5 justify-content-between">
 			{{ range $section.Pages.ByWeight }}
 			<div style="position: relative">
@@ -304,12 +303,12 @@ padding-bottom: 3.5rem"
 >
 <div style="width: 65%; min-width: 1250px">
 	<div style="margin-top: 2.5rem">
-		{{ $section := .Site.GetPage "section" "partners" }}
 		<div
 				class="section-bg d-flex flex-column align-items-center"
 		>
-			<div class="section-title">{{ $section.Params.title }}</div>
+			<div class="section-title">合作伙伴</div>
 		</div>
+		{{ $section := .Site.GetPage "section" "partners" }}
 		<div class="d-flex justify-content-center gap-5">
 			{{ range ( where (where site.RegularPages "Section" "partners") "Params.Onhomepage" "eq" true ) }}
 			<div style="position: relative">
@@ -329,7 +328,6 @@ padding-bottom: 3.5rem"
 			{{end}}
 		</div>
 	</div>
-</div>
 </div>
 
 {{ end }}
