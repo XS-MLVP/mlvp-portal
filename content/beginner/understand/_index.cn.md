@@ -72,7 +72,7 @@ weight: 3
 [**Bug复现任务**](https://open-verify.cc/bugreappeartask/session_01/)
 ——根据已发布的Bug任务，设计回归测试用例
 
-[**香山UT模块-维护者招募**]()
+[**香山UT模块-维护者招募**](https://open-verify.cc/recruit/ut/)
 ——参与核心模块验证，共建可信验证体系
 
 ### 2.3 活动收获
