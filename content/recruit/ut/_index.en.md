@@ -1,7 +1,12 @@
 ---
 title: 'Xiangshan UT module maintainer'
-is_page: true
+date: 2025-02-19T11:07:20+08:00
+draft: false
+resource_tags: ["Documentation", "Verification Positions"]
+status: "seeding"
+summary: "Contribute to core module verification and co-build trusted verification framework"
 weight: 1
+open: true  
 ---
 
 ## About the Project

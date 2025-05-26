@@ -9,6 +9,8 @@ task_closed: false
 home_page_show: true
 Weight: 11
 summary: "Learning Xiangshan FTQ Microarchitecture Design Through Verification"
+schedule: 2
+difficult: 5
 ---
 
 This verification hands-on task will help in learning the design of the FTQ module in Xiangshan's Kunming Lake architecture. FTQ (Fetch Target Queue) plays a critical role in processor front-end design, responsible for the interaction between the front-end Branch Prediction Unit (BPU) and Instruction Fetch Unit (IFU), as well as the interaction between the front-end and back-end.
