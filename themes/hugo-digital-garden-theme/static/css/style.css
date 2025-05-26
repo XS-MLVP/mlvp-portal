@@ -229,10 +229,23 @@ code {
   transform: translate3d(0, 0.2em, 0);
 }
 
+.navbar-brand-content {
+  margin-right: 5.9rem;
+}
+
 @media (max-width: 830px) {
   .intro-text, .banner-img {
     display: none;
   }
+
+  .chinese .intro-font {
+    font-size: 3rem !important;
+  }
+
+  .english .intro-font {
+    font-size: 2.5rem !important;
+  }
+
   .banner {
     background-size: cover !important;
     background-repeat: no-repeat;
@@ -244,8 +257,12 @@ code {
     font-size: 1.2rem !important;
   }
 
-  .english .intro-font {
-    /*font-size: 2.2rem !important;*/
+  .navbar {
+    padding: 0 1rem !important;
+  }
+
+  .navbar-brand-content {
+    margin-right: 2rem !important;
   }
 }
 
