@@ -1,9 +1,10 @@
 ---
 title: 'Beginner task'
-desc: 'Quickly understand the framework and tools of "One People, One Core" and complete the whole verification process.'
-schedule: 1
+summary: 'Quickly understand the framework and tools of UnityChip and complete the whole verification process.'
+schedule: 2
 date: 2025-01-02T08:50:39+08:00
 resource_tags: ["Document", "Learning Materials"]
+weight: 2
 ---
 
 In this beginner's task, you will:

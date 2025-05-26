@@ -17,12 +17,15 @@
 /* 基础大小 16px 在 1920px 宽度 */
 html {
   font-size: 16px;
-  min-width: 1350px;
+  /*min-width: 1250px*/
 }
 
-@media (max-width: 576px) {
+@media (max-width: 1349px) {
   html {
-    font-size: 12px;
+    font-size: max(
+            12px,
+            calc(16px - (1349px - 100vw) * 0.0078) /* 原公式 */
+    );
   }
 }
 
@@ -226,9 +229,35 @@ code {
   transform: translate3d(0, 0.2em, 0);
 }
 
+@media (max-width: 830px) {
+  .intro-text, .banner-img {
+    display: none;
+  }
+  .banner {
+    background-size: cover !important;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 3rem 1rem !important;
+    column-gap: 0.8rem;
+  }
+  .banner-title {
+    font-size: 1.2rem !important;
+  }
+
+  .english .intro-font {
+    /*font-size: 2.2rem !important;*/
+  }
+}
+
 /*introduce*/
 .bg-cover {
   background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.bg-all{
+  background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -254,36 +283,55 @@ code {
   height: 100%;
 }
 
-@media (max-width: 1200px) {
+.intro-word {
+  margin-left: 14%;
+}
+
+@media(min-width: 1800px) {
   .intro-word {
-    margin-left: 3%;
+    margin-left: 16% !important;
   }
 }
 
-@media (min-width: 1200px) {
+@media(max-width: 1300px) {
   .intro-word {
-    margin-left: 10%;
+    margin-left: 6% !important;
   }
 }
 
-@media (min-width: 1500px) {
+@media(max-width: 900px) {
   .intro-word {
-    margin-left: 18.8%;
+    margin-left: 3% !important;
   }
 }
 
 .intro-font {
-  font-size: 3.5rem;
   color: #000000;
   font-family: 'SourceHanSansCN-Bold';
 }
 
+.chinese .intro-font {
+  font-size: 3.5rem;
+}
+
+.english .intro-font {
+  font-size: 3rem;
+}
+
 .intro-text {
-  width: 37rem;
-  font-size: 1.25rem;
   color: #000000;
   font-family: 'SourceHanSansCN-Regular';
   font-weight: 500;
+}
+
+.chinese .intro-text {
+  width: 37rem;
+  font-size: 1.25rem;
+}
+
+.english .intro-text {
+  width: 40rem;
+  font-size: 1.2rem;
 }
 
 .quick-start {
@@ -303,32 +351,66 @@ code {
 
 /********************* Banner *********************/
 .banner {
-  width: 84.56rem;
-  height: 11.38rem;
-  padding: 1.63rem 4rem;
+  width: 100%;
+  max-width: 84.56rem;
+  padding: 3rem;
   position: absolute;
   z-index: 99;
   left: 50%;
   top: -50%;
   transform: translate(-50%, -50%);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .banner-title {
   font-family: 'SourceHanSansCN-Bold';
-  font-size: 1.38rem;
   font-weight: bold;
   color: #000000;
+}
+
+.chinese .banner-title {
+  font-size: 1.38rem;
+}
+
+.english .banner-title {
+  font-size: 1.2rem;
 }
 
 .banner-intro {
   margin-top: 0.8rem;
   font-family: 'SourceHanSansCN-Regular';
-  font-size: 0.875rem;
-  width: 12.5rem;
   color: #000000;
 }
 
+/*.chinese .banner-intro {*/
+/*  width: 12.5rem;*/
+/*}*/
+
+/*.english .banner-intro {*/
+/*  width: 13.5rem;*/
+/*}*/
+
 /********************* 新手入门 *********************/
+.section-width {
+  width: 90%;
+  margin: 0 auto;
+}
+
+@media (min-width: 1150px) {
+  .section-width {
+    width: 80%;
+  }
+}
+
+@media (min-width: 1350px) {
+  .section-width {
+    min-width: 1350px;
+    width: 65%;
+  }
+}
+
 .section-bg {
   padding-top: 3rem;
   background-repeat: no-repeat;
@@ -352,6 +434,21 @@ code {
   color: #000000;
 }
 
+.beginner-bg {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 21.3rem;
+}
+
+.chinese .beginner-bg {
+  padding: 8rem 2.5rem 2.5rem 2.5rem;
+}
+
+.english .beginner-bg {
+  padding: 6.2rem 2.5rem 2.5rem 2.5rem;
+}
+
 .beginner-title {
   font-family: 'SourceHanSansCN-Bold';
   font-weight: bold;
@@ -362,15 +459,31 @@ code {
 
 .beginner-desc {
   font-family: 'SourceHanSansCN-Regular';
-  font-size: 1.25rem;
   color: #000000;
-  margin-bottom: 1.8rem;
+  flex: 1;
+  /*margin-bottom: 1.8rem;*/
+}
+
+.chinese .beginner-desc {
+  font-size: 1.25rem;
+}
+
+.english .beginner-desc {
+  font-size: 1.1rem;
 }
 
 /********************* 验证任务 *********************/
+.verify-bg-white {
+  background: #FFFFFF;
+  border-radius: 6px;
+  box-shadow: 0 0 10px #b5d4f2;
+  margin-bottom: 2.5rem;
+}
+
 .verify-container {
   width: 100%;
-  height: 28.13rem;
+  /*height: 28.13rem;*/
+  height: 100%;
 }
 
 .verify-title {
@@ -414,10 +527,17 @@ code {
 
 .verify-card-title {
   font-family: 'SourceHanSansCN-Regular';
-  font-size: 1.25rem;
   color: #ffffff;
   font-weight: bold;
   margin-bottom: 0.5rem;
+}
+
+.chinese .verify-card-title {
+  font-size: 1.25rem;
+}
+
+.english .verify-card-title {
+  font-size: 1.05rem;
 }
 
 .star-container {
@@ -433,6 +553,14 @@ code {
 }
 
 /********************* 学习资源 *********************/
+.learning-bg-white {
+  background: #FFFFFF;
+  border-radius: 4px;
+  margin-bottom: 2.5rem;
+  padding: 1.5rem;
+  height: 100%;
+}
+
 .learning-card {
   width: 100%;
   height: 12.56rem;
@@ -456,7 +584,7 @@ code {
 
 /********************* 招募信息 *********************/
 .recruit-card {
-  width: 100%;
+  /*width: 100%;*/
   height: 7rem;
 }
 

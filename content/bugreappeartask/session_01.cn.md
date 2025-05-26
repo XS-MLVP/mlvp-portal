@@ -6,11 +6,10 @@ fenbao_tags: ["Bug复现","回归测试"]
 #website: "/xs-bpu/"
 task_closed: false
 status: "Continuing"
-task_closed: false
 home_page_show: true
 Weight: 10
 summary: "根据已发布的Bug任务，设计回归测试用例复现Bug"
-schedule: '正在进行'
+schedule: 2
 desc: '第1期：共18个待回归BUG'
 ---
 

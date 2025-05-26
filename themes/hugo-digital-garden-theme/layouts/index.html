@@ -1,5 +1,6 @@
 {{ define "main" }}
 
+<div class="{{ if eq .Language.Lang "cn" }}chinese{{ else }}english{{ end }}">
 <!--introduce-->
 <div class="intro-container">
 	<div
@@ -11,7 +12,7 @@
 	{{ with .Site.GetPage "section" "introduce" }}
 	<div class="intro-word" style="margin-top: 5rem">
 		<div class="intro-font fw-bold">{{ .Params.title }}</div>
-		<div class="d-flex align-items-center">
+		<div class="d-flex align-items-center flex-wrap">
 			<img src="{{ "/images/RISC-V.png" | relURL }}" />
 			<span class="intro-font fw-bold">{{ .Params.sub }}</span>
 		</div>
@@ -42,13 +43,13 @@
 <!--banner-->
 <div style="position: relative;">
 	<div
-			class="banner bg-cover d-flex align-items-center justify-content-between"
+			class="banner d-flex align-items-start justify-content-between"
 			style="background-image: url('{{ "/images/banner_bg.png" | relURL }}');"
 	>
 	{{ $section := .Site.GetPage "section" "banner" }}
 	{{ range $section.Pages }}
-	<div class="d-flex align-items-center">
-		<div>
+	<div class="d-flex align-items-center" style="flex: 1">
+		<div style="flex: 1">
 			{{ if .Params.title }}
 			<div class="banner-title">{{ .Params.title }}</div>
 			{{ end  }}
@@ -56,12 +57,12 @@
 			<div class="banner-intro">{{ .Params.intro }}</div>
 			{{ end  }}
 		</div>
-		<div>
+		<div class="banner-img" style="width: 35%">
 			{{ $img := .Resources.GetMatch "*img*" }}
 			{{ with $img }}
 			<img
 					src="{{.RelPermalink }}"
-					style="max-width: 100%; height: auto;"
+					style="width: 100%; height: auto;"
 			/>
 			{{ end }}
 		</div>
@@ -77,95 +78,96 @@
 padding-top: 7rem;
 padding-bottom: 2rem"
 >
-<div style="width: 65%; min-width: 1250px">
+<div class="section-width">
 	<!--beginner 新手入门-->
+	{{ $section := .Site.GetPage "section" "beginner" }}
 	<div>
 		<div
 				class="section-bg d-flex flex-column align-items-center"
 				style="background-image: url('{{ "/images/title_decoration.png" | relURL }}')"
 		>
-		<div class="section-title">新手入门</div>
-		<div class="section-desc">全面了解万众一芯，完成一次验证全流程</div>
+		<div class="section-title">{{ $section.Params.title }}</div>
+		<div class="section-desc">{{ $section.Params.summary }}</div>
 	</div>
-	{{ $section := .Site.GetPage "section" "beginner" }}
-	<div class="d-flex justify-content-center">
+	<div class="row">
 		{{ range $section.Pages.ByWeight.Reverse }}
 		{{ $img := .Resources.GetMatch "img.png" }}
-		<div
-				class="position-relative flex-grow-1 bg-cover"
-				style="
-							padding: 8rem 2.5rem 2.5rem 2.5rem;
-							{{ with $img }}
-							background-image: url('{{ .RelPermalink }}');
-							width: 26.4rem;
-							height: 21.3rem;
-							{{ end }}
-						"
-		>
-			{{ if .Params.title }}
-			<div class="beginner-title">{{ .Params.title }}</div>
-			{{ end }}
-			{{ if .Params.summary }}
-			<div class="beginner-desc">{{ .Params.summary }}</div>
-			{{ end }}
-			<!--0即将上线 1正在进行 2报名中-->
-			{{ if eq .Params.schedule "即将上线" }}
-			<img src="{{ "/images/beginner_0.png" | relURL }}">
-			{{ else if eq .Params.schedule "正在进行" }}
-			<img src="{{ "/images/beginner_1.png" | relURL }}">
-			{{ else if eq .Params.schedule "报名中" }}
-			<img src="{{ "/images/beginner_2.png" | relURL }}">
-			{{ end }}
+		<div class="col-12 col-sm-6 col-md-4">
+			<div
+					class="position-relative bg-all beginner-bg"
+					style="
+								{{ with $img }}
+								background-image: url('{{ .RelPermalink }}');
+								{{ end }}
+							"
+			>
+				{{ if .Params.title }}
+				<div class="beginner-title">{{ .Params.title }}</div>
+				{{ end }}
+				{{ if .Params.summary }}
+				<div class="beginner-desc">{{ .Params.summary }}</div>
+				{{ end }}
+				<!--1即将上线 2正在进行 3报名中-->
+				{{ if eq site.Language.Lang "cn" }}
+				{{ if eq .Params.schedule 1 }}
+				<img src="{{ "/images/beginner_0.png" | relURL }}" width=98>
+				{{ else if eq .Params.schedule 2 }}
+				<img src="{{ "/images/beginner_1.png" | relURL }}" width=98>
+				{{ else if eq .Params.schedule 3 }}
+				<img src="{{ "/images/beginner_2.png" | relURL }}" width=98>
+				{{ end }}
+				{{ else }}
+				{{ if eq .Params.schedule 1 }}
+				<img src="{{ "/images/beginner_0_en.png" | relURL }}" width=98>
+				{{ else if eq .Params.schedule 2 }}
+				<img src="{{ "/images/beginner_1_en.png" | relURL }}" width=98>
+				{{ else if eq .Params.schedule 3 }}
+				<img src="{{ "/images/beginner_2_en.png" | relURL }}" width=98>
+				{{ end }}
+				{{ end }}
 
-			{{ if .Params.Website }}
-			<a href="{{ .Params.Website }}" class="stretched-link" tab="_blank"></a>
-			{{ else }}
-				{{ if ne .Params.schedule "即将上线" }}
+				{{ if .Params.Website }}
+				<a href="{{ .Params.Website }}" class="stretched-link" tab="_blank"></a>
+				{{ else }}
+				{{ if ne .Params.schedule 1 }}
 				<a href="{{ .RelPermalink }}" class="stretched-link"></a>
 				{{ end }}
-			{{ end  }}
+				{{ end  }}
+			</div>
 		</div>
 		{{ end }}
 	</div>
 </div>
 
 <div style="margin-top: 5rem">
+	{{ $section := .Site.GetPage "section" "verify_task_title" }}
 	<div
 			class="section-bg d-flex flex-column align-items-center"
 			style="background-image: url('{{ "/images/title_decoration.png" | relURL }}')"
 	>
-	<div class="section-title">验证任务</div>
-	<div class="section-desc">通过任务，逐步加深对RISC-V指令集架构的理解</div>
+	<div class="section-title">{{ $section.Params.title }}</div>
+	<div class="section-desc">{{ $section.Params.summary }}</div>
 </div>
 
-<!--verify 模块验证任务-->
-<div
-		class="verify-container bg-cover"
-		style="background-image: url('{{ "/images/module_frame_bg.png" | relURL }}');"
->
-{{ with .Site.GetPage "section" "verifytask" }}
-{{ partial "home_list.html" . }}
-{{ end }}
+<!--verifytask 模块验证任务-->
+<div class="verify-container verify-bg-white">
+	{{ with .Site.GetPage "section" "verifytask" }}
+	{{ partial "home_list.html" . }}
+	{{ end }}
 </div>
 
 <!--crowdsourcingtask 文档众包任务-->
-<div
-		class="verify-container bg-cover"
-		style="background-image: url('{{ "/images/module_frame_bg.png" | relURL }}');margin-top: 1.6rem"
->
-{{ with .Site.GetPage "section" "crowdsourcingtask" }}
-{{ partial "home_list.html" . }}
-{{ end }}
+<div class="verify-container verify-bg-white">
+	{{ with .Site.GetPage "section" "crowdsourcingtask" }}
+	{{ partial "home_list.html" . }}
+	{{ end }}
 </div>
 
 <!--bugreappeartask Bug复现任务-->
-<div
-		class="verify-container bg-cover"
-		style="background-image: url('{{ "/images/module_frame_bg.png" | relURL }}');margin-top: 1.6rem"
->
-{{ with .Site.GetPage "section" "bugreappeartask" }}
-{{ partial "home_list.html" . }}
-{{ end }}
+<div class="verify-container verify-bg-white">
+	{{ with .Site.GetPage "section" "bugreappeartask" }}
+	{{ partial "home_list.html" . }}
+	{{ end }}
 </div>
 </div>
 </div>
@@ -177,71 +179,90 @@ padding-bottom: 2rem"
 		background-image: url('{{ "/images/bg_03.jpg" | relURL }}');
 padding-bottom: 3.5rem"
 >
-<div style="width: 65%; min-width: 1250px">
+<div class="section-width">
 	<!--learningresource 学习资源-->
+	{{ $section := .Site.GetPage "section" "learningresource" }}
 	<div style="margin-top: 5rem">
 		<div
 				class="section-bg d-flex flex-column align-items-center"
 				style="background-image: url('{{ "/images/title_decoration.png" | relURL }}')"
 		>
-		<div class="section-title">学习资源</div>
-		<div class="section-desc">开启万众一芯学习之旅</div>
+		<div class="section-title">{{ $section.Params.title }}</div>
+		<div class="section-desc">{{ $section.Params.summary }}</div>
 	</div>
-	{{ $section := .Site.GetPage "section" "learningresource" }}
-	<div class="d-flex gap-5">
+	<div class="row">
 		{{ range $section.Pages }}
-		<div
-				class="learning-card bg-cover"
-				style="position: relative;background-image: url('{{ "/images/learningresource_frame.png" | relURL }}')"
-		>
-		<div class="d-flex justify-content-between">
-			{{ if .Params.title }}
-			<div class="learning-title">{{ .Params.title }}</div>
-			{{ end  }}
-			{{ $img := .Resources.GetMatch "*img*" }}
-			{{ with $img }}
-			<img
-					src="{{.RelPermalink }}"
-					style="max-width: 100%; height: auto;"
-			/>
-			{{ end }}
-		</div>
-		{{ if .Params.summary }}
-		<div class="learning-summary">{{ .Params.summary }}</div>
-		{{ end  }}
+		<div class="col-12 col-sm-6 col-md-4 mb-4">
+			<div class="learning-bg-white" style="position: relative;">
+				<div class="d-flex justify-content-between">
+					{{ if .Params.title }}
+					<div class="learning-title">{{ .Params.title }}</div>
+					{{ end  }}
+					{{ $img := .Resources.GetMatch "*img*" }}
+					{{ with $img }}
+					<img
+							src="{{.RelPermalink }}"
+							style="max-width: 100%; height: auto;"
+					/>
+					{{ end }}
+				</div>
+				{{ if .Params.summary }}
+				<div class="learning-summary">{{ .Params.summary }}</div>
+				{{ end  }}
 
-		{{ if .Params.Website }}
-		<a href="{{ .Params.Website }}" class="stretched-link" tab="_blank"></a>
-		{{ else }}
-		<a href="{{ .RelPermalink }}" class="stretched-link"></a>
-		{{ end  }}
+				{{ if .Params.Website }}
+				<a href="{{ .Params.Website }}" class="stretched-link" tab="_blank"></a>
+				{{ else }}
+				<a href="{{ .RelPermalink }}" class="stretched-link"></a>
+				{{ end  }}
+			</div>
 	</div>
 	{{ end }}
 </div>
 
 <!--recruit 招募信息-->
+{{ $section := .Site.GetPage "section" "recruit" }}
 <div style="margin-top: 5rem">
 	<div
 			class="section-bg d-flex flex-column align-items-center"
 			style="background-image: url('{{ "/images/title_decoration.png" | relURL }}')"
 	>
-	<div class="section-title">招募信息</div>
+	<div class="section-title">{{ $section.Params.title }}</div>
 </div>
-{{ $section := .Site.GetPage "section" "recruit" }}
-<div class="d-flex gap-5">
+<div class="row gx-4">
 	{{ range $section.Pages.ByWeight }}
 	{{ $bgImage := "" }}
 	{{ if eq .Params.open true }}
+	{{ if eq site.Language.Lang "cn" }}
 	{{ with .Resources.GetMatch "img.png" }}
 	{{ $bgImage = .RelPermalink }}
+	{{ else }}
+	{{ with .Resources.GetMatch "img_en.png" }}
+	{{ $bgImage = .RelPermalink }}
+	{{ end }}
 	{{ end }}
 	{{ else }}
+	{{ with .Resources.GetMatch "img_en.png" }}
+	{{ $bgImage = .RelPermalink }}
+	{{ end }}
+	{{ end }}
+	{{ else }}
+	{{ if eq site.Language.Lang "cn" }}
 	{{ with .Resources.GetMatch "waiting_img.png" }}
 	{{ $bgImage = .RelPermalink }}
+	{{ else }}
+	{{ with .Resources.GetMatch "waiting_img_en.png" }}
+	{{ $bgImage = .RelPermalink }}
+	{{ end }}
+	{{ end }}
+	{{ else }}
+	{{ with .Resources.GetMatch "waiting_img_en.png" }}
+	{{ $bgImage = .RelPermalink }}
+	{{ end }}
 	{{ end }}
 	{{ end }}
 	<div
-			class="recruit-card bg-cover"
+			class="col-12 col-sm-6 col-md-4 mb-4 recruit-card bg-cover"
 			style="position: relative;
 				background-image: url('{{ $bgImage }}');background-size: contain"
 	>
@@ -249,9 +270,9 @@ padding-bottom: 3.5rem"
 		{{ if .Params.Website }}
 		<a href="{{ .Params.Website }}" class="stretched-link" tab="_blank"></a>
 		{{ else }}
-			{{ if eq .Params.open true }}
-			<a href="{{ .RelPermalink }}" class="stretched-link"></a>
-			{{ end }}
+		{{ if eq .Params.open true }}
+		<a href="{{ .RelPermalink }}" class="stretched-link"></a>
+		{{ end }}
 		{{ end  }}
 	</div>
 	{{ end }}
@@ -268,22 +289,34 @@ padding-bottom: 3.5rem"
 		background-image: url('{{ "/images/bg_04.jpg" | relURL }}');
 padding-bottom: 2.5rem"
 >
-<div style="width: 65%; min-width: 1250px">
+<div class="section-width">
 	<div style="margin-top: 2.5rem">
+		{{ $section := .Site.GetPage "section" "communication" }}
 		<div
 				class="section-bg d-flex flex-column align-items-center"
 		>
-			<div class="section-title" style="color: #ffffff;text-shadow: none">互动交流与咨询</div>
+			<div class="section-title" style="color: #ffffff;text-shadow: none">{{ $section.Params.title }}</div>
 		</div>
-		{{ $section := .Site.GetPage "section" "communication" }}
-		<div class="d-flex gap-5 justify-content-between">
+		<div class="row">
 			{{ range $section.Pages.ByWeight }}
-			<div style="position: relative">
-				{{ with .Resources.ByType "image" }}
-				{{ range first 1 . }}
-				<img src="{{ .RelPermalink }}">
+			<div
+				class="col-12 col-sm-6 col-md-4 mb-4"
+				style="position: relative;">
+				{{ $bgImage := "" }}
+				{{ if eq site.Language.Lang "cn" }}
+				{{ with .Resources.GetMatch "img.png" }}
+				{{ $bgImage = .RelPermalink }}
+				{{ else }}
+				{{ with .Resources.GetMatch "img_en.png" }}
+				{{ $bgImage = .RelPermalink }}
 				{{ end }}
 				{{ end }}
+				{{ else }}
+				{{ with .Resources.GetMatch "img_en.png" }}
+				{{ $bgImage = .RelPermalink }}
+				{{ end }}
+				{{ end }}
+				<img src="{{ $bgImage }}" style="width: 100%">
 				{{ if .Params.Website }}
 				<a href="{{ .Params.Website }}" class="stretched-link" target="_blank"></a>
 				{{end}}
@@ -301,15 +334,15 @@ padding-bottom: 2.5rem"
 		background-image: url('{{ "/images/bg_05.jpg" | relURL }}');
 padding-bottom: 3.5rem"
 >
-<div style="width: 65%; min-width: 1250px">
+<div class="section-width">
 	<div style="margin-top: 2.5rem">
+		{{ $section := .Site.GetPage "section" "partners" }}
 		<div
 				class="section-bg d-flex flex-column align-items-center"
 		>
-			<div class="section-title">合作伙伴</div>
+			<div class="section-title">{{ $section.Params.title }}</div>
 		</div>
-		{{ $section := .Site.GetPage "section" "partners" }}
-		<div class="d-flex justify-content-center gap-5">
+		<div class="d-flex justify-content-center gap-3">
 			{{ range ( where (where site.RegularPages "Section" "partners") "Params.Onhomepage" "eq" true ) }}
 			<div style="position: relative">
 				{{ $images := .Resources.ByType "image" }}
@@ -328,6 +361,7 @@ padding-bottom: 3.5rem"
 			{{end}}
 		</div>
 	</div>
+</div>
 </div>
 
 {{ end }}
