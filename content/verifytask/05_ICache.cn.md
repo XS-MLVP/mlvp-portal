@@ -13,7 +13,7 @@ schedule: 2
 difficult: 5
 ---
 
-在本期验证任务中，各位朋友将走近香山昆明湖架构的 ICache 模块，在验证实战中体会香山指缓存模块的设计思路，加深对 RISCV 指令集架构的理解。欢迎各位报名参加（报名填写[这里](https://www.wjx.top/vm/e1nEX25.aspx#)，qq 群：**600480230**。）！
+在本期验证任务中，各位朋友将走近香山昆明湖架构的 ICache 模块，在验证实战中体会香山指令缓存模块的设计思路，加深对 RISCV 指令集架构的理解。欢迎各位报名参加（报名填写[这里](https://www.wjx.top/vm/e1nEX25.aspx#)，qq 群：**600480230**。）！
 
 ICache（Instruction Cache）即指令缓存，负责接收 FTQ 的取指和预取请求并从向 ITLB 获取物理地址和通过 Tilelink 获取指令数据，最终将指令数据或者异常数据发送给 IFU。
 
