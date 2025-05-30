@@ -9,7 +9,7 @@ task_closed: false
 home_page_show: true
 Weight: 11
 summary: "在验证中学习香山FTQ的微架构设计"
-schedule: '正在进行'
+schedule: 2
 difficult: 5
 ---
 

@@ -6,10 +6,11 @@ fenbao_tags: ["Bug Reproduction","Regression Testing"]
 #website: "/xs-bpu/"
 task_closed: false
 status: "Continuing"
-task_closed: false
 home_page_show: true
 Weight: 10
 summary: "Design regression test cases to reproduce bugs based on the published bug tasks."
+schedule: 2
+desc: 'Round 1: 18 bugs to verify'
 ---
 
 
