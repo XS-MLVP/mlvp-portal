@@ -7,131 +7,97 @@ weight: 3
 
 # “万众一芯” 开放验证平台
 &emsp;&emsp;——让每个开发者，都能参与RISC-V处理器验证
-## 01 关于 “万众一芯”
-&emsp;&emsp;芯片设计工作中的一大挑战是芯片验证。在传统芯片设计中，验证工作量占比超过70%，验证工程师数量远大于设计工程师，人力成本巨大。且源代码闭源，属于商业机密，只能在公司内部完成。随着高端芯片越来越复杂，验证投入将会越来越大。
+## 一、我们是谁
+&emsp;&emsp;“万众一芯”是基于高性能 RISC-V 处理器核“香山”的芯片验证平台。支持使用Python/Java/Go编写芯片单元测试UT（Unit Test）用例，同时兼容传统UVM验证框架，旨在让软件工程师也可以参与芯片验证。
 
-&emsp;&emsp;“万众一芯” 开放验证平台，致力于探索开源硬件众包验证可能性，希望降低芯片验证成本，让软件工程师也能参与到硬件工作中来。基于高性能RISC-V处理器 “香山” 的最新架构，我们将芯片验证任务拆分成多个子模块，邀请所有感兴趣的开发者共同参与。
+&emsp;&emsp;“万众一芯”汇聚软硬件工程师、高校学生与极客的力量，让“一万个人共同参与开发一款芯片”。期待你与我们一起，为开源芯片的发展贡献力量。
 
-&emsp;&emsp;2025年， “万众一芯” 持续发布各类众包验证任务。通过提供开源验证工具与框架，**让每一位开发者，都可以用自己擅长的编程语言，随时随地进行芯片验证。**
+<small><em>
+[什么是“香山”](https://xiangshan.cc/zh/)
 
-<small><em>想了解更多 “万众一芯” 诞生背景，延伸阅读：[《为什么要，为什么能进行开源分包验证》作者：包云岗](https://open-verify.cc/learningresource/comm/com_001/)</em></small>
+&emsp;&emsp;“香山”是一款开源高性能 RISC-V 处理器，是目前国际开源社区中性能最强、最活跃的RISC-V处理器核。自2021年在全球最大的开源项目托管平台Github创建以来，已获得约 6,300 +个星标（Star）和 760+个分支（Fork），获得10,000+条提交（Commit），3,800+次合入请求（Pull request）和400+项议题（Issue），其中40个议题形成合入请求并已合入项目主线。
+</em></small>
 
-## 02 参与 “万众一芯”
-### 2.1 面向人群
-&emsp;&emsp;“万众一芯” **面向所有背景的开发者**，无论你是软件背景还是硬件背景，正在上学或是已经工作，都可以参与“万众一芯”的活动。**我们提供开源验证工具与框架，复用软件测试生态进行芯片验证，让软件背景开发者，也能顺利参与到芯片验证**。同时配备学习资源和导师指导，带你顺利上手验证。
-<div>			
-    <center>	
-    <img src="/crowdsourcing/target_audience.png"
-         alt="面向人群"
-         style="zoom:100%"/>
-    <br>
-    </center>
-</div>
-<div>			
-    <center>	
-    <img src="/crowdsourcing/target_audience_1.png"
-         alt="面向人群"
-         style="zoom:100%"/>
-    <br>
-    </center>
-</div>
+## 二、平台优势
+- **首个开源众包芯片验证平台** 
 
-### 2.2 活动内容
-&emsp;&emsp;2025年，基于开源高性能RISC-V处理器核 “香山” 的最新架构昆明湖，“万众一芯”持续发布不同难度，不同类别的验证任务，**每个任务均有奖金**，包括验证文档众包，验证模块众包，Bug复现任务，同时招募香山UT模块维护者。
-<div>			
-    <center>	
-    <img src="/crowdsourcing/ut_crowdsourcing.png"
-         alt="众包模块"
-         style="zoom:100%"/>
-    <br>		
-    2025年计划发布的UT验证众包模块
-    </center>
-</div>
+&emsp;&emsp;依托开源硬件优势，对大型芯片验证任务进行拆解，降低验证复杂度。提供基于高级语言的验证工具与框架，让软件开发者参与到芯片设计中，大幅降低芯片验证的门槛与成本。
 
-<div>			
-    <center>	
-    <img src="/crowdsourcing/activity_process.png"
-         alt="任务流程"
-         style="zoom:26%"/>
-    <br>		
-    “万众一芯”验证任务参与流程	
-    </center>
-</div>
+- **支持多语言验证，无需学习新语言**
 
-**目前“万众一芯”开放报名的任务有：**
+&emsp;&emsp;通过工具，硬件电路可被转换为 Python, C++, Java 等多种语言。开发者可以用一行命令，完成从RTL级到多语言软件包的全流程转换，用自己擅长的语言进行验证。
 
-[**新手入门任务**](https://open-verify.cc/beginner/task/)
+- **集成软件生态，实现软硬件协同验证**
+
+&emsp;&emsp;**·** 提供多语言高级验证框架：基于 Python 搭建高级验证框架 toffee，在支持传统的验证特性的同时，引入软件生态所带来的全新验证特性。
+
+&emsp;&emsp;**·** 建立UVM多语言通信：复用UVM验证环境，使用主流语言编写参考模型、测试用例，可直接使用C++、Python等语言与UVM通信。
+
+## 三、参与方式
+### 1、任务类型
+基于“香山”的最新架构昆明湖，“万众一芯”长期发布不同难度，不同类别的验证任务：
+
+&emsp;&emsp;[**新手入门任务**](https://open-verify.cc/beginner/task/)
 ——快速了解框架和工具，完成一次验证全流程
 
-[**验证文档众包任务**](https://open-verify.cc/crowdsourcingtask/01_cpl2/)
+&emsp;&emsp;[**验证文档众包任务**](https://open-verify.cc/crowdsourcingtask/01_cpl2/)
 ——提高文档写作能力和代码分析能力，入门芯片验证
 
-[**模块验证众包任务**](https://open-verify.cc/verifytask/)
+&emsp;&emsp;[**模块验证众包任务**](https://open-verify.cc/verifytask/)
 ——使用敏捷验证工具链，体验应用级别的模块验证
 
-[**Bug复现任务**](https://open-verify.cc/bugreappeartask/session_01/)
+&emsp;&emsp;[**Bug复现任务**](https://open-verify.cc/bugreappeartask/session_01/)
 ——根据已发布的Bug任务，设计回归测试用例
 
-[**香山UT模块-维护者招募**](https://open-verify.cc/recruit/ut/)
+### 2、核心收获
+通过参与任务，你将可以：
+
+&emsp;&emsp;**【学习】** 低门槛学习高性能CPU设计，深入理解RISC-V指令集架构
+
+&emsp;&emsp;**【实践】** 使用敏捷验证工具链，在真实场景中体验应用级别的模块验证
+
+&emsp;&emsp;**【奖金】** 完成任务即有奖金，发现BUG将有额外奖励，全年奖金池50W+
+
+&emsp;&emsp;**【交流】** 有机会参与RISC-V欧洲峰会，获得RISC-V中国峰会资助
+
+### 3、参与路径
+&emsp;&emsp;“万众一芯” **面向所有背景的开发者**，无论你是软件背景还是硬件背景，正在上学或是已经工作，都可以参与“万众一芯”的活动。**我们提供开源验证工具与框架，复用软件测试生态进行芯片验证，让软件背景开发者，也能顺利参与到芯片验证。** 同时配备学习资源和导师指导，带你顺利上手验证。
+
+<div>			
+    <center>	
+    <img src="/crowdsourcing/participate_path.png"
+         alt="参与路径"
+         style="zoom:100%"/>
+    <br>		
+    “万众一芯”验证任务参与路径
+    </center>
+</div>
+
+### 4、维护者招募
+&emsp;&emsp;我们欢迎不同背景的开发者，成为香山UT模块维护者。若您暂时对香山的设计不了解但有意愿为开源社区做贡献，我们会提供相关的学习资料，您在学习完成后即可正式加入。
+
+&emsp;&emsp;[**香山UT模块-维护者招募**](https://open-verify.cc/recruit/ut/)
 ——参与核心模块验证，共建可信验证体系
 
-### 2.3 活动收获
-&emsp;&emsp;作为软件和硬件的交叉领域，参与万众一芯的活动，需要开发者根据自身情况，付出一定的学习成本和时间成本。但是无需担心，我们有专门的教程，资料和专业的导师，陪伴你完成从学习到开发的过程，你的努力也终将获得回报。
+## 四、与“万众一芯”合作
 
-**直接收获**
+“万众一芯”诚邀高校与企业，携手共建开源芯片验证生态！
 
-&emsp;&emsp;**·** 学习高性能CPU设计，理解RISC-V指令集架构
-
-&emsp;&emsp;**·** 使用敏捷验证工具链，体验应用级别的模块验证
-
-&emsp;&emsp;**·** 完成每个任务都有相应的奖金，**全年奖金池50W**
-
-&emsp;&emsp;**·** 提高文档写作能力和代码分析能力，入门芯片验证
-
-&emsp;&emsp;**·** 有机会参与RISC-V欧洲峰会，获得RISC-V中国峰会资助
-
-<div>			
-    <center>	
-    <img src="/crowdsourcing/direct_gains.png"
-         alt="直接收获"
-         style="zoom:100%"/>
-    <br>
-    </center>
-</div>
-
-**长期收获**
-
-&emsp;&emsp;验证工作可以相对低门槛的了解芯片设计全流程，为你的职业发展和转型提供帮助：
-
-<div>			
-    <center>	
-    <img src="/crowdsourcing/long_term_gains.png"
-         alt="直接收获"
-         style="zoom:100%"/>
-    <br>
-    </center>
-</div>
-
-## 03 与 “万众一芯” 合作
-&emsp;&emsp;“万众一芯”诚邀高校与企业，携手共建开源芯片验证生态！
-
-**高校合作**
+- **高校合作**
 
 &emsp;&emsp;“万众一芯”团队走进高校，提供深入了解RISC-V开源芯片“香山”的窗口，让学生学习前沿验证方法，掌握业界领先的验证技能，并获得验证技能认证，为未来职业发展奠定坚实基础。
 
-**企业合作**
+- **企业合作**
 
 &emsp;&emsp;为各类企业提供高效的验证众包平台，企业可在平台上发布验证任务，汇聚全球开发者、学生和爱好者的智慧，快速完成芯片验证，降低研发成本，加速产品迭代。
 
 **如果您有合作意向，请通过以下方式联系我们:**
 
-&emsp;&emsp;**·** 邮箱：yaozhicheng@bosc.ac.cn；
+&emsp;&emsp;**·** “万众一芯”官方邮箱：unitychip@bosc.ac.cn；
 
-&emsp;&emsp;**·** 关注“万众一芯UnityChip”公众号，了解最新活动
+&emsp;&emsp;**·** “万众一芯”官方公众号：万众一芯 UnityChip
 
-&emsp;&emsp;**·** “万众一芯”官网：open-verify.cc
-
-&emsp;&emsp;**·** “万众一芯”交流QQ群：600480230
+&emsp;&emsp;**·** “万众一芯”官方交流群：600480230
 
 &emsp;&emsp;**·** GitHub：https://github.com/XS-MLVP/UnityChipForXiangShan
 
