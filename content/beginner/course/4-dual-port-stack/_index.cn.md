@@ -658,7 +658,7 @@ python3 example.py
 
 可直接运行本案例的测试代码，你将会看到类似如下的输出：
 
-```shell
+```bash
 ...
 Push 141
 Push 102
