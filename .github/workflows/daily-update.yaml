@@ -91,6 +91,7 @@ jobs:
         make init
         cd /home/runner/work/mlvp-portal/mlvp-portal/UnityChipForXiangShan/documents
         ln -s /home/runner/work/mlvp-portal/mlvp-portal/xs-mlvp.github.io/UnityChipForXiangShan/data/reports static/data/reports
+        find /home/runner/work/mlvp-portal/mlvp-portal/xs-mlvp.github.io/UnityChipForXiangShan/data/reports -maxdepth 1 -mindepth 1 -type d -print0 | sort -zr | tail -zn +2 | xargs -0 rm -rf
         make init
         cd /home/runner/work/mlvp-portal/mlvp-portal/mlvp-portal 
         npm install -D autoprefixer
