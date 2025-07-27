@@ -268,18 +268,16 @@ source ~/.bashrc
 
 完成所有依赖工具的安装后，现在可以安装 Picker 本身。
 
-首先下载 Picker 的源码并完成初始化：
+首先下载 Picker 的源码并进入仓库：
 
 ```bash
 git clone https://github.com/XS-MLVP/picker.git --depth=1
 cd picker
-make init
 ```
 
 然后构建并安装：
 
 ```bash
-cd picker
 make # 编译
 sudo -E make install # 安装
 ```
