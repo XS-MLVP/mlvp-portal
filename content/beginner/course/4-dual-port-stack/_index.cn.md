@@ -293,7 +293,7 @@ picker export --autobuild=true dual_port_stack.v -w dual_port_stack.fst --sname 
 
 #### 状态机切换过程图
 
-![双端口栈状态机](assets/state-machine.png)
+<center><img src="./assets/state-machine.png" alt="双端口栈状态机" style="width: 90%"/></center>
 
 | **当前状态**          | **跳转条件**              | **下一个状态**         | **行为说明**                |
 | ----------------- | --------------------- | ----------------- | ----------------------- |
@@ -522,9 +522,7 @@ Pop 104...
 
   * picker 允许协程使用 await AStep 函数进行这种等待
 
-![await AStep示意图](assets/timeline-diagram.png)
-
-
+<center><img src="./assets/timeline-diagram.png" alt="await AStep示意图" style="width: 90%" /></center>
 
 > 宏观上来看，协程 1，协程 2 属于并发执行，但实际上是通过协程切换实现的
 

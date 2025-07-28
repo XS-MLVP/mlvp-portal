@@ -91,7 +91,7 @@ Env 封装了整个验证环境，并确定了参考模型的编写规范。
 
 果壳 cache（Nutshell Cache）是果壳处理器中使用的缓存模块。其采用三级流水设计，当第三级流水检出当前请求为 MMIO 或者发生重填（refill）时，会阻塞流水线。同时，果壳 cache 采用可定制的模块化设计，通过改变参数可以生成存储空间大小不同的一级 cache（L1 Cache）或者二级 cache（L2 Cache）。此外，果壳 cache 留有一致性（coherence）接口，可以处理一致性相关的请求。
 
-![]()
+<center><img src="./assets/nutshell-cache-frame.png" style="90%"/></center>
 
 ## Chisel 与果壳
 
