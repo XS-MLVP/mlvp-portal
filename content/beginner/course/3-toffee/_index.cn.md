@@ -77,6 +77,12 @@ test_adder.py::test_boundary PASSED
 
 在先前的环境中，我们需要手动管理测试用例。`toffee-test` 是 toffee 提供的一个 pytest 插件，用于管理 toffee 测试用例。
 
+> 💡关于 pytest：Pytest 是 Python 中的一个软件测试框架。
+>
+> 它能够轻松编写简洁易读的测试用例，同时具备强大的扩展能力，足以支持应用程序和库的复杂功能测试需求。
+>
+> Pytest 本身有强大的功能和丰富的生态，如果感兴趣的话，可以查阅 [pytest 的文档](https://docs.pytest.org/en/stable/)和相关的插件仓库，来帮助你更好地完成验证任务。
+
 在随机数生成器的例子中，仅使用 picker 的验证代码为：
 
 ```python
