@@ -540,7 +540,7 @@ if __name__ == "__main__":
 
 ### XData 写入模式
 
-XData 作为电路引脚数据的表示方式，支持三种不同的写模式：
+在Picker 中，XData 是电路引脚数据的表示方式，支持三种不同的写模式：
 
 * **立即写模式（Imme）** ：数据立即写入目标，不依赖时钟
 
@@ -717,7 +717,73 @@ if __name__ == "__main__":
 
 打开波形文件可以发现，波形直接记录了`reset`信号保持 4 个低电平的状态。
 
-***
+## 用 `assert` 编写验证代码
+
+在熟悉如何操作之后，我们就可以编写验证代码了，一般通过 `assert` 来判断结果的正确性。
+
+`assert` 是 Python 中的一个关键词，它有两种使用格式：
+
+```python
+assert 布尔表达式
+assert 布尔表达式, "提示字符串"
+```
+
+其中，布尔表达式部分要编写我们认为是正确的情况；提示字符串是可选部分，当表达式的结果为假时，会输出提示字符串的内容。
+
+比如说，我们希望随机数生成器的结果为 `114514`，那么我们可以写：
+
+```python
+assert dut.random_number.value == 114514, "Mismatch"
+```
+
+如果随机数生成器的结果不是 `114514`，那么最终会输出 "Mismatch"。
+
+### 随机数生成器的验证代码
+
+下面就是随机数生成器的验证代码：
+
+```python
+# 代码来自：https://github.com/XS-MLVP/picker/blob/master/example/RandomGenerator/example.py
+from UT_RandomGenerator import *
+
+class LSRF_16:
+    def __init__(self, seed):
+        self.state = seed & ((1 << 16) - 1)
+
+    def step(self):
+        new_bit = (self.state >> 15) ^ (self.state >> 14) & 1
+        self.state = ((self.state << 1) | new_bit ) & ((1 << 16) - 1)
+
+if __name__ == "__main__":
+    dut = DUTRandomGenerator()
+    dut.InitClock("clk")
+
+    seed = random.randint(0, 2**16 - 1)
+
+    dut.seed.value = seed
+    ref = LSRF_16(seed)
+    
+    # 模块初始化
+    dut.reset.value = 1
+    dut.Step(1)
+    dut.reset.value = 0
+    dut.Step(1)
+		# 测试部分
+    for i in range(65536):
+        print(f"Cycle {i}, DUT: {dut.random_number.value:x}, REF: {ref.state:x}")
+        assert dut.random_number.value == ref.state, "Mismatch"
+        dut.Step(1)
+        ref.step()
+
+    print("Test Passed, destroy UT_RandomGenerator")
+    dut.Finish()
+```
+
+在这里，我们用 Python 代码实现了一个类`LSRF_16`，它被用来模拟设计模块的预期行为，被称为**参考模型**。
+
+最终，我们通过一个循环，把设计周期每个模块的输出和参考模型的输出进行对比。当循环结束且没有报错，就代表这个模块的验证结束并且没有发现错误。
+
+---
 
 # 覆盖率的收集导出
 
