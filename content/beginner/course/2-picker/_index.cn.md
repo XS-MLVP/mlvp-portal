@@ -743,45 +743,46 @@ assert dut.random_number.value == 114514, "Mismatch"
 下面就是随机数生成器的验证代码：
 
 ```python
-# 代码来自：https://github.com/XS-MLVP/picker/blob/master/example/RandomGenerator/example.py
-from UT_RandomGenerator import *
+from RandomGenerator import *
+import random
 
-class LSRF_16:
+# 定义参考模型
+class LFSR_16:
     def __init__(self, seed):
         self.state = seed & ((1 << 16) - 1)
 
-    def step(self):
+    def Step(self):
         new_bit = (self.state >> 15) ^ (self.state >> 14) & 1
         self.state = ((self.state << 1) | new_bit ) & ((1 << 16) - 1)
 
 if __name__ == "__main__":
-    dut = DUTRandomGenerator()
-    dut.InitClock("clk")
-
-    seed = random.randint(0, 2**16 - 1)
-
-    dut.seed.value = seed
-    ref = LSRF_16(seed)
+    dut = DUTRandomGenerator()            # 创建DUT 
+    dut.InitClock("clk")                  # 指定时钟引脚，初始化时钟
+    seed = random.randint(0, 2**16 - 1)   # 生成随机种子
+    dut.seed.value = seed                 # 设置DUT种子
+    # reset DUT
+    dut.reset.value = 1                   # reset 信号置1
+    dut.Step()                            # 推进一个时钟周期（时序电路，需要通过Step推进）
+    dut.reset.value = 0                   # reset 信号置0
+    dut.Step()                            # 推进一个时钟周期
     
-    # 模块初始化
-    dut.reset.value = 1
-    dut.Step(1)
-    dut.reset.value = 0
-    dut.Step(1)
-		# 测试部分
-    for i in range(65536):
-        print(f"Cycle {i}, DUT: {dut.random_number.value:x}, REF: {ref.state:x}")
-        assert dut.random_number.value == ref.state, "Mismatch"
-        dut.Step(1)
-        ref.step()
+    ref = LFSR_16(seed)                   # 创建参考模型用于对比
 
-    print("Test Passed, destroy UT_RandomGenerator")
-    dut.Finish()
+    for i in range(65536):                # 循环65536次
+        dut.Step()                        # dut 推进一个时钟周期，生成随机数
+        ref.Step()                        # ref 推进一个时钟周期，生成随机数
+        rand = dut.random_number.value
+        assert rand == ref.state, "Mismatch"  # 对比DUT和参考模型生成的随机数
+        print(f"Cycle {i}, DUT: {rand:x}, REF: {ref.state:x}") # 打印结果
+    # 完成测试
+    print("Test Passed")
+    dut.Finish()    # Finish函数会完成波形、覆盖率等文件的写入
+
 ```
 
 在这里，我们用 Python 代码实现了一个类`LSRF_16`，它被用来模拟设计模块的预期行为，被称为**参考模型**。
 
-最终，我们通过一个循环，把设计周期每个模块的输出和参考模型的输出进行对比。当循环结束且没有报错，就代表这个模块的验证结束并且没有发现错误。
+最终，我们通过一个循环，把设计模块每个周期的输出和参考模型的输出进行对比。当循环结束且没有报错，就代表这个模块的验证结束并且没有发现错误。
 
 ---
 
