@@ -1,6 +1,6 @@
 ---
 title: '第二讲·Picker 的安装与使用'
-date: 2025-01-02T08:50:39+08:00
+date: 2025-07-30T15:12:30+08:00
 resource_tags: ["文档", "学习资料", "新手入门教程", "picker"]
 summary: "以 Python 语言为例，介绍 Picker 的安装与使用"
 weight: 2

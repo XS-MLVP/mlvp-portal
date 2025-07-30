@@ -1,12 +1,10 @@
 ---
 title: '第三讲·Toffee 的安装与使用'
-date: 2025-01-02T08:50:39+08:00
+date: 2025-07-30T15:12:30+08:00
 resource_tags: ["文档", "学习资料", "新手入门教程", "toffee"]
 summary: "掌握使用 Toffee 进行芯片验证的基本流程和关键技术，为后续独立完成验证任务打下基础"
 weight: 3
 ---
-
-
 
 # 简介
 
@@ -105,7 +103,7 @@ if __name__ == "__main__":
     dut.seed.value = seed                 # 设置DUT种子
     # reset DUT
     dut.reset.value = 1                   # reset 信号置1
-    dut.Step()                            # 推进一个时钟周期（DUTRandomGenerator是时序电路，需要通过Step推进）
+    dut.Step()                            # 推进一个时钟周期
     dut.reset.value = 0                   # reset 信号置0
     dut.Step()                            # 推进一个时钟周期
     
@@ -128,8 +126,7 @@ if __name__ == "__main__":
 # test_with_toffee.py
 from RandomGenerator import DUTRandomGenerator
 import random
-from toffee import start_clock, create_dut
-from toffee_test import ToffeeRequest
+import toffee_test
 
 
 # 定义参考模型
@@ -144,7 +141,15 @@ class LFSR_16:
 
 @toffee_test.testcase
 async def test_with_ref(dut: DUTRandomGenerator):
-    ref = LFSR_16(seed)                  # 创建参考模型用于对比
+    seed = random.randint(0, 2**16 - 1)  # 生成随机种子
+    dut.seed.value = seed                # 设置DUT种子
+    #### 初始化部分 ####
+    dut.reset.value = 1  # reset 信号置1
+    dut.Step()           # 推进一个时钟周期
+    dut.reset.value = 0  # reset 信号置0
+    dut.Step()           # 推进一个时钟周期
+    #### 初始化结束 ####
+    ref = LFSR_16(seed)  # 创建参考模型用于对比
 
     for i in range(65536):  # 循环65536次
         dut.Step()          # dut 推进一个时钟周期，生成随机数
@@ -155,17 +160,10 @@ async def test_with_ref(dut: DUTRandomGenerator):
 
 
 @toffee_test.fixture
-async def dut(toffee_request: ToffeeRequest):
+async def dut(toffee_request: toffee_test.ToffeeRequest):
     # 使用toffee创建DUT并绑定时钟
-    dut = create_dut(DUTRandomGenerator, "clk")
-    seed = random.randint(0, 2**16 - 1)  # 生成随机种子
-    dut.seed.value = seed                # 设置DUT种子
-    # reset DUT
-    dut.reset.value = 1  # reset 信号置1
-    dut.Step()           # 推进一个时钟周期（DUTRandomGenerator是时序电路，需要通过Step推进）
-    dut.reset.value = 0  # reset 信号置0
-    dut.Step()           # 推进一个时钟周期
-    return dut
+    rand_dut = toffee_request.create_dut(DUTRandomGenerator, "clk")
+    return rand_dut
 ```
 
 随后运行：
@@ -204,10 +202,9 @@ pytest . -sv --toffee-report
 @toffee_test.fixture # 1. 固定装饰器
 async def dut(toffee_request: toffee_test.ToffeeRequest): # 2. 固定参数 toffee_request
     # Fixture 的设置逻辑
-    print("Setting up DUT fixture...")
+    ...
     rand_dut = toffee_request.create_dut(DUTRandomGenerator, "clk")
-    toffee.start_clock(rand_dut)
-    print("DUT fixture setup complete.")
+    ...
     # 返回准备好的资源
     return rand_dut # 3. 返回值将被注入测试用例
 ```
@@ -216,7 +213,7 @@ async def dut(toffee_request: toffee_test.ToffeeRequest): # 2. 固定参数 toff
 
 1. **装饰器**：必须使用 `@toffee_test.fixture` 来声明这是一个 Toffee 测试的 Fixture。
 
-2. **固定参数 `toffee_request`**： Fixture **一定要**包含一个类型为 `toffee_test.ToffeeRequest` 的参数， 该参数也会提供一些实用的功能（如创建 DUT `create_dut`、添加覆盖组 `add_cov_groups`）；**框架会自动传入这个对象**。
+2. **固定参数 `toffee_request`**： Fixture **一定要**包含一个名称为`toffee_request`（它的类型为 `toffee_test.ToffeeRequest`） 的参数， 该参数也会提供一些实用的功能（如创建 DUT `create_dut`、添加覆盖组 `add_cov_groups`）；**框架会自动传入这个对象**。
 
 3. **返回值**：Fixture 函数通过 `return`来提供准备好的资源。
 

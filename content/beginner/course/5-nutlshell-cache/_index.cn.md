@@ -1,6 +1,6 @@
 ---
 title: '第五讲·实战案例：果壳 Cache'
-date: 2025-01-02T08:50:39+08:00
+date: 2025-07-30T15:12:30+08:00
 resource_tags: ["文档", "学习资料", "新手入门教程", "果壳 Cache"]
 summary: "介绍如何开始一个验证任务、完成 Chisel 到 Verilog 的转换，以及验证果壳 Cache 的要求"
 weight: 5
