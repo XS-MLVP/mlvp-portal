@@ -68,19 +68,18 @@ Picker 目前支持的 RTL 仿真器：
 
 * 包含 Picker 和 Toffee：`ghcr.io/xs-mlvp/envfull:latest`
 
-具体用法请查阅：https://github.com/XS-MLVP/tutorial-records
+具体用法请查阅：[https://github.com/XS-MLVP/tutorial-records](https://github.com/XS-MLVP/tutorial-records)
 
 ## 系统要求
 
 Picker 需要在 Linux 系统环境下运行，推荐使用以下发行版：
 
-1. Debian 12
+1. Debian 12/13
 
-2. Ubuntu 22.04LTS
+2. Ubuntu 22.04/24.04
 
-3. Ubuntu 24.04LTS
 
-> **注意**：下命令仅保证在上述列举的 Linux 发行版中正常工作，如果您使用其他发行版，遇到问题请自行解决。
+> **注意**：以下命令仅保证在上述列举的 Linux 发行版中正常工作，如果您使用其他发行版，遇到问题请自行解决。
 
 ## 依赖安装
 
