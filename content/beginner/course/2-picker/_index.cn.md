@@ -792,9 +792,11 @@ if __name__ == "__main__":
 
 对于代码覆盖率，需要保证在 Picker 创建 DUT 时添加`-c`参数，启动代码行覆盖率的自动收集。
 
-如果使用 Python 来验证硬件，功能覆盖率的收集需要使用 toffee-test。
+如果使用 Python 来验证硬件，功能覆盖率的收集需要使用 toffee 和 toffee-test：
 
-toffee-test 是一个用于为 toffee 框架提供测试支持的 Pytest 插件，它提供了测试报告生成功能。
+- toffee 是一个基于 Python的验证框架。
+
+- toffee-test 是一个用于为 toffee 框架提供测试支持的 Pytest 插件，它提供了测试报告生成功能。
 
 我们会在下一讲中详细介绍 toffee 和 toffee-test 的安装与使用，或者参考[仓库文档](https://github.com/XS-MLVP/toffee-test/)。这里只介绍如何使用 toffee-test 提供的覆盖率收集功能，以及如何导出收集的结果。
 

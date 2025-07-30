@@ -6,6 +6,8 @@ fenbao_tags: ["新手任务", "Picker"]
 summary: "熟悉 Picker 的基本用法"
 ---
 
+验证对象的代码和文档位于：[同步 FIFO 的设计规范和代码](../sync_fifo)。
+
 ## 准备工作
 
 1. 创建项目目录结构：

@@ -6,6 +6,7 @@ fenbao_tags: ["新手任务", "Toffee"]
 summary: "用 Toffee 搭建验证环境"
 ---
 
+验证对象的代码和文档位于：[同步 FIFO 的设计规范和代码](../sync_fifo)。
 
 ## 1. 用 toffee-test 管理测试用例
 
