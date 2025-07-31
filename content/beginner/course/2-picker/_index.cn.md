@@ -189,7 +189,7 @@ sudo apt purge -y swig
 
 <center><img src="./assets/swig-website.png" style="width: 90%"/></center>
 
-截止在编写教程时，我们得到源码的链接为`http://prdownloads.sourceforge.net/swig/swigwin-4.3.1.zip`
+截止在编写教程时，我们得到源码的链接为`wget http://prdownloads.sourceforge.net/swig/swig-4.3.1.tar.gz`
 
 > ❓如果我打开的 swig 网站版本跟截图里的不一样，该怎么办？
 > 没有问题，不低于 4.2.0 就行。
