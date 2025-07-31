@@ -365,7 +365,10 @@ if __name__ == "__main__":
 
 Toffee 提供了 `toffee.start_clock(dut)` 函数来解决这个问题。当你调用 `start_clock(dut)` 时（通常在测试环境初始化阶段，如 Fixture 中），Toffee 会在后台启动一个专门负责驱动 `dut` 时钟信号（需要预先通过 `create_dut` 或 `InitClock` 指定时钟引脚）的任务。这个任务会根据仿真时间步进持续地翻转时钟信号，从而驱动整个设计的时序前进。
 
-> **关键点**：`start_clock`只能在**异步函数**里调用。
+> `start_clock` **关键点**
+>
+> - 只能在**异步函数**里调用。
+> - 波形会**额外多一个周期**的结果，这个是为了后文提到的**监测方法（Monitor method）**刻意为之的。
 
 引入 `start_clock` 管理时钟和异步等待方法后的代码示例如下：
 
