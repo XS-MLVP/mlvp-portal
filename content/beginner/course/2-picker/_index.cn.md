@@ -361,21 +361,9 @@ picker export RandomGenerator.v --sname RandomGenerator -w RandomGenerator.fst -
 │   ├── libUT_RandomGenerator.py
 │   ├── libUTRandomGenerator.so
 │   ├── pli.tab
-│   ├── __pycache__
-│   │   ├── __init__.cpython-311.pyc
-│   │   └── libUT_RandomGenerator.cpython-311.pyc
 │   ├── signals.json
 │   ├── _UT_RandomGenerator.so
 │   └── xspcomm
-│       ├── info.py
-│       ├── __init__.py
-│       ├── libxspcomm.so.0.0.1
-│       ├── __pycache__
-│       │   ├── __init__.cpython-311.pyc
-│       │   └── pyxspcomm.cpython-311.pyc
-│       ├── pyxspcomm.py
-│       ├── _pyxspcomm.so -> _pyxspcomm.so.0.0.1
-│       └── _pyxspcomm.so.0.0.1
 └── RandomGenerator.v # 随机数生成器的设计文件
 ```
 
