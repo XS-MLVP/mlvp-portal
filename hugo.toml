@@ -96,3 +96,7 @@ defaultContentLanguageInSubdir = false
   [markup.highlight]
     # Choose from https://xyproto.github.io/splash/docs/all.html
     style = 'monokailight'
+  [markup.tableOfContents]
+    endLevel = 3
+    ordered = false
+    startLevel = 1
