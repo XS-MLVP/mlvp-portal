@@ -233,7 +233,7 @@ async def dut(toffee_request: toffee_test.ToffeeRequest): # 2. 固定参数 toff
 
 下图展示了 Fixture 如何为多个测试用例提供独立的 DUT 实例：
 
-```plain&#x20;text
+```bash
 +---------------------------+
 | fixture: dut()            |
 | return: DUTRandomGenerator|
@@ -271,7 +271,7 @@ async def dut(toffee_request: toffee_test.ToffeeRequest): # 2. 固定参数 toff
 
 通过使用 Fixture，我们可以有效地组织测试环境的准备工作，让测试用例本身更简洁、更专注于验证逻辑。关于 Fixture 的作用域（如 `session`、`module` 级别共享），可以查阅 pytest 和 python 的相关文档。
 
-## 测试用例的规范
+## 2.2 测试用例的规范
 
 一般来说，对于包含测试用例的文件，需要遵循：
 
@@ -279,7 +279,7 @@ async def dut(toffee_request: toffee_test.ToffeeRequest): # 2. 固定参数 toff
 
 2. 包含测试用例的文件要以`test_`为前缀或`_test`为后缀
 
-3. 每个测试用例（即函数或方法）的名称，需要以`test`为前缀，更具体的规则请参考[ pytest 文档](https://docs.pytest.org/en/stable/explanation/goodpractices.html#conventions-for-python-test-discovery)
+3. 每个测试用例（即函数或方法）的名称，需要以`test`为前缀，更具体的规则请参考 [pytest 文档](https://docs.pytest.org/en/stable/explanation/goodpractices.html#conventions-for-python-test-discovery)
 
 4. 每个测试用例要有和 fixture 函数同名的参数，这样才能让 pytest 注入结果
 
@@ -2152,3 +2152,21 @@ self.port_agent = AgentPort()
 - Python 文档中关于协程的部分：https://docs.python.org/zh-cn/3.11/library/asyncio-task.html
 
 - Python 异步编程 - 搞明白 async， await （继续解释 yield）： https://www.bilibili.com/video/BV1zJ7mzdEc8
+
+## Pytest 相关
+
+> 💡Pytest 本身的功能和生态非常强大，推荐阅读下面的内容：
+
+- [pytest 文档](https://docs.pytest.org/en/stable/index.html)
+
+- [如何调用 pytest](https://docs.pytest.org/en/stable/how-to/usage.html)
+
+- pytest 中 [fixture 的用法](https://docs.pytest.org/en/stable/how-to/fixtures.html)
+
+- pytest 中标记功能 [mark 的用法](https://docs.pytest.org/en/stable/how-to/mark.html)
+
+- pytest 实现[测试函数的参数化](https://docs.pytest.org/en/stable/how-to/parametrize.html)
+
+- 利用多核并行，加快测试用例运行速度：[pytest-xdist](https://pytest-xdist.readthedocs.io/en/stable/)
+
+    - > ⚠️警告：开启多核并行运行测试用例后，如果对比顺序运行测试用例的结果，发现覆盖率下降，说明顺序运行的一部分覆盖率是靠 DUT 初始状态的随机值给刷上去的，并非依赖输入激励的影响
