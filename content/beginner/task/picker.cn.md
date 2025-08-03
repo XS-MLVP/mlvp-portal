@@ -30,6 +30,27 @@ fifo_test/
 
 4. `把rst_n`的写模式修改为立即模式`Imme`，再和默认情况下的波形做一个比对
 
+5. 思考：在对模块进行初始化时，仅仅是对`rst_n`进行赋值就足够了吗？还需要注意什么？
+
+    - 可以阅读以下材料帮助你思考：
+
+    - >> (4.1 Value set) Verilog HDL 的数值集合包含四种基本值：
+        >>
+        >> - `0`：表示逻辑零或假条件
+        >> - `1`：表示逻辑一或真条件
+        >> - `x`：表示**未知逻辑值**
+        >> - `z`：表示**高阻态**
+        >
+        >> (4.2.1 Net declarations) `wire` 类型的初始值为 `z`
+        >
+        >> (4.2.2 Variable declarations) `reg` 类型的初始值为 `x`
+        >
+        >—— 来自[IEEE Std 1364-2005, IEEE Standard for Verilog® Hardware Description Language](https://ieeexplore.ieee.org/document/1620780)
+
+    - > > Verilator 本质上是一个二态仿真器，所以对于 `x` 和 `z` 值会分配一个具体的常量值，可以是随机数也可以只固定值，具体取决于[相关选项](https://veripool.org/guide/latest/exe_verilator.html#cmdoption-9)的控制。
+        >
+        > —— 来自 Verilator 文档的 [Unknown States](https://veripool.org/guide/latest/languages.html#unknown-states) 部分
+
 ## 2. 编写复位测试
 
 在测试用例`test_reset_dut`的基础上，测试完成复位后，用`assert`判断 FIFO 的输出、读写指针是否为 0
