@@ -12,7 +12,7 @@ summary: "熟悉 Picker 的基本用法"
 
 1. 创建项目目录结构：
 
-```
+```bash
 fifo_test/
 ├── rtl/        # 放置FIFO的RTL代码
 └── test_smoke.py  # 测试用例文件
