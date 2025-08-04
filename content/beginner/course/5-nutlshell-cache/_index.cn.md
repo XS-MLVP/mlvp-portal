@@ -118,19 +118,18 @@ cd cache-ut
 
 ### 配置 Mill
 
-> ⚠️警告：以下内容参考2025年08月04日15:22访问的 [Mill - Installation & IDE Setup/Bootstrap Scripts](https://mill-build.org/mill/cli/installation-ide.html) 部分，如果下面内容失效，请以 [Mill 文档](https://mill-build.org/mill/index.html)的内容为主！
-
 在 `cache-ut` 目录下执行以下命令：
 ```bash
-curl -L https://repo1.maven.org/maven2/com/lihaoyi/mill-dist/1.0.2/mill-dist-1.0.2-mill.sh -o mill
-chmod +x mill
-echo "//| mill-version: 1.0.2" > build.mill
-./mill version
+curl -L https://github.com/com-lihaoyi/mill/releases/download/0.11.13/0.11.13 > mill && chmod +x mill
+echo 0.11.13 > .mill-version
 ```
 
-如果最后几行包含：
+> ⚠️警告：高于 `0.11.13` 的 mill 版本可能会导致失败
+
+如果执行`./mill --version`包含：
+
 ```bash
-Mill Build Tool version 1.0.2
+Mill Build Tool version 0.11.13
 ```
 
 代表已经配置好 mill 了。
