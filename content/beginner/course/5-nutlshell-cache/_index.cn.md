@@ -124,7 +124,7 @@ curl -L https://github.com/com-lihaoyi/mill/releases/download/0.11.13/0.11.13 > 
 echo 0.11.13 > .mill-version
 ```
 
-> ⚠️警告：高于 `0.11.13` 的 mill 版本可能会导致失败
+> ⚠️警告：高于 `0.11.x` 的 mill 版本可能会导致失败
 
 如果执行`./mill --version`包含：
 
