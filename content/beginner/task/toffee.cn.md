@@ -40,13 +40,15 @@ pythonpath = "./"
 
 本次练习中，需要创建指定的 Bundle 类对 DUT 进行封装，然后编写一些新的测试用例：
 
-1. 封装 FIFO 的端口：
+1. 请根据**端口功能**，封装 FIFO 的端口：
 
-    - 创建 `WriteBundle` 类，包含写入相关的端口
+    - 创建 `WriteBundle` 类，包含**向FIFO 写入数据**的相关端口。
 
-    - 创建 `ReadBundle` 类，包含读取相关的端口
+    - 创建 `ReadBundle` 类，包含**从FIFO读取数据**的相关端口。
 
-    - 创建 `InternalBundle` 类，用于封装 FIFO 内部状态信号
+    - 创建 `InternalBundle` 类，用于封装 FIFO 内部状态信号。
+
+    - 如果你觉得还需要补充其他 Bundle，请自行实现。
 
 2. 为 `ReadBundle` 添加 `dequeue` 方法： 实现方法 `dequeue(self)`，该方法执行一次读取操作。
 
