@@ -155,7 +155,7 @@ make -j
 sudo -E make install
 ```
 
-然后在命令行里输入`verilator --version`，出现类似下图内容表示安装成功：
+然后在命令行里输入`verilator -version`，出现类似下图内容表示安装成功：
 
 <img src="./assets/verilator-version.png" style="width: 40%; min-width: 550px"/>
 
