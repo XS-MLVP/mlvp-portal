@@ -462,6 +462,7 @@ weight: 1
 这就要求我们掌握：
 
 1. Verilog 基础
+    - 推荐视频：[从电路设计的角度入门VerilogHDL](https://www.bilibili.com/video/BV1PS4y1s7XW)
 
 2. Chisel 基础
 
