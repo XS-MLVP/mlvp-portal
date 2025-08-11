@@ -493,6 +493,8 @@ print(adder_bundle.sum.value)
 print(adder_bundle.cout.value)
 ```
 
+> ⚠️警告：<font color="red">**不推荐**重写 Bundle 的构造方法 </font>，除非你对 Bundle 的代码实现非常熟悉！
+
 ## 4.2 将 DUT 绑定到 Bundle
 
 仅仅创建 `Bundle` 实例并对其进行操作，还无法影响到实际的硬件设计 （DUT）。我们需要将 `Bundle` 与 DUT 的端口进行“绑定”，建立连接。
