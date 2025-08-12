@@ -6,6 +6,10 @@ summary: "了解芯片验证的基础知识"
 weight: 1
 ---
 
+🎬直播回放：[第一讲·芯片验证基础知识](https://www.bilibili.com/video/BV1S8bVz3Euh)
+
+---
+
 {{<toc>}}
 
 
