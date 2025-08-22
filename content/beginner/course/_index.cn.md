@@ -27,8 +27,8 @@ schedule: 3
 | 2025年8月1日（周五）晚7:30  |    第二讲：Picker 的安装和使用    | [🎬](https://www.bilibili.com/video/BV1btbVzkEQK) |
 | 2025年8月5日（周二）晚7:30  | 第三讲：Toffee 的安装和使用（上） | [🎬](https://www.bilibili.com/video/BV1b8bVz3EFw) |
 | 2025年8月8日（周五）晚7:30  | 第三讲：Toffee 的安装和使用（下） | [🎬](https://www.bilibili.com/video/BV1U8bVz3Eig) |
-| 2025年8月12日（周二）晚7:30 |     第四讲：进阶案例·双端口栈     |                     敬请期待                     |
-| 2025年8月15日（周五）晚7:30 |    第五讲：实战案例·果壳Cache     |                     敬请期待                     |
+| 2025年8月12日（周二）晚7:30 |     第四讲：进阶案例·双端口栈     | [🎬](https://www.bilibili.com/video/BV1T4bnz4EEB) |
+| 2025年8月15日（周五）晚7:30 |    第五讲：实战案例·果壳Cache     | [🎬](https://www.bilibili.com/video/BV1KGYUzLEHN) |
 
 </center>
 
