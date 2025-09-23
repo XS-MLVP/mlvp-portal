@@ -6,7 +6,7 @@ summary: "以 Python 语言为例，介绍 Picker 的安装与使用"
 weight: 2
 ---
 
-🎬直播回放：[第二讲·Picker的安装和使用](https://www.bilibili.com/video/BV1btbVzkEQK)
+<center><iframe src="//player.bilibili.com/player.html?isOutside=true&aid=115008604215641&bvid=BV1btbVzkEQK&cid=31619745234&p=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="width:80%; aspect-ratio: 16/9"></iframe></center>
 
 ---
 
