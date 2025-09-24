@@ -1,6 +1,6 @@
 ---
 title: '新手入门任务'
-date: 2025-01-02T08:50:39+08:00
+date: 2025-09-24T08:50:39+08:00
 draft: false
 resource_tags: ["文档", "学习资料"]
 status: "seeding"
@@ -15,7 +15,7 @@ schedule: 2
 
 ## 1. 新手任务参与方式
 
-+ **Step1**：[点击此处](https://www.wjx.top/vm/rxpBe1j.aspx)填写报名表。
++ **Step1**：[点击此处](https://www.wjx.top/vm/P7MqjP0.aspx# )填写报名表。
 
 + **Step2**：收到邮件，加入新手任务交流群（QQ群号：1033196714）。
 

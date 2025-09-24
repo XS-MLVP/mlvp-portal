@@ -6,7 +6,7 @@ summary: "了解芯片验证的基础知识"
 weight: 1
 ---
 
-<center><iframe src="//player.bilibili.com/player.html?isOutside=true&aid=115008587501643&bvid=BV1S8bVz3Euh&cid=31619483445&p=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="width:80%; aspect-ratio: 16/9"></iframe></center>
+<center><iframe src="//player.bilibili.com/player.html?isOutside=true&aid=115008587501643&bvid=BV1S8bVz3Euh&cid=31619483445&p=1&poster=1&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="width:80%; aspect-ratio: 16/9"></iframe></center>
 
 ---
 
