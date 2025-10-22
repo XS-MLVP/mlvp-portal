@@ -5,8 +5,9 @@ draft: false
 fenbao_tags: ["验证案例", "RACE", "Vector", "FAdd", "UT验证"]
 status: "Continuing"
 task_closed: false
-home_page_show: false
+home_page_show: true
 Weight: 11
+summary: "在实战中理解 RISC-V V拓展"
 schedule: 2
 difficult: 5
 ---
