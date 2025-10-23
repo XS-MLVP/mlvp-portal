@@ -1,8 +1,8 @@
 ---
-title: "UT实战第十期：向量 LaneFAdd 模块 UT 验证实战(进行中)"
+title: "UT实战第十期：AI 向量处理器——浮点混合加法模块验证实战 (进行中)"
 date: 2025-10-22T13:56:05+08:00
 draft: false
-fenbao_tags: ["验证案例", "RACE", "Vector", "FAdd", "UT验证"]
+fenbao_tags: ["验证案例", "RACE", "Vector", "FloatAdd", "UT验证"]
 status: "Continuing"
 task_closed: false
 home_page_show: true
@@ -12,7 +12,8 @@ schedule: 2
 difficult: 5
 ---
 
-本期验证任务要求参与者完成基于 RISC-V "V" 扩展的 LaneFAdd 向量浮点运算单元的功能验证，通过在实战中加深对 RISC-V 向量扩展的理解。LaneFAdd 支持该规范中的大部分浮点指令操作，本次任务将提供经 Chisel 转换生成的 Verilog 代码（**原始 Chisel 设计源代码不予提供**）。
+本期验证任务要求参与者完成基于 RISC-V "V" 扩展实现的 **向量浮点混合加法模块(LaneFAdd)** 的功能验证，通过在实战中加深对 RISC-V 向量扩展的理解。
+LaneFAdd 支持该规范中的浮点加减法及浮点比较等指令，并且额外支持AI所需的BF16浮点格式，本次任务将提供经 Chisel 转换生成的 Verilog 代码（**原始 Chisel 设计源代码不予提供**）。
 
 欢迎各位报名参加，请填写[报名问卷](https://www.wjx.top/vm/wFU6suy.aspx#)并加入交流群:
 
@@ -26,7 +27,7 @@ difficult: 5
 参与本次验证任务需要完成以下步骤：
 
 1. **填写报名问卷[报名问卷](https://www.wjx.top/vm/wFU6suy.aspx#)**
-2. **加入LaneFAdd交流群(上方的微信群)**
+2. **加入 LaneFAdd 验证交流群(上方的微信群)**
 3. **完成验证工作**：基于 [ut-vector-fadd](https://github.com/RACE-org/ut-vector-fadd) 仓库提供的验证环境开展验证
 4. **提交PR**：将验证结果通过Pull Request方式提交至该仓库
 
@@ -61,7 +62,7 @@ difficult: 5
 
 本次验证任务将以线上实习的方式进行，**名额有限**，任务完成后将得到2000元的基础奖金。
 
-此外，如果为LaneFAdd模块**找出bug并反馈确认后**，还会有额外奖金。
+此外，如果为 LaneFAdd 模块**找出 bug 并反馈确认后**，还会有额外奖金。
 
 # 任务详情
 
@@ -71,4 +72,4 @@ difficult: 5
 
 请填写[报名问卷](https://www.wjx.top/vm/wFU6suy.aspx#)参与本期任务，也欢迎加入万众一芯官方qq群：**600480230**。
 
-如有疑问可在qq群中联系群主，或联系万众一芯官方邮箱：unitychip@bosc.ac.cn。
+如有疑问可在微信群或qq群中联系群主，或联系万众一芯官方邮箱：unitychip@bosc.ac.cn。
