@@ -45,12 +45,17 @@ VectorIdiv 是一个支持多种数据位宽的向量整数除法器模块。它
 ### UCAgent使用
 
 UCAgent提供了两种方式与LLM进行交互。一种通过标准化API与大语言模型进行直接交互，另一种则是通过MCP协议与通用Code Agent进行深度协同。**（需要注意的是，token效率赛道需要使用API模式，并对UCAgent进行自定义配置，从而达到更好的效率）**
+
 以MCP模式为例，通过 `make mcp_VectorIdiv  `即可启动该模式的tui界面。然后在 ` UCAgent/output `文件夹下，在所用Code Agent的CLI界面中输入提示词:
- 请通过工具RoleInfo获取你的角色信息和基本指导，然后完成任务。请使用工具ReadTextFile读取文件。你需要在当前工作目录进行文件操作，不要超出该目录。 
+
+>请通过工具RoleInfo获取你的角色信息和基本指导，然后完成任务。请使用工具ReadTextFile读取文件。你需要在当前工作目录进行文件操作，不要超出该目录。
+
 即可开启验证。
 
 若Code Agent中途中断，可输入:
-  继续，请通过工具Check和Complete判断是否完成所有任务 
+
+>继续，请通过工具Check和Complete判断是否完成所有任务 
+
 提示词继续验证。
 
 验证生成的文件可在 `output `文件夹中查看。
