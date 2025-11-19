@@ -14,35 +14,23 @@ difficult: 5
 
 ## 活动简介
 
-本次黑客马拉松以“AI驱动开源芯片验证”为主题，聚焦基于大语言模型的硬件验证智能体UCAgent的实际应用。各位将在限定时间内，利用UCAgent人机协同进行模块验证，分析生成失败的测试用例，找出题目当中的BUG/提升token效率。希望让大家能体验到使用 UCAgent 工具在开源验证中的便利，同时作为开发者参与到开源芯片验证的生态当中。
+欢迎参加本次黑客马拉松！本次黑客马拉松以“AI驱动开源芯片验证”为主题，聚焦基于大语言模型的硬件验证智能体UCAgent的实际应用。各位将在限定时间内，利用UCAgent人机协同进行模块验证，分析生成的fail case，找出题目当中的BUG或提升token效率。通过参与，您不仅能体验UCAgent工具在开源验证中的便利，还能作为开发者参与到开源芯片验证的生态中。
 
-## 热身赛题
+- **任务**：本次活动提供了**15**个手工注入的bug供大家进行发现，共有两个赛道：**找bug赛道**/**token效率赛道**，，找出bug分析并提交结果。
+- **难度分级**：每个模块含有5个bug对应5个rtl文件，分为**1、2题为简单难度；3题为中等难度；4、5题困难难度**。
+- **排名资格**：各组需要**至少找到一共5个Bug**才能获得排名资格。 
 
-我们提供了**15**个手工注入的bug的rtl文件作为UCAgent的输入，各位需要使用UCAgent选择**找bug赛道**/**token效率赛道**，人机协同进行验证，找出bug分析并提交结果。
-
-每个模块含有五个bug，每个bug对应一个rtl文件，分为**1、2题为简单难度；3题为中等难度；4、5题困难难度**。
-
-各组需要**至少找到一共5个Bug**才能获得排名资格。
-
-### YunSuan介绍
-
-本期赛题选自香山昆明湖架构的YunSuan运算功能单元三个向量计算模块：向量浮点融合乘加器、向量浮点加法器和向量整数除法器。
-
-YunSuan模块是开源高性能RISC-V处理器项目XiangShan（香山）的核心组成部分，专门负责实现处理器的各种算术和逻辑运算功能，包括整数运算单元、浮点运算单元、向量处理单元等。YunSuan模块与XiangShan处理器的流水线紧密集成，为RISC-V指令集提供完整的运算支持。
-
-其中VectorIdiv 是一个支持多种数据位宽的向量整数除法器模块。它通过并行实例化多个不同位宽的除法子模块来处理向量数据，采用状态机控制除法流程，最终输出商、余数向量和除零标志。该设计实现了高效的向量化整数除法运算。
+为使大家能够高效地找到bug，我们提供了**UCAgent**工具。下面将以VectorIdiv模块的第一个bug为例，演示如何使用UCAgent进行验证并提交结果。
 
 ## 热身演示
 
-### 第一步 使用UCAgent
+### 第一步 使用UCAgent快速寻找fail case
 
-UCAgent提供了两种方式与LLM进行交互。一种通过标准化API与大语言模型进行直接交互，另一种则是通过MCP协议与通用Code Agent进行深度协同。**（需要注意的是，token效率赛道需要使用API模式，并对UCAgent进行自定义配置，从而达到更好的效率）**
+详细使用方法请参考[UCAgent使用手册](https://open-verify.cc/mlvp/docs/ucagent)。
+提示：建议先熟悉UCAgent的基本操作，再开始正式任务。
+### 第二步 基于fail case进行bug分析
 
-UCAgent使用方法可参考[UCAgent使用手册](https://open-verify.cc/mlvp/docs/ucagent)。
-
-### 第二步 找bug
-
-由UCAgent生成的 `VectorIdiv_bug_analysis.md `文档中了本次验证所跑出的所有bug，并给出了详细的bug分析：
+UCAgent会在`output/unity_test/tests`目录下生成一份`VectorIdiv_bug_analysis.md` 文档，列出所有检测到的bug并提供详细分析。例如：
 
 ```markdown
 ## VectorIdiv 缺陷分析
@@ -80,64 +68,52 @@ UCAgent使用方法可参考[UCAgent使用手册](https://open-verify.cc/mlvp/do
     应将 `YOzhvk` 信号连接到 `io_d_zero` 输出，或者使用 `YOzhvk` 来设置一个在除零时会置位的寄存器，并最终驱动 `io_d_zero`。
 ```
 
-由于bug中包含假阳性bug，即测试用例不符合要求等原因导致的非源码类报错，因此需要结合阅读Spec文档分析失败的测试用例，分析出真正的bug：
+**注意**：bug报告中可能包含假阳性bug（即测试用例不符合要求导致的非源码类报错），因此需要结合阅读Spec文档分析失败的测试用例，以识别真正的bug。
+例如：
 
-第一个bug通过阅读Spec文档，由于-128除以-1得到的128超出了RISC-V向量规范导致的报错，并非源码类bug，因此忽略。<br>
-第二个bug通过分析spec文档中，整数除法的行为在“12.2 Division Operations”部分有明确规定。该部分指出：<br>
->整数除法操作（包括向量整数除法）在除零时不应触发硬件异常，而是浮点异常设置标志，返回定义好的值（商为全1，余数为被除数）。
+- 第一个bug（-128除以-1）通过阅读Spec文档发现，这是由于结果超出RISC-V向量规范导致的报错，并非源码bug，可忽略。<br>
+- 第二个bug（除零异常）通过分析Spec文档（第12.2节）确认：整数除法在除零时应返回定义值（商为全1，余数为被除数），而不应触发硬件异常。但测试中io_d_zero信号未置位，这表明是真正的源码bug。
 
-与在测试中发现，即使除数为零，`io_d_zero` 信号异常标志仍然为零。
-因此我们可以推测本次bug为除数为0时，io_d_zero未被设置为高电平状态。
+
 
 ### 第三步 提交结果
 
-在找到了Bug后，参赛小组需要给出：
-
-1. Bug报告：说明Bug的触发位置、原因与该Bug对应Spec当中要求不符的章节与行数；
+找到Bug后，请提交以下内容：
 
 <table style="width: 100%; min-width: auto;">
   <tr>
-    <th style="width: 15%;">名称</th>
-    <th style="width: 15%;">功能概述</th>
-    <th style="width: 25%;">文件/代码行</th>
-    <th style="width: 10%;">功能点约束</th>
-    <th style="width: 25%;">难度预估</th>
-    <th style="width: 10%;">spec链接</th>
+    <th style="width: 25%;">所在文件名</th>
+    <th style="width: 25%;">bug说明</th>
+    <th style="width: 25%;">fail case文件相关</th>
+    <th style="width: 25%;">Spec不一致的章节内容</th>
   </tr>
   <tr>
-    <td>VectorIdiv_bug_1</td>
-    <td> d_zero标记位未被设置为高电平状态 </td>
-    <td>test_VectorIdiv_templates.py</td>
-    <td>156</td>
-    <td>12.2 Division Operations：有符号整数除法（div）在遇到极端情况时（如除以零或溢出）不会报错或触发异常，而是返回一个定义的值：如果除数为零，结果所有位设置为1</td>
-    <td>4096</td>
+    <td>例如VectorIdiv_bug_1.v</td>
+    <td> 说明触发bug的fail case、原因 </td>
+    <td>output文件夹打包</td>
+    <td>该Bug对应Spec当中要求不符的章节与内容</td>
   </tr>
 </table>
 
-2. 将UCAgent生成的`tests`文件夹打包
-
-
-将以上文件进行上传，提交到指定平台。
+将以上文件上传到指定平台即可完成提交。
 
 
 
 ## 热身学习资源
 
-这里给出**三个无bug版本rtl和一个有bug版本rtl**供各位参赛者熟悉UCAgent验证流程：
+为了帮助您快速上手，我们提供了以下资源：
+**无bug版本rtl：**
+- **[VectorFMA_origin.v：https://github.com/XS-MLVP/Hackathon/blob/main/origin_file/VectorFMA_origin.v](https://github.com/XS-MLVP/Hackathon/blob/main/origin_file/VectorFMA_origin.v)**
+- **[VectorFloatAdder_origin.v：https://github.com/XS-MLVP/Hackathon/blob/main/origin_file/VectorFloatAdder_origin.v](https://github.com/XS-MLVP/Hackathon/blob/main/origin_file/VectorFloatAdder_origin.v)**
+- **[VectorIdiv_origin.v：https://github.com/XS-MLVP/Hackathon/blob/main/origin_file/VectorIdiv_origin.v](https://github.com/XS-MLVP/Hackathon/blob/main/origin_file/VectorIdiv_origin.v)**
 
-**[VectorFMA_origin](/hackathon/VectorFMA.v)**
-
-**[VectorFAdd无bug版本](/hackathon/VectorFAdd.v)**
-
-**[VectorIdiv无bug版本](/hackathon/VectorIdiv.v)**
-
-**[VectorIdiv_bug_1](/hackathon/VectorIdiv_BUG1.v)**
+**有bug版本rtl：**
+- **[VectorIdiv_bug_1.v：https://github.com/XS-MLVP/Hackathon/blob/main/bug_file/VectorIdiv_bug_1.v](https://github.com/XS-MLVP/Hackathon/blob/main/bug_file/VectorIdiv_bug_1.v)**
 
 **SPEC链接：**
 
-**[向量整数除法指令](https://docs.riscv.org/reference/isa/unpriv/v-st-ext.html#vector-integer-divide-instructions)**
-
-**[向量浮点指令](https://docs.riscv.org/reference/isa/unpriv/v-st-ext.html#sec-vector-float)**
+- **[向量整数除法指令:https://docs.riscv.org/reference/isa/unpriv/v-st-ext.html#vector-integer-divide-instructions](https://docs.riscv.org/reference/isa/unpriv/v-st-ext.html#vector-integer-divide-instructions)**
+- **[向量浮点指令:https://docs.riscv.org/reference/isa/unpriv/v-st-ext.html#sec-vector-float](https://docs.riscv.org/reference/isa/unpriv/v-st-ext.html#sec-vector-float)**
 
 **UCAgent链接：[https://github.com/XS-MLVP/UCAgent](https://github.com/XS-MLVP/UCAgent)**
 
