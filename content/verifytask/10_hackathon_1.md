@@ -95,7 +95,7 @@ UCAgent使用方法可参考[UCAgent使用手册](https://open-verify.cc/mlvp/do
 
 1. Bug报告：说明Bug的触发位置、原因与该Bug对应Spec当中要求不符的章节与行数；
 
-<table style="width: 100%; min-width: 800px;">
+<table style="width: 100%; min-width: auto;">
   <tr>
     <th style="width: 15%;">名称</th>
     <th style="width: 15%;">功能概述</th>
@@ -112,6 +112,7 @@ UCAgent使用方法可参考[UCAgent使用手册](https://open-verify.cc/mlvp/do
     <td>12.2 Division Operations：有符号整数除法（div）在遇到极端情况时（如除以零或溢出）不会报错或触发异常，而是返回一个定义的值：如果除数为零，结果所有位设置为1</td>
     <td>4096</td>
   </tr>
+</table>
 
 2. 将UCAgent生成的`tests`文件夹打包
 
