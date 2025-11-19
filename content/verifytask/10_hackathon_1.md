@@ -16,19 +16,19 @@ difficult: 5
 
 欢迎参加本次黑客马拉松！本次黑客马拉松以“AI驱动开源芯片验证”为主题，聚焦基于大语言模型的硬件验证智能体UCAgent的实际应用。各位将在限定时间内，利用UCAgent人机协同进行模块验证，分析生成的fail case，找出题目当中的BUG或提升token效率。通过参与，您不仅能体验UCAgent工具在开源验证中的便利，还能作为开发者参与到开源芯片验证的生态中。
 
-- **任务**：本次活动提供了**15**个手工注入的bug供大家进行发现，共有两个赛道：**找bug赛道**/**token效率赛道**，，找出bug分析并提交结果。
-- **难度分级**：每个模块含有5个bug对应5个rtl文件，分为**1、2题为简单难度；3题为中等难度；4、5题困难难度**。
-- **排名资格**：各组需要**至少找到一共5个Bug**才能获得排名资格。 
+- **赛题任务**：本次活动提供了**15**个手工注入的bug供大家进行发现，共有两个赛道：**找bug赛道**/**token效率赛道**，，找出bug分析并提交结果。
+- **难度分级**：每个模块含有5个bug对应5个rtl文件，分为**简单难度2个（每个100分）；中等难度1个（每个300分）；困难难度2个（每个500分）**。
+- **排名资格**：**至少找到一共5个Bug**才能获得排名资格。 
 
 为使大家能够高效地找到bug，我们提供了**UCAgent**工具。下面将以VectorIdiv模块的第一个bug为例，演示如何使用UCAgent进行验证并提交结果。
 
 ## 热身演示
 
-### 第一步 使用UCAgent快速寻找fail case
+### 第一步 使用UCAgent快速寻找Fail case
 
 详细使用方法请参考[UCAgent使用手册](https://open-verify.cc/mlvp/docs/ucagent)。
 提示：建议先熟悉UCAgent的基本操作，再开始正式任务。
-### 第二步 基于fail case进行bug分析
+### 第二步 基于Fail case进行bug分析
 
 UCAgent会在`output/unity_test/tests`目录下生成一份`VectorIdiv_bug_analysis.md` 文档，列出所有检测到的bug并提供详细分析。例如：
 
@@ -71,8 +71,8 @@ UCAgent会在`output/unity_test/tests`目录下生成一份`VectorIdiv_bug_analy
 **注意**：bug报告中可能包含假阳性bug（即测试用例不符合要求导致的非源码类报错），因此需要结合阅读Spec文档分析失败的测试用例，以识别真正的bug。
 例如：
 
-- 第一个bug（-128除以-1）通过阅读Spec文档发现，这是由于结果超出RISC-V向量规范导致的报错，并非源码bug，可忽略。<br>
-- 第二个bug（除零异常）通过分析Spec文档（第12.2节）确认：整数除法在除零时应返回定义值（商为全1，余数为被除数），而不应触发硬件异常。但测试中io_d_zero信号未置位，这表明是真正的源码bug。
+- 第一个疑似bug（-128除以-1）分析：通过阅读Spec文档发现，这是由于结果超出RISC-V向量规范导致的报错，并非源码bug，可忽略。<br>
+- 第二个疑似bug（除零异常）分析：通过分析Spec文档（第12.2节）确认：整数除法在除零时应返回定义值（商为全1，余数为被除数），而不应触发硬件异常。但测试中io_d_zero信号未置位，这表明是真正的源码bug。
 
 
 
@@ -83,8 +83,8 @@ UCAgent会在`output/unity_test/tests`目录下生成一份`VectorIdiv_bug_analy
 <table style="width: 100%; min-width: auto;">
   <tr>
     <th style="width: 25%;">所在文件名</th>
-    <th style="width: 25%;">bug说明</th>
-    <th style="width: 25%;">fail case文件相关</th>
+    <th style="width: 25%;">Bug说明</th>
+    <th style="width: 25%;">Fail case文件相关</th>
     <th style="width: 25%;">Spec不一致的章节内容</th>
   </tr>
   <tr>
@@ -95,15 +95,16 @@ UCAgent会在`output/unity_test/tests`目录下生成一份`VectorIdiv_bug_analy
   </tr>
 </table>
 
-将以上文件上传到指定平台即可完成提交。
+将以上文件上传到指定平台即可完成提交。（平台暂未开放）
 
 
 
 ## 热身学习资源
 
 为了帮助您快速上手，我们提供了以下资源：
+
 **无bug版本rtl：**
-- **[VectorFMA_origin.v：https://github.com/XS-MLVP/Hackathon/blob/main/origin_file/VectorFMA_origin.v](https://github.com/XS-MLVP/Hackathon/blob/main/origin_file/VectorFMA_origin.v)**
+- **[VectorFloatFMA_origin.v：https://github.com/XS-MLVP/Hackathon/blob/main/origin_file/VectorFloatFMA_origin.v](https://github.com/XS-MLVP/Hackathon/blob/main/origin_file/VectorFloatFMA_origin.v)**
 - **[VectorFloatAdder_origin.v：https://github.com/XS-MLVP/Hackathon/blob/main/origin_file/VectorFloatAdder_origin.v](https://github.com/XS-MLVP/Hackathon/blob/main/origin_file/VectorFloatAdder_origin.v)**
 - **[VectorIdiv_origin.v：https://github.com/XS-MLVP/Hackathon/blob/main/origin_file/VectorIdiv_origin.v](https://github.com/XS-MLVP/Hackathon/blob/main/origin_file/VectorIdiv_origin.v)**
 
