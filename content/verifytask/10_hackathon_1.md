@@ -96,9 +96,9 @@ UCAgent使用方法可参考[UCAgent使用手册](https://open-verify.cc/mlvp/do
 
 1. Bug报告：说明Bug的触发位置、原因与该Bug对应Spec当中要求不符的章节与行数；
 
-｜Bug名｜Bug原因｜对应测试用例文件|在用例中的行数｜与Spec不符内容｜token消耗总计（赛道2）｜
-| ---- |----|----|----|----|----｜
-｜VectorIdiv_bug_1｜d_zero标记位未被设置为高电平状态｜test_VectorIdiv_templates.py|156|11.11 Vector Integer Divide Instructions：有符号整数除法（div）在遇到极端情况时（如除以零或溢出）不会报错或触发异常，而是返回一个定义的值：如果除数为零，结果所有位设置为1（即-1）|4096|
+｜Bug名|Bug原因|对应测试用例文件|在用例中的行数|与Spec不符内容|token消耗总计（赛道2）|
+|---- |----|----|----|----|----|
+|VectorIdiv_bug_1|d_zero标记位未被设置为高电平状态|test_VectorIdiv_templates.py|156|11.11 Vector Integer Divide Instructions：有符号整数除法（div）在遇到极端情况时（如除以零或溢出）不会报错或触发异常，而是返回一个定义的值：如果除数为零，结果所有位设置为1（即-1）|4096|
 
 2. 将UCAgent生成的`tests`文件夹打包
 
