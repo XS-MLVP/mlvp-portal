@@ -82,10 +82,10 @@ UCAgent使用方法可参考[UCAgent使用手册](https://open-verify.cc/mlvp/do
 
 由于bug中包含假阳性bug，即测试用例不符合要求等原因导致的非源码类报错，因此需要通过阅读文档分析file case，结合，分析出真正的bug：
 
->第一个bug由于-128除以-1得到的128超出了RISC-V向量规范导致的报错，并非源码类bug，因此忽略。
+>第一个bug由于-128除以-1得到的128超出了RISC-V向量规范导致的报错，并非源码类bug，因此忽略。<br>
 >第二个bug通过分析spec文档与代码逻辑推测为io_d_zero标记位未拉高。
 
-因此我们可以发现本次bug为io_d_zero标记位未被设置为高电平状态，即除数为0时，io_d_zero未被设置为高电平状态。
+因此我们可以推测本次bug为除数为0时，io_d_zero未被设置为高电平状态。
 
 ### 第三步 提交结果
 
@@ -93,11 +93,11 @@ UCAgent使用方法可参考[UCAgent使用手册](https://open-verify.cc/mlvp/do
 
 1. Bug报告：说明Bug的触发位置、原因与该Bug对应Spec当中要求不符的章节与行数；
 
->VectorIdiv_bug_1报告：
->该bug所在源码文件为：VectorIdiv_BUG1.v
->该bug所在失败用例文件行数：test_VectorIdiv_templates.py 第156行
->bug触发可能的原因：该bug为“d_zero标记位未被设置为高电平状态”触发（赛道2需添加token消耗总计）。
->该bug所在Spec链接为：https://docs.riscv.org/reference/isa/unpriv/v-st-ext.html#vector-integer-divide-instructions
+>VectorIdiv_bug_1报告：<br>
+>该bug所在源码文件为：VectorIdiv_BUG1.v<br>
+>该bug所在失败用例文件行数：test_VectorIdiv_templates.py 第156行<br>
+>bug触发可能的原因：该bug为“d_zero标记位未被设置为高电平状态”触发（赛道2需添加token消耗总计）。<br>
+>该bug所在Spec链接为：https://docs.riscv.org/reference/isa/unpriv/v-st-ext.html#vector-integer-divide-instructions<br>
 >该bug与所在Spec链接章节要求不符：11.11 Vector Integer Divide Instructions
 
 2. 将UCAgent生成的`tests`文件夹打包
@@ -111,13 +111,13 @@ UCAgent使用方法可参考[UCAgent使用手册](https://open-verify.cc/mlvp/do
 
 这里给出**三个无bug版本rtl和一个有bug版本rtl**供各位参赛者熟悉UCAgent验证流程：
 
-[VectorFMA无bug版本](/hackathon/VectorFMA.v)
+**[VectorFMA无bug版本](/hackathon/VectorFMA.v)**
 
-[VectorFAdd无bug版本](/hackathon/VectorFAdd.v)
+**[VectorFAdd无bug版本](/hackathon/VectorFAdd.v)**
 
-[VectorIdiv无bug版本](/hackathon/VectorIdiv.v)
+**[VectorIdiv无bug版本](/hackathon/VectorIdiv.v)**
 
-[VectorIdiv_bug_1](/hackathon/VectorIdiv_BUG1.v)
+**[VectorIdiv_bug_1](/hackathon/VectorIdiv_BUG1.v)**
 
 **SPEC链接：**
 
