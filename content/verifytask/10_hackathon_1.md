@@ -82,12 +82,11 @@ UCAgent使用方法可参考[UCAgent使用手册](https://open-verify.cc/mlvp/do
 
 由于bug中包含假阳性bug，即测试用例不符合要求等原因导致的非源码类报错，因此需要结合阅读Spec文档分析失败的测试用例，分析出真正的bug：
 
-第一个bug由于-128除以-1得到的128超出了RISC-V向量规范导致的报错，并非源码类bug，因此忽略。<br>
-第二个bug通过分析spec文档中，整数除法的行为在“11.11. Vector Integer Divide Instructions”部分有明确规定。该部分指出：<br>
->The divide and remainder instructions are equivalent to the RISC-V standard scalar integer multiply/divides, with the same results for extreme inputs.
+第一个bug通过阅读Spec文档，由于-128除以-1得到的128超出了RISC-V向量规范导致的报错，并非源码类bug，因此忽略。<br>
+第二个bug通过分析spec文档中，整数除法的行为在“12.2 Division Operations”部分有明确规定。该部分指出：<br>
+>整数除法操作（包括向量整数除法）在除零时不应触发硬件异常，而是浮点异常设置标志，返回定义好的值（商为全1，余数为被除数）。
 
-这意味着向量整数除法指令（如vdiv.vv和vdiv.vx）的行为与RISC-V标量整数除法指令一致。在RISC-V标量规范中，有符号整数除法（div）在遇到极端情况时（如除以零或溢出）不会报错或触发异常，而是返回一个定义的值：如果除数为零，结果所有位设置为1（即-1）。
-然而，在测试中发现，即使除数为零，`io_d_zero` 信号仍然为零
+与在测试中发现，即使除数为零，`io_d_zero` 信号异常标志仍然为零。
 因此我们可以推测本次bug为除数为0时，io_d_zero未被设置为高电平状态。
 
 ### 第三步 提交结果
@@ -96,9 +95,23 @@ UCAgent使用方法可参考[UCAgent使用手册](https://open-verify.cc/mlvp/do
 
 1. Bug报告：说明Bug的触发位置、原因与该Bug对应Spec当中要求不符的章节与行数；
 
-｜Bug名|Bug原因|对应测试用例文件|在用例中的行数|与Spec不符内容|token消耗总计（赛道2）|
-|---- |----|----|----|----|----|
-|VectorIdiv_bug_1|d_zero标记位未被设置为高电平状态|test_VectorIdiv_templates.py|156|11.11 Vector Integer Divide Instructions：有符号整数除法（div）在遇到极端情况时（如除以零或溢出）不会报错或触发异常，而是返回一个定义的值：如果除数为零，结果所有位设置为1（即-1）|4096|
+<table style="width: 100%; min-width: 800px;">
+  <tr>
+    <th style="width: 15%;">名称</th>
+    <th style="width: 15%;">功能概述</th>
+    <th style="width: 25%;">文件/代码行</th>
+    <th style="width: 10%;">功能点约束</th>
+    <th style="width: 25%;">难度预估</th>
+    <th style="width: 10%;">spec链接</th>
+  </tr>
+  <tr>
+    <td>VectorIdiv_bug_1</td>
+    <td> d_zero标记位未被设置为高电平状态 </td>
+    <td>test_VectorIdiv_templates.py</td>
+    <td>156</td>
+    <td>12.2 Division Operations：有符号整数除法（div）在遇到极端情况时（如除以零或溢出）不会报错或触发异常，而是返回一个定义的值：如果除数为零，结果所有位设置为1</td>
+    <td>4096</td>
+  </tr>
 
 2. 将UCAgent生成的`tests`文件夹打包
 
