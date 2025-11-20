@@ -14,14 +14,22 @@ difficult: 5
 
 ## 活动简介
 
-欢迎参加本次黑客马拉松！本次黑客马拉松以“AI驱动开源芯片验证”为主题，聚焦基于大语言模型的硬件验证智能体UCAgent的实际应用。各位将在限定时间内，利用UCAgent人机协同进行模块验证，分析生成的fail case，找出题目当中的BUG或提升token效率。通过参与，您不仅能体验UCAgent工具在开源验证中的便利，还能作为开发者参与到开源芯片验证的生态中。
+欢迎参加本次黑客马拉松活动！本次黑客马拉松以“AI驱动开源芯片验证”为主题，聚焦基于大语言模型的硬件验证智能体UCAgent的实际应用。各位将在限定时间内，利用UCAgent人机协同进行UT模块验证，分析Fail test cases，找出赛题中隐藏的Bug。通过参与，您不仅能体验UCAgent工具在开源验证中的便利，还能作为开发者参与到开源芯片验证的生态中。
 
-- **赛题任务**：本次活动提供了**15**个手工注入的bug供大家进行发现，共有两个赛道：**找bug赛道**/**token效率赛道**，，找出bug分析并提交结果。
-- **难度分级**：每个模块含有5个bug对应5个rtl文件，分为**简单难度2个（每个100分）；中等难度1个（每个300分）；困难难度2个（每个500分）**。
-- **排名资格**：**至少找到一共5个Bug**才能获得排名资格。 
-- **首位在origin版本中找到Bug的参与者，经验证确认有效后，将额外获得 500 至 1000 分的奖励。**
+本次活动提供了15个人工注入的Bug供大家进行发现和分析，共有两个赛道：找Bug赛道和Token效率赛道。
 
-为使大家能够高效地找到bug，我们提供了**UCAgent**工具。下面将以VectorIdiv模块的一个简单bug为例，演示如何使用UCAgent进行验证并提交结果。
+- **Bug分级：** 每个模块含有注入5个bug，分别对应5个RTL原文件，简单难度2个、中等难度1个、困难难度2个。
+- **Bug积分：** 简单难度 100分/个，中等难度300分/个, 困难500分/个。
+- **Token效率：** 效率 `E = Bug个数/消耗总Token`
+
+
+### 赛道介绍
+
+- **找Bug赛道**： 对参赛队伍按获得的Bug积分进行排名（bug数需要大于5个），前三名将获得`证书 + 现金奖励`，其他名次将获得`证书`。
+- **效率赛道**：利用UCAgent API模式分析Bug，按Token效率进行排名(bug数需不少于12个)，前三名将获得`证书 + 现金奖励`，其他名次将获得`证书`。
+- **额外奖励**：首位发现Origin版本中的非人工注入Bug，获得现金奖励：`500-1000元/个 + 证书`。具体金额由UT设计者给出的Bug等级来定。
+
+注：除了效率赛道外，其他赛道可用您任何擅长的工具或者方法，不仅限于UCAgent技术路线。
 
 ## 热身演示
 
@@ -96,7 +104,7 @@ UCAgent会在`output/unity_test/tests`目录下生成一份`VectorIdiv_bug_analy
   </tr>
 </table>
 
-将以上文件上传到指定平台即可完成提交。（平台暂未开放）
+将以上文件上传到指定平台即可完成提交。（提交地址暂未开放）
 
 
 
@@ -104,20 +112,21 @@ UCAgent会在`output/unity_test/tests`目录下生成一份`VectorIdiv_bug_analy
 
 为了帮助您快速上手，我们提供了以下资源：
 
+#### **黑客马拉松仓库：[https://github.com/XS-MLVP/hackathon2512](https://github.com/XS-MLVP/hackathon2512)**
+
 **无bug版本rtl：**
-- **[VectorFloatFMA_origin.v：https://github.com/XS-MLVP/hackathon2512/blob/main/origin_file/VectorFloatFMA_origin.v](https://github.com/XS-MLVP/hackathon2512/blob/main/origin_file/VectorFloatFMA_origin.v)**
-- **[VectorFloatAdder_origin.v：https://github.com/XS-MLVP/hackathon2512/blob/main/origin_file/VectorFloatAdder_origin.v](https://github.com/XS-MLVP/hackathon2512/blob/main/origin_file/VectorFloatAdder_origin.v)**
-- **[VectorIdiv_origin.v：https://github.com/XS-MLVP/hackathon2512/blob/main/origin_file/VectorIdiv_origin.v](https://github.com/XS-MLVP/hackathon2512/blob/main/origin_file/VectorIdiv_origin.v)**
+- **VectorFloatFMA_origin.v：[点击打开](https://github.com/XS-MLVP/hackathon2512/blob/main/origin_file/VectorFloatFMA_origin.v)**
+- **VectorFloatAdder_origin.v：[点击打开](https://github.com/XS-MLVP/hackathon2512/blob/main/origin_file/VectorFloatAdder_origin.v)**
+- **VectorIdiv_origin.v：[点击打开](https://github.com/XS-MLVP/hackathon2512/blob/main/origin_file/VectorIdiv_origin.v)**
 
 **有bug版本rtl：**
-- **[VectorIdiv_bug_1.v：https://github.com/XS-MLVP/hackathon2512/blob/main/bug_file/VectorIdiv_bug_1.v](https://github.com/XS-MLVP/hackathon2512/blob/main/bug_file/VectorIdiv_bug_1.v)**
+- **VectorIdiv_bug_1.v：[点击打开](https://github.com/XS-MLVP/hackathon2512/blob/main/bug_file/VectorIdiv_bug_1.v)**
 
-**SPEC链接：**
+**Spec链接：**
 
-- **[向量整数除法指令:https://docs.riscv.org/reference/isa/unpriv/v-st-ext.html#vector-integer-divide-instructions](https://docs.riscv.org/reference/isa/unpriv/v-st-ext.html#vector-integer-divide-instructions)**
-- **[向量浮点指令:https://docs.riscv.org/reference/isa/unpriv/v-st-ext.html#sec-vector-float](https://docs.riscv.org/reference/isa/unpriv/v-st-ext.html#sec-vector-float)**
+**RISC-V官方V扩展Spec：[点击打开](https://github.com/riscv/riscv-v-spec/blob/master/v1.0.0/v1.0.0.pdf)**
 
-**UCAgent链接：[https://github.com/XS-MLVP/UCAgent](https://github.com/XS-MLVP/UCAgent)**
+**UCAgent仓库：[https://github.com/XS-MLVP/UCAgent](https://github.com/XS-MLVP/UCAgent)**
 
 **UCAgent使用手册：[https://open-verify.cc/mlvp/docs/ucagent](https://open-verify.cc/mlvp/docs/ucagent)**
 
