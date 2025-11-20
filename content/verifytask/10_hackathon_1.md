@@ -105,12 +105,12 @@ UCAgent会在`output/unity_test/tests`目录下生成一份`VectorIdiv_bug_analy
 为了帮助您快速上手，我们提供了以下资源：
 
 **无bug版本rtl：**
-- **[VectorFloatFMA_origin.v：https://github.com/XS-MLVP/Hackathon/blob/main/origin_file/VectorFloatFMA_origin.v](https://github.com/XS-MLVP/Hackathon/blob/main/origin_file/VectorFloatFMA_origin.v)**
-- **[VectorFloatAdder_origin.v：https://github.com/XS-MLVP/Hackathon/blob/main/origin_file/VectorFloatAdder_origin.v](https://github.com/XS-MLVP/Hackathon/blob/main/origin_file/VectorFloatAdder_origin.v)**
-- **[VectorIdiv_origin.v：https://github.com/XS-MLVP/Hackathon/blob/main/origin_file/VectorIdiv_origin.v](https://github.com/XS-MLVP/Hackathon/blob/main/origin_file/VectorIdiv_origin.v)**
+- **[VectorFloatFMA_origin.v：https://github.com/XS-MLVP/hackathon2512/blob/main/origin_file/VectorFloatFMA_origin.v](https://github.com/XS-MLVP/hackathon2512/blob/main/origin_file/VectorFloatFMA_origin.v)**
+- **[VectorFloatAdder_origin.v：https://github.com/XS-MLVP/hackathon2512/blob/main/origin_file/VectorFloatAdder_origin.v](https://github.com/XS-MLVP/hackathon2512/blob/main/origin_file/VectorFloatAdder_origin.v)**
+- **[VectorIdiv_origin.v：https://github.com/XS-MLVP/hackathon2512/blob/main/origin_file/VectorIdiv_origin.v](https://github.com/XS-MLVP/hackathon2512/blob/main/origin_file/VectorIdiv_origin.v)**
 
 **有bug版本rtl：**
-- **[VectorIdiv_bug_1.v：https://github.com/XS-MLVP/Hackathon/blob/main/bug_file/VectorIdiv_bug_1.v](https://github.com/XS-MLVP/Hackathon/blob/main/bug_file/VectorIdiv_bug_1.v)**
+- **[VectorIdiv_bug_1.v：https://github.com/XS-MLVP/hackathon2512/blob/main/bug_file/VectorIdiv_bug_1.v](https://github.com/XS-MLVP/hackathon2512/blob/main/bug_file/VectorIdiv_bug_1.v)**
 
 **SPEC链接：**
 
