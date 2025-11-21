@@ -47,7 +47,7 @@ schedule: 2
 
 + 入门第五讲：实战案例——果壳 Cache
 
-每讲新手教程包含了**视频讲解，文字教程，和学习任务**。您可以在[新手课程页(https://open-verify.cc/beginner/course/)](https://open-verify.cc/beginner/course/)查看具体内容并开始学习~
+每讲新手教程包含了**视频讲解，文字教程，和学习任务**。您可以在[新手课程页](https://open-verify.cc/beginner/task/course/)查看具体内容并开始学习~
 
 在学习过程中有任何问题，可以在交流群中进行讨论，将有导师进行在线解答.
 
