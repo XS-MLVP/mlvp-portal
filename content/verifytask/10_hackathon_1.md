@@ -81,7 +81,7 @@ UCAgent会在`output/unity_test/tests`目录下生成一份`VectorIdiv_bug_analy
 例如：
 
 - 第一个疑似bug（-128除以-1）分析：通过阅读Spec文档发现，这是由于结果超出RISC-V向量规范导致的报错，并非源码bug，可忽略。<br>
-- 第二个疑似bug（除零异常）分析：通过分析Spec文档（第12.2节）确认：整数除法在除零时应返回定义值（商为全1，余数为被除数），而不应触发硬件异常。但测试中io_d_zero信号未置位，这表明是真正的源码bug。
+- 第二个疑似bug（除零异常）分析：通过分析Spec文档（[第12.2节 Risc-v M扩展整数除法章节：https://docs.riscv.org/reference/isa/unpriv/m-st-ext.html#division-operations](https://docs.riscv.org/reference/isa/unpriv/m-st-ext.html#division-operations)）确认：整数除法在除零时应返回定义值（商为全1，余数为被除数），而不应触发硬件异常。但测试中io_d_zero信号未置位，这表明是真正的源码bug。
 
 
 
