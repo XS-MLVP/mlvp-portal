@@ -82,6 +82,13 @@ jobs:
         echo "SKIP=$skip" >> $GITHUB_ENV
       shell: bash
 
+    # 新增：提前装好 Python 构建工具，避免 hugo==0.145.0 安装时报错
+    - name: Setup Python build tools
+      if: env.SKIP == 'false'
+      run: |
+        python3 -m pip install --upgrade pip
+        python3 -m pip install --upgrade setuptools wheel
+
     - name: Run make commands
       if: env.SKIP == 'false'
       run: |
