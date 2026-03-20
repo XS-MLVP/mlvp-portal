@@ -86,8 +86,8 @@ jobs:
     - name: Setup Python build tools
       if: env.SKIP == 'false'
       run: |
-        python3 -m pip install --upgrade pip
-        python3 -m pip install --upgrade setuptools wheel
+        sudo python3 -m pip install --upgrade pip
+        sudo python3 -m pip install --upgrade setuptools wheel
 
     - name: Run make commands
       if: env.SKIP == 'false'
