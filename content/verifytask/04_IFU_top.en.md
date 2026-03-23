@@ -8,7 +8,7 @@ task_closed: true
 home_page_show: true
 Weight: 11
 summary: "Learning Xiangshan IFU Microarchitecture Design Through Verification"
-schedule: 2
+schedule: 4
 difficult: 5
 ---
 

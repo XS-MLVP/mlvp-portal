@@ -8,7 +8,7 @@ task_closed: true
 home_page_show: true
 Weight: 11
 summary: "用UCAgent验证参与黑客松，实战赢奖金"
-schedule: 2
+schedule: 4
 difficult: 5
 ---
 

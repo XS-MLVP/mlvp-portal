@@ -8,7 +8,7 @@ task_closed: true
 home_page_show: true
 Weight: 11
 summary: "挑战RISC-V向量扩展实战，亲手验证AI芯片模块"
-schedule: 2
+schedule: 4
 difficult: 5
 ---
 

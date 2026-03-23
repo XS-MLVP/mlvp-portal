@@ -8,7 +8,7 @@ task_closed: true
 home_page_show: true
 Weight: 11
 summary: "挑战RISC-V向量算子验证"
-schedule: 2
+schedule: 4
 difficult: 5
 ---
 
