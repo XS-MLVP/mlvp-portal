@@ -1,10 +1,10 @@
 ---
-title: "万众一芯黑客马拉松第一期：热身赛题(进行中)"
+title: "万众一芯黑客马拉松第一期：热身赛题(已完成)"
 date: 2025-11-18T10:56:05+08:00
 draft: false
 fenbao_tags: [ "YunSuan", "UCAgent", "hackathon"]
 status: "Completed"
-task_closed: false
+task_closed: true
 home_page_show: true
 Weight: 11
 summary: "用UCAgent验证参与黑客松，实战赢奖金"

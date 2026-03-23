@@ -5,7 +5,7 @@ draft: false
 fenbao_tags: ["Verification Case", "ITLB", "UT Verification"]  
 #website: "/xs-bpu/"  
 status: "Completed"  
-task_closed: false  
+task_closed: true  
 home_page_show: true  
 Weight: 11  
 summary: "Learn the Microarchitecture Design of Xiangshan’s ITLB Through Verification"  

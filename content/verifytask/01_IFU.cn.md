@@ -1,11 +1,11 @@
 ---
-title: 'UT实战第二期：第三代香山(昆明湖）架构IFU模块UT验证实战(进行中)'
+title: 'UT实战第二期：第三代香山(昆明湖）架构IFU模块UT验证实战(已完成)'
 date: 2024-12-11T10:47:18+08:00
 draft: false
 fenbao_tags: ["验证案例", "IFU", "UT验证"]
 #website: "/xs-bpu/"
 status: "Completed"
-task_closed: false
+task_closed: true
 home_page_show: true
 Weight: 11
 summary: "在验证中学习香山IFU的微架构设计"

@@ -5,7 +5,7 @@ draft: false
 fenbao_tags: ["Verification Cases", "FTQ", "UT Verification"]
 #website: "/xs-bpu/"
 status: "Completed"
-task_closed: false
+task_closed: true
 home_page_show: true
 Weight: 11
 summary: "Learning Xiangshan FTQ Microarchitecture Design Through Verification"

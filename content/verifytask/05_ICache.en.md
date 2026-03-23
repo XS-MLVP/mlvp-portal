@@ -5,7 +5,7 @@ draft: false
 fenbao_tags: ["Verification Cases", "ICache", "UT Verification"]
 #website: "/xs-icache/"
 status: "Completed"
-task_closed: false
+task_closed: true
 home_page_show: true
 Weight: 11
 summary: "Learning Xiangshan ICache Microarchitecture Design Through Verification"

@@ -1,10 +1,10 @@
 ---
-title: 'UT实战第八期：第三代香山(昆明湖）架构 L2TLB-bitmap 模块UT验证实战(进行中)'
+title: 'UT实战第八期：第三代香山(昆明湖）架构 L2TLB-bitmap 模块UT验证实战(已完成)'
 date: 2025-08-22T10:13:22+08:00
 draft: false
 fenbao_tags: ["验证案例", "L2TLB", "bitmap", "UT验证"]
 status: "Completed"
-task_closed: false
+task_closed: true
 home_page_show: true
 Weight: 11
 summary: "在验证中学习香山L2TLB-bitmap的微架构设计"

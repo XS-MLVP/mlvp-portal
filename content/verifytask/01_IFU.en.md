@@ -5,7 +5,7 @@ draft: false
 fenbao_tags: ["Verification Cases", "IFU", "UT Verification"]
 #website: "/xs-bpu/"
 status: "Completed"
-task_closed: false
+task_closed: true
 home_page_show: true
 Weight: 11
 summary: "Learning the microarchitecture design of Xiangshan IFU during verification."

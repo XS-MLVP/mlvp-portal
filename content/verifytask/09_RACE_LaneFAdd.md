@@ -1,10 +1,10 @@
 ---
-title: "UT实战第十期：AI 向量处理器—浮点混合加法模块验证实战 (进行中)"
+title: "UT实战第十期：AI 向量处理器—浮点混合加法模块验证实战 (已完成)"
 date: 2025-10-22T13:56:05+08:00
 draft: false
 fenbao_tags: ["验证案例", "RACE", "Vector", "FloatAdd", "UT验证"]
 status: "Completed"
-task_closed: false
+task_closed: true
 home_page_show: true
 Weight: 11
 summary: "挑战RISC-V向量扩展实战，亲手验证AI芯片模块"

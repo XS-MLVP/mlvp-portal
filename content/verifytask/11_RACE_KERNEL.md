@@ -1,10 +1,10 @@
 ---
-title: "AI 算子验证第一期：RISC-V 向量计算验证实战 (进行中)"
+title: "AI 算子验证第一期：RISC-V 向量计算验证实战 (已完成)"
 date: 2025-11-26T10:05:00+08:00
 draft: false
 fenbao_tags: ["验证案例", "RACE", "Vector", "AI算子验证"]
 status: "Completed"
-task_closed: false
+task_closed: true
 home_page_show: true
 Weight: 11
 summary: "挑战RISC-V向量算子验证"

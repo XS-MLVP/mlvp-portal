@@ -4,7 +4,7 @@ date: 2025-03-31T10:47:18+08:00
 draft: false
 fenbao_tags: ["Verification Cases", "IFU", "top", "UT Verification"]
 status: "Completed"
-task_closed: false
+task_closed: true
 home_page_show: true
 Weight: 11
 summary: "Learning Xiangshan IFU Microarchitecture Design Through Verification"
