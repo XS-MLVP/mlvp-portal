@@ -13,3 +13,4 @@ summary: "结合所学知识，完成对果壳 Cache 的验证"
 验证报告的格式可以参考先前的[果壳 Cache 验证案例](https://github.com/XS-MLVP/Example-NutShellCache/blob/master/nutshell_cache_report_demo.pdf)完成您的验证。
 
 在开始验证之前，推荐先通读一遍 picker 和 toffee 的文档
+
