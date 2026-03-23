@@ -3,7 +3,7 @@ title: 'UT Practical Session Phase 5: Third Generation Xiangshan (Kunming Lake) 
 date: 2025-03-31T10:47:18+08:00
 draft: false
 fenbao_tags: ["Verification Cases", "IFU", "top", "UT Verification"]
-status: "Continuing"
+status: "Completed"
 task_closed: false
 home_page_show: true
 Weight: 11

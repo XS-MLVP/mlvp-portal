@@ -61,12 +61,6 @@ content/
 ├── about                      # 关于我们模块
 │   ├── featured.jpg
 │   └── index.md
-├── crowdsourcing              # 正在进行的分包任务模块
-│   ├── _index.md
-│   └── kunming_lake           # 分包任务1
-│       ├── _index.md          # 分包总描述
-│       ├── dut_00.md          # dut 1 介绍
-│       └── dut_01.md          # dut 2 介绍
 |
 ├── learningresource           # 学习资源模块
 │   ├── _index.md

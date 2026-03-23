@@ -4,7 +4,7 @@ date: 2025-03-18T14:57:18+08:00
 draft: false
 fenbao_tags: ["Verification Cases", "FTQ", "UT Verification"]
 #website: "/xs-bpu/"
-status: "Continuing"
+status: "Completed"
 task_closed: false
 home_page_show: true
 Weight: 11

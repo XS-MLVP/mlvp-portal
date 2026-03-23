@@ -4,7 +4,7 @@ date: 2025-04-01T16:00:00+08:00
 draft: false
 fenbao_tags: ["Verification Cases", "ICache", "UT Verification"]
 #website: "/xs-icache/"
-status: "Continuing"
+status: "Completed"
 task_closed: false
 home_page_show: true
 Weight: 11

@@ -3,7 +3,7 @@ title: 'UT实战第九期：第三代香山(昆明湖）架构 LSU-StoreUnit 模
 date: 2025-09-18T10:17:00+08:00
 draft: false
 fenbao_tags: ["验证案例", "LSU", "StoreUnit", "UT验证"]
-status: "Continuing"
+status: "Completed"
 task_closed: false
 home_page_show: true
 Weight: 11
