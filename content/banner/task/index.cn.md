@@ -1,6 +1,6 @@
 ---
-title: '全年奖金池50W+'
+title: '兼容传统UVM验证'
 is_page: true
 weight: 3
-intro: '70+验证模块任务陆续发布，奖金池50W+'
+intro: '支持传统验证特性的同时，引入软件生态全新特性'
 ---
