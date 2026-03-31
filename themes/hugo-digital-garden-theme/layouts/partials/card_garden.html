@@ -3,33 +3,35 @@
 {{ $.Scratch.Add "garden_tags_list" ( . | printf " js-iso-%s") }}
 {{ end }}
 <div class='col d-flex {{ $.Scratch.Get "garden_tags_list" }}' {{ if .Params.task_closed }} style="filter:grayscale(100%);" {{ end }}>
-    <div class="card h-100 w-100 top-highlight">
-        <div class="card-body">
+    <div class="card h-100 w-100 top-highlight d-flex flex-column">
+        <div class="card-body d-flex flex-column">
             {{ if .Summary }}
             <h4 class="card-title">{{ .Title }}</h4>
-            <p class="card-text pb-3">{{ .Summary }}</p>
+            <p class="card-text pb-3 flex-grow-1">{{ .Summary }}</p>
             {{ else }}
-            <h4 class="card-title pb-3">{{ .Title }}</h4>
+            <h4 class="card-title pb-3 flex-grow-1">{{ .Title }}</h4>
             {{ end }}
             {{ if .Params.Website }}
             <a href="{{ .Params.Website }}" class="stretched-link" tab="_blank"></a>
             {{ else }}
             <a href="{{ .Permalink }}" class="stretched-link"></a>
             {{ end  }}
-            <hr class="dropdown-divider">
-            <div class="row justify-content-between">
-                <div class="col-6">
-                    {{ $dateTime := .Lastmod.Format "2006-01-02" }}
-                    {{ $dateFormat := .Site.Params.dateFormat | default "Jan 2, 2006" }}
-                    <span style="font-size: small"> {{ .Lastmod.Format $dateFormat }}</span>
+            <div class="mt-auto">
+                <hr class="dropdown-divider">
+                <div class="row justify-content-between">
+                    <div class="col-6">
+                        {{ $dateTime := .Lastmod.Format "2006-01-02" }}
+                        {{ $dateFormat := .Site.Params.dateFormat | default "Jan 2, 2006" }}
+                        <span style="font-size: small"> {{ .Lastmod.Format $dateFormat }}</span>
+                    </div>
+                    <div class="col-6" style="text-align: right">
+                        {{ partial "status.html" . }}
+                    </div>
                 </div>
-                <div class="col-6" style="text-align: right">
-                    {{ partial "status.html" . }}
-                </div>
+                {{range .Params.fenbao_tags}}
+                <span class="badge tag-badge">{{.}}</span>
+                {{end}}
             </div>
-            {{range .Params.fenbao_tags}}
-            <span class="badge tag-badge">{{.}}</span>
-            {{end}}
         </div>
     </div>
 </div>

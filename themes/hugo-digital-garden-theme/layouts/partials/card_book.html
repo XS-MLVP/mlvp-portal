@@ -4,7 +4,7 @@
 {{ end }}
 {{ if .Params.Imgonly }}
 <div class='col col-sm-6 col-md-6 col-lg-3 col-xl-2 mb-3 {{ $.Scratch.Get "library_tags_list" }}'>
-    <div class="card">
+    <div class="card h-100">
         <a href="{{ .Permalink }}" class="stretched-link"></a>
         {{ $img := (.Resources.ByType "image").GetMatch "*featured*" }}
         {{ $img = $img.Fit "350x500" }}
@@ -15,7 +15,7 @@
 </div>
 {{ else }}
 <div class='col col-sm-6 col-lg-6 col-xl-4 mb-3 {{ $.Scratch.Get "library_tags_list" }}'>
-    <div class="card top-highlight">
+    <div class="card top-highlight h-100">
         {{ if .Params.Website }}
         <a href="{{ .Params.Website }}" class="stretched-link" tab="_blank"></a>
         {{ else }}

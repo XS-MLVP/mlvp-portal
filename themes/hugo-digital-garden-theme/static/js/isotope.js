@@ -2,10 +2,33 @@
 // https://codepen.io/desandro/pen/JGKyrY
 //
 var $blogposts = $('#blogposts');
+
+function setEqualHeight() {
+    var tallest = 0;
+    var $cards = $blogposts.find('.card');
+    $cards.css('min-height', '0'); // reset
+    $cards.each(function() {
+        if ($(this).outerHeight() > tallest) {
+            tallest = $(this).outerHeight();
+        }
+    });
+    $cards.css('min-height', tallest + 'px');
+}
+
+// Set heights before initializing Isotope
+setEqualHeight();
+
 $blogposts.isotope({
   itemSelector: '.col',
   layoutMode: 'fitRows'
 });
+
+// Update on resize
+$(window).on('resize', function() {
+    setEqualHeight();
+    $blogposts.isotope('layout');
+});
+
 var $checkboxes = $('#filters input');
 
 $checkboxes.change( function() {

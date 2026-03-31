@@ -28,7 +28,7 @@
 
 <!-- Blog Post Cards -->
 <div class="container">
-    <div class="row" data-masonry='{"percentPosition": true }' id="blogposts">
+    <div class="row g-4" id="blogposts">
         {{ range .Pages.ByPublishDate.Reverse }}
         {{ partial "card_book.html" . }}
         {{ end }}

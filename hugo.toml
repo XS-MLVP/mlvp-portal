@@ -2,6 +2,7 @@ baseURL = "https://www.example.com"
 languageCode = "zh-cn"
 title = "UnityChip Verification"
 copyright = "MLVP Group ©"
+theme = "hugo-digital-garden-theme"
 
 defaultContentLanguage = 'cn'
 defaultContentLanguageInSubdir = false
