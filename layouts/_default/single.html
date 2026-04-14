@@ -159,16 +159,6 @@
             </style>
             <script>
                 document.addEventListener('DOMContentLoaded', () => {
-                    // 如果由于文章缺少一级标题(H1)导致目录出现空的 "1."，自动填入文章的 Title
-                    const firstLi = document.querySelector('.toc-container nav > ol > li');
-                    if (firstLi && (!firstLi.firstElementChild || firstLi.firstElementChild.tagName !== 'A')) {
-                        const a = document.createElement('a');
-                        a.href = '#'; 
-                        a.textContent = '{{ .Title }}';
-                        a.className = 'active'; // 默认高亮大标题
-                        firstLi.insertBefore(a, firstLi.firstChild);
-                    }
-
                     const observer = new IntersectionObserver(entries => {
                         entries.forEach(entry => {
                             const id = entry.target.getAttribute('id');

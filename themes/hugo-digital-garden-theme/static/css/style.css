@@ -295,9 +295,6 @@ code {
 }
 
 .intro-section {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
 }
@@ -344,7 +341,7 @@ code {
 }
 
 .chinese .intro-text {
-  width: 37rem;
+  width: 45rem;
   font-size: 1.25rem;
 }
 
