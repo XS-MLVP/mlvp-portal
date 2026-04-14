@@ -8,7 +8,7 @@
 		{{ if .Params.slides }}
 			{{ range $index, $slide := .Params.slides }}
 			<div class="carousel-item {{ if eq $index 0 }}active{{ end }} h-100">
-				<div class="intro-section bg-cover h-100" style="background-image: url('{{ $slide.bg_image | relURL }}');">
+				<div class="intro-section bg-cover h-100" style="background-image: url('{{ $slide.bg_image | relURL }}'); {{ if $slide.bg_style }}{{ $slide.bg_style | safeCSS }}{{ end }}">
 					<div class="intro-word">
 						{{ if $slide.title }}
 						<div class="intro-font fw-bold" {{ if $slide.title_style }}style="{{ $slide.title_style | safeCSS }}"{{ end }}>{{ $slide.title | safeHTML }}</div>
@@ -39,7 +39,7 @@
 								href="{{ $slide.quick_start_url }}"
 								{{ if $slide.blank }}target="_blank"{{ end }}
 								class="quick-start d-flex align-items-center bg-cover"
-								style="background-image: url('{{ "/images/Btn_Frame.png" | relURL }}');"
+								style="background-image: url('{{ "/images/Btn_Frame.png" | relURL }}'); {{ if $slide.quick_start_style }}{{ $slide.quick_start_style | safeCSS }}{{ end }}"
 						>
 						{{ $slide.quick_start_text }}
 						</a>

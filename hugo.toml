@@ -43,7 +43,7 @@ defaultContentLanguageInSubdir = false
       weight = 2
     [[languages.cn.menu.main]]
       name = "新闻动态"
-      url = "https://open-verify.cc/mlvp/docs/"
+      url = "/news/"
       weight = 2
     [[languages.cn.menu.main]]
       name = "关于我们"
@@ -64,6 +64,13 @@ defaultContentLanguageInSubdir = false
        title = "Registration entrance summary"
        name = "Registration entrance summary"
        url = "/en/registration_portal/"
+       weight = 1
+
+    [[languages.en.menu.main]]
+       identifier = "news"
+       title = "News"
+       name = "News"
+       url = "/en/news/"
        weight = 1
 
     [[languages.en.menu.main]]

@@ -16,6 +16,8 @@ slides:
     description_style: ""
     quick_start_text: "万众一芯论文被 ISCA26 录用：软件原生重塑硬件验证"
     quick_start_url: "https://mp.weixin.qq.com/s/8L8Cpyf_ZgVi1LWArpvUOw"
+    quick_start_style: "width: fit-content; padding-right: 4.5rem; position: relative; top: 27.5rem;"
     bg_image: "/images/banner23.png"
+    bg_style: "background-size: 120% 120%;"
     blank: true
 ---

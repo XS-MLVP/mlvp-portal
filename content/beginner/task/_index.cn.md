@@ -4,7 +4,7 @@ date: 2025-09-24T08:50:39+08:00
 draft: false
 resource_tags: ["文档", "学习资料"]
 status: "seeding"
-summary: "通过实战来了解“万众一芯”的框架和工具，完成一次验证全流程"
+summary: "通过实战来了解“万众一芯”框架和工具，完成一次验证全流程"
 weight: 2
 task_closed: false
 home_page_show: true
