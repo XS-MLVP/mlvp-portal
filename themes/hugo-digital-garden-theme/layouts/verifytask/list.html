@@ -34,13 +34,13 @@
 
     {{ if .Params.filter }}
     <!-- Multiple checkboxes option -->
-    <div class="btn-toolbar mb-2 bio" role="toolbar" aria-label="Toolbar with button groups">
-        <i class="fas fa-filter"></i>
-        <div id="filters" class="button-group">
+    <div class="d-flex flex-row align-items-start mb-2 bio">
+        <i class="fas fa-filter text-muted me-2" style="font-size: 14px; margin-top: 0.35rem;"></i>
+        <div id="filters" class="button-group d-flex flex-wrap">
             {{ range $name, $taxonomy := .Site.Taxonomies.fenbao_tags }}
             {{ $btnid := $name | printf ".js-iso-%s"}}
             <input type="checkbox" class="btn-check" id="{{ $btnid }}" autocomplete="off" data-filter="{{ $btnid }}">
-            <label class="button" for="{{ $btnid }}">{{ $name }}</label>
+            <label class="button mb-1" for="{{ $btnid }}" style="font-size: 12px; padding: 0.25rem 0.5rem; margin-right: 0.35rem; line-height: 1.5;">{{ $name }}</label>
             {{ end }}
         </div>
     </div>

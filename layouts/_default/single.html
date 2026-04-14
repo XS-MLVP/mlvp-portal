@@ -1,0 +1,192 @@
+{{ define "main" }}
+
+<div class="container">
+    <div class="row">
+        <!-- 左侧内容区 -->
+        <div class="col-lg-9 col-md-12">
+            <div class="py-4 rounded-3">
+                <!-- 面包屑导航 -->
+                <nav aria-label="breadcrumb" class="mb-4">
+                    <ol class="breadcrumb bg-transparent p-0 m-0 text-muted small">
+                        {{ range .Ancestors.Reverse }}
+                        <li class="breadcrumb-item"><a href="{{ .RelPermalink }}" class="text-decoration-none">{{ .Title }}</a></li>
+                        {{ end }}
+                        <li class="breadcrumb-item active" aria-current="page">{{ .Title }}</li>
+                    </ol>
+                </nav>
+
+                <div class="container-fluid py-2">
+                    <h1 class="display-2 mb-4 text-center">{{ .Title }}</h1>
+                </div>
+                {{ with .Summary }}
+                <p class="text-center fs-4 fst-italic serif">{{ . }}</p>
+                {{ end }}
+                <div class="text-center pt-4">
+                    {{ with .Params.links }}
+                    {{ range sort . "weight" }}
+                    <a href="{{ .href }}" role="button" class="btn btn-sm btn-link mx-2" target="_blank">
+                        <i class="{{ .icon }} fs-5"></i>
+                    {{ .text }}
+                    </a>
+                    {{ end }}
+                    {{ end }}
+                </div>
+            </div>
+            <div class="row justify-content-center mb-5">
+                <div class="col-12">
+                    <p class="card-date m-0">
+                        {{ $dateFormat := .Site.Params.dateFormat | default "Jan 2, 2006" }}
+                        {{ with .Date }}
+                            Created {{ .Format $dateFormat }} - 
+                        {{ end }}
+                        Last updated: {{ .Lastmod.Format $dateFormat }}
+                    </p>
+                    <hr class="dropdown-divider">
+                    <div class="row justify-content-between">
+                        <div class="col-sm-4">
+                            {{ partial "status.html" . }}
+                        </div>
+                        <div class="col-sm-8" style="text-align: right;">
+                            {{ with .Params.tags }}
+                            {{ range . }}
+                            <span class="badge tag-badge">{{ . }}</span>
+                            {{ end }}
+                        {{ end }}
+                        {{ with .Params.garden_tags }}
+                            {{ range . }}
+                            <span class="badge tag-badge">{{ . }}</span>
+                            {{ end }}
+                        {{ end }}
+                        {{ with .Params.project_tags }}
+                            {{ range . }}
+                            <span class="badge tag-badge">{{ . }}</span>
+                            {{ end }}
+                        {{ end }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid py-2 content">
+                <div class="serif main-content">
+                    {{ .Content | safeHTML }}
+                </div>
+            </div>
+        </div>
+
+        <!-- 右侧目录区 -->
+        <div class="col-lg-3 d-none d-lg-block">
+            {{ if and (gt .WordCount 100 ) (.TableOfContents) }}
+            <div class="sticky-top" style="top: 2rem; max-height: calc(100vh - 4rem); overflow-y: auto; padding-top: 1.5rem;">
+                <h5 class="text-muted border-bottom pb-2 mb-3">目录</h5>
+                <div class="toc-container">
+                    {{ .TableOfContents }}
+                </div>
+            </div>
+            <style>
+                /* Scrollbar styling for TOC */
+                .sticky-top::-webkit-scrollbar {
+                    width: 4px;
+                }
+                .sticky-top::-webkit-scrollbar-track {
+                    background: transparent;
+                }
+                .sticky-top::-webkit-scrollbar-thumb {
+                    background: #dee2e6;
+                    border-radius: 4px;
+                }
+                .sticky-top:hover::-webkit-scrollbar-thumb {
+                    background: #adb5bd;
+                }
+
+                .toc-container nav ol {
+                    padding-left: 1.5rem;
+                    font-size: 0.9rem;
+                    color: #6c757d;
+                }
+                .toc-container nav > ol {
+                    padding-left: 0;
+                    list-style-type: none;
+                    counter-reset: item;
+                }
+                .toc-container nav > ol > li {
+                    counter-increment: item;
+                    display: flex;
+                    flex-direction: column;
+                }
+                .toc-container nav > ol > li > a::before {
+                    content: counters(item, ".") ". ";
+                    font-weight: 600;
+                    margin-right: 0.3rem;
+                    color: #495057;
+                }
+                .toc-container nav ol ol {
+                    counter-reset: subitem;
+                    list-style-type: none;
+                    padding-left: 1rem;
+                    margin-top: 0.5rem;
+                }
+                .toc-container nav ol ol li {
+                    counter-increment: subitem;
+                    position: relative;
+                    display: flex;
+                    flex-direction: column;
+                }
+                .toc-container nav ol ol li > a::before {
+                    content: counters(item, ".") "." counters(subitem, ".") " ";
+                    margin-right: 0.3rem;
+                    font-size: 0.85em;
+                    color: #6c757d;
+                }
+                .toc-container nav ol li {
+                    margin-bottom: 0.5rem;
+                }
+                .toc-container nav ol li a {
+                    text-decoration: none;
+                    color: #6c757d;
+                    display: inline-block;
+                    padding: 2px 0;
+                    transition: all 0.2s ease;
+                    line-height: 1.4;
+                }
+                .toc-container nav ol li a:hover {
+                    color: #0d6efd;
+                }
+                .toc-container nav ol li a.active {
+                    color: #0d6efd;
+                    font-weight: bold;
+                }
+            </style>
+            <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    // 如果由于文章缺少一级标题(H1)导致目录出现空的 "1."，自动填入文章的 Title
+                    const firstLi = document.querySelector('.toc-container nav > ol > li');
+                    if (firstLi && (!firstLi.firstElementChild || firstLi.firstElementChild.tagName !== 'A')) {
+                        const a = document.createElement('a');
+                        a.href = '#'; 
+                        a.textContent = '{{ .Title }}';
+                        a.className = 'active'; // 默认高亮大标题
+                        firstLi.insertBefore(a, firstLi.firstChild);
+                    }
+
+                    const observer = new IntersectionObserver(entries => {
+                        entries.forEach(entry => {
+                            const id = entry.target.getAttribute('id');
+                            if (entry.intersectionRatio > 0) {
+                                document.querySelectorAll(`.toc-container nav li a`).forEach(link => link.classList.remove('active'));
+                                document.querySelector(`.toc-container nav li a[href="#${id}"]`)?.classList.add('active');
+                            }
+                        });
+                    }, { rootMargin: "0px 0px -80% 0px" });
+                    
+                    document.querySelectorAll('h1[id], h2[id], h3[id], h4[id]').forEach((section) => {
+                        observer.observe(section);
+                    });
+                });
+            </script>
+            {{ end }}
+        </div>
+    </div>
+</div>
+
+{{ end }}

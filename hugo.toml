@@ -99,5 +99,5 @@ defaultContentLanguageInSubdir = false
     style = 'monokailight'
   [markup.tableOfContents]
     endLevel = 3
-    ordered = false
+    ordered = true
     startLevel = 1
