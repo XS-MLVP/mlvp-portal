@@ -206,6 +206,49 @@ padding-bottom: 2rem"
 </div>
 
 <div style="margin-top: 5rem">
+	<!--opensource_tools 开源工具-->
+	{{ $section := .Site.GetPage "section" "opensource_tools" }}
+	{{ if $section }}
+	<div
+			class="section-bg d-flex flex-column align-items-center"
+			style="background-image: url('{{ "/images/title_decoration.png" | relURL }}')"
+	>
+		<div class="section-title">{{ $section.Params.title }}</div>
+		<div class="section-desc">{{ $section.Params.summary }}</div>
+	</div>
+	<div class="row">
+		{{ range $section.Pages.ByWeight }}
+		<div class="col-12 col-sm-6 col-md-4 mb-4">
+			<div class="learning-bg-white" style="position: relative;">
+				<div class="d-flex justify-content-between">
+					{{ if .Params.title }}
+					<div class="learning-title">{{ .Params.title }}</div>
+					{{ end  }}
+					{{ $img := .Resources.GetMatch "*img*" }}
+					{{ with $img }}
+					<img
+							src="{{.RelPermalink }}"
+							style="max-width: 100%; height: auto;"
+					/>
+					{{ end }}
+				</div>
+				{{ if .Params.summary }}
+				<div class="learning-summary">{{ .Params.summary }}</div>
+				{{ end  }}
+
+				{{ if .Params.Website }}
+				<a href="{{ .Params.Website }}" class="stretched-link" target="_blank"></a>
+				{{ else }}
+				<a href="{{ .RelPermalink }}" class="stretched-link"></a>
+				{{ end  }}
+			</div>
+		</div>
+		{{ end }}
+	</div>
+	{{ end }}
+</div>
+
+<div style="margin-top: 5rem">
 	{{ $section := .Site.GetPage "section" "verify_task_title" }}
 	<div
 			class="section-bg d-flex flex-column align-items-center"

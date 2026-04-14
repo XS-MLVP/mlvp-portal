@@ -575,6 +575,13 @@ code {
   margin-bottom: 2.5rem;
   padding: 1.5rem;
   height: 100%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.learning-bg-white:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 .learning-card {
