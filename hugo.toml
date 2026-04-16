@@ -4,7 +4,7 @@ hasCJKLanguage = true
 title = "UnityChip Verification"
 copyright = "MLVP Group ©"
 theme = "hugo-digital-garden-theme"
-
+hasCJKLanguage = true
 defaultContentLanguage = 'cn'
 defaultContentLanguageInSubdir = false
 
