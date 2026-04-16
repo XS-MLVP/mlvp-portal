@@ -1,5 +1,6 @@
 baseURL = "https://www.example.com"
 languageCode = "zh-cn"
+hasCJKLanguage = true
 title = "UnityChip Verification"
 copyright = "MLVP Group ©"
 theme = "hugo-digital-garden-theme"
