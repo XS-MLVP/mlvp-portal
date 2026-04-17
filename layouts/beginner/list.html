@@ -16,16 +16,10 @@
             
             {{ if not .Params.filter }}
             <div class="row justify-content-between mb-5 px-3">
-                <div class="col-6">
-                    {{ $dateTime := .Lastmod.Format "2006-01-02" }}
-                    {{ $dateFormat := .Site.Params.date | default "Jan 2, 2006" }}
-                    Created <span style="font-size: small"> {{ .Lastmod.Format $dateFormat }}</span>
-                    - Last updated <span style="font-size: small"> {{ .Lastmod.Format $dateFormat }}</span>
-                </div>
-                <div class="col-6" style="text-align: right">
+                <div class="col-12" style="text-align: right">
                     {{ partial "status.html" . }}
                 </div>
-                <hr class="dropdown-divider">
+                <hr class="dropdown-divider mt-2">
             </div>
             {{ end }}
             
@@ -114,52 +108,36 @@
                     background: #adb5bd;
                 }
 
-                .toc-container nav ol {
+                .toc-container nav ol, .toc-container nav ul {
                     padding-left: 1.5rem;
                     font-size: 0.9rem;
                     color: #6c757d;
                 }
-                .toc-container nav > ol {
+                .toc-container nav > ol, .toc-container nav > ul {
                     padding-left: 0;
                     list-style-type: none;
-                    counter-reset: item;
                 }
-                .toc-container nav > ol > li {
-                    counter-increment: item;
+                .toc-container nav > ol > li, .toc-container nav > ul > li {
                     display: flex;
                     flex-direction: column;
                 }
-                .toc-container nav > ol > li > a {
+                .toc-container nav > ol > li > a, .toc-container nav > ul > li > a {
                     font-weight: normal !important;
                 }
-                .toc-container nav > ol > li > a::before {
-                    content: counters(item, ".") ". ";
-                    font-weight: normal;
-                    margin-right: 0.3rem;
-                    color: #495057;
-                }
-                .toc-container nav ol ol {
-                    counter-reset: subitem;
+                .toc-container nav ol ol, .toc-container nav ul ul {
                     list-style-type: none;
                     padding-left: 1rem;
                     margin-top: 0.5rem;
                 }
-                .toc-container nav ol ol li {
-                    counter-increment: subitem;
+                .toc-container nav ol ol li, .toc-container nav ul ul li {
                     position: relative;
                     display: flex;
                     flex-direction: column;
                 }
-                .toc-container nav ol ol li > a::before {
-                    content: counters(item, ".") "." counters(subitem, ".") " ";
-                    margin-right: 0.3rem;
-                    font-size: 0.85em;
-                    color: #6c757d;
-                }
-                .toc-container nav ol li {
+                .toc-container nav ol li, .toc-container nav ul li {
                     margin-bottom: 0.5rem;
                 }
-                .toc-container nav ol li a {
+                .toc-container nav ol li a, .toc-container nav ul li a {
                     text-decoration: none;
                     color: #6c757d;
                     display: inline-block;
@@ -167,7 +145,7 @@
                     transition: all 0.2s ease;
                     line-height: 1.4;
                 }
-                .toc-container nav ol li a:hover {
+                .toc-container nav ol li a:hover, .toc-container nav ul li a:hover {
                     color: rgb(32, 35, 41);
                 }
                 .toc-container nav ol li a.active {
