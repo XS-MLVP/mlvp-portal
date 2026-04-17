@@ -7,7 +7,7 @@ slides:
     description: "“万众一芯”是一个开源开放的芯片验证平台，致力于用 AI 和软件的方式重构芯片验证。"
     description_sub: "平台自主研发了一系列开源工具，可以大幅提升验证效率，降低验证门槛，众包验证工作。开源高性能 RISC-V 处理器核“香山”是首批使用该平台的项目之一。"
     description_sub2: "期待您与我们一起，通过创新的验证技术和开放的协作模式，让芯片验证从“人力密集”走向“智能高效”，共同构建AI驱动的芯片验证新范式。"
-    quick_start_text: "会编码就会验证，快速开始"
+    quick_start_text: ""
     quick_start_url: "https://open-verify.cc/mlvp/docs/quick-start/"
     bg_image: "/images/intro_bg.jpg"
   - title: ""
