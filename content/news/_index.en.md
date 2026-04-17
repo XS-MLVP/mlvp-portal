@@ -1,6 +1,6 @@
 ---
 title: 'News'
 summary: 'Latest news and updates'
-type: 'verifytask'
+type: 'news'
 filter: false
 ---

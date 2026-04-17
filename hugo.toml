@@ -47,7 +47,7 @@ defaultContentLanguageInSubdir = false
       weight = 2
     [[languages.cn.menu.main]]
       name = "关于我们"
-      url = "https://open-verify.cc/about/"
+      url = "/about/"
       weight = 3
 
     [languages.en]

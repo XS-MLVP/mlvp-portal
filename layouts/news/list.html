@@ -1,0 +1,238 @@
+{{ define "main" }}
+<div class="news-page-container">
+    <div class="news-header">
+        <h1 class="news-title">{{ .Params.Title }}</h1>
+        {{ if .Params.Summary }}
+        <p class="news-subtitle">{{ .Params.Summary }}</p>
+        {{ end }}
+    </div>
+
+    <div class="news-grid" id="news-grid-container">
+        {{ range $index, $page := .RegularPages.ByDate.Reverse }}
+        {{ $link := .Permalink }}
+        {{ if .Params.Website }}
+            {{ $link = .Params.Website }}
+        {{ end }}
+        <a href="{{ $link }}" target="{{ if .Params.Website }}_blank{{ else }}_self{{ end }}" class="news-card" style="{{ if ge $index 6 }}display: none;{{ end }}">
+            <div class="news-card-image-wrapper">
+                <img src="/images/image.png" alt="Cover Image" class="news-card-image">
+            </div>
+            <div class="news-card-body">
+                <div class="news-card-meta">
+                    <span class="news-card-tag">文章</span>
+                    <span class="news-card-date">{{ .Date.Format "2006-01-02" }}</span>
+                </div>
+                <h2 class="news-card-title">{{ .Title }}</h2>
+                <div class="news-card-footer">
+                    <span class="news-card-btn">阅读更多 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg></span>
+                </div>
+            </div>
+        </a>
+        {{ end }}
+    </div>
+
+    <div class="news-load-more-container" id="load-more-container">
+        <button class="news-load-more-btn" id="load-more-btn">加载更多</button>
+    </div>
+</div>
+
+<style>
+.news-page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px 100px;
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.news-header {
+    text-align: left;
+    margin-bottom: 60px;
+}
+
+.news-title {
+    font-size: 40px;
+    font-weight: 600;
+    color: #181E25;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+}
+
+.news-subtitle {
+    font-size: 16px;
+    color: #6B7280;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 30px;
+}
+
+.news-card {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border: 1px solid #EAEAEA;
+    border-radius: 24px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.news-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+    color: inherit;
+}
+
+.news-card-image-wrapper {
+    width: 100%;
+    padding: 12px 12px 0 12px;
+}
+
+.news-card-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 16px;
+    display: block;
+}
+
+.news-card-body {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.news-card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.news-card-tag {
+    background-color: #F4F5F7;
+    color: #333;
+    font-size: 13px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+.news-card-date {
+    font-size: 14px;
+    color: #999;
+}
+
+.news-card-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1A1A1A;
+    line-height: 1.5;
+    margin: 0 0 30px 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.news-card-footer {
+    margin-top: auto;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.news-card-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background-color: #F7F8FA;
+    color: #1A1A1A;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: background-color 0.2s ease;
+}
+
+.news-card:hover .news-card-btn {
+    background-color: #EDEDED;
+}
+
+.news-load-more-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.news-load-more-btn {
+    background-color: #fff;
+    color: #1A1A1A;
+    border: 1px solid #1A1A1A;
+    border-radius: 40px;
+    padding: 12px 40px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.news-load-more-btn:hover {
+    background-color: #1A1A1A;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const cards = document.querySelectorAll('.news-card');
+    const loadMoreBtn = document.getElementById('load-more-btn');
+    const loadMoreContainer = document.getElementById('load-more-container');
+    let currentlyShown = 6;
+    const step = 6;
+
+    // Initially hide cards beyond the limit
+    cards.forEach((card, index) => {
+        if (index >= currentlyShown) {
+            card.style.display = 'none';
+        }
+    });
+
+    // Hide button if all cards are already shown
+    if (cards.length <= currentlyShown) {
+        loadMoreContainer.style.display = 'none';
+    }
+
+    // Handle click
+    if (loadMoreBtn) {
+        loadMoreBtn.addEventListener('click', function() {
+            const end = currentlyShown + step;
+            cards.forEach((card, index) => {
+                if (index >= currentlyShown && index < end) {
+                    card.style.display = 'flex';
+                }
+            });
+            
+            currentlyShown = end;
+
+            // Hide button if no more cards to show
+            if (currentlyShown >= cards.length) {
+                loadMoreContainer.style.display = 'none';
+            }
+        });
+    }
+});
+</script>
+{{ end }}
