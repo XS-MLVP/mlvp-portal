@@ -15,7 +15,7 @@
         {{ end }}
         <a href="{{ $link }}" target="{{ if .Params.Website }}_blank{{ else }}_self{{ end }}" class="news-card" style="{{ if ge $index 6 }}display: none;{{ end }}">
             <div class="news-card-image-wrapper">
-                <img src="/images/image.png" alt="Cover Image" class="news-card-image">
+                <img src="{{ with .Params.image }}{{ . }}{{ else }}/images/image.png{{ end }}" alt="Cover Image" class="news-card-image">
             </div>
             <div class="news-card-body">
                 <div class="news-card-meta">
