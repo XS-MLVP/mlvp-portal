@@ -218,28 +218,47 @@ padding-bottom: 2rem"
 	</div>
 	<div class="row">
 		{{ range $section.Pages.ByWeight }}
+		{{ $img := .Resources.GetMatch "img.png" }}
 		<div class="col-12 col-sm-6 col-md-4 mb-4">
-			<div class="learning-bg-white" style="position: relative;">
-				<div class="d-flex justify-content-between">
-					{{ if .Params.title }}
-					<div class="learning-title">{{ .Params.title }}</div>
-					{{ end  }}
-					{{ $img := .Resources.GetMatch "*img*" }}
-					{{ with $img }}
-					<img
-							src="{{.RelPermalink }}"
-							style="max-width: 100%; height: auto;"
-					/>
-					{{ end }}
-				</div>
+			<div
+					class="position-relative bg-all beginner-bg"
+					style="
+								{{ with $img }}
+								background-image: url('{{ .RelPermalink }}');
+								{{ end }}
+							"
+			>
+				{{ if .Params.title }}
+				<div class="beginner-title">{{ .Params.title }}</div>
+				{{ end }}
 				{{ if .Params.summary }}
-				<div class="learning-summary">{{ .Params.summary }}</div>
-				{{ end  }}
+				<div class="beginner-desc">{{ .Params.summary }}</div>
+				{{ end }}
+				<!--1即将上线 2正在进行 3报名中-->
+				{{ if eq site.Language.Lang "cn" }}
+				{{ if eq .Params.schedule 1 }}
+				<img src="{{ "/images/beginner_0.png" | relURL }}" width=98>
+				{{ else if eq .Params.schedule 2 }}
+				<img src="{{ "/images/beginner_1.png" | relURL }}" width=98>
+				{{ else if eq .Params.schedule 3 }}
+				<img src="{{ "/images/beginner_2.png" | relURL }}" width=98>
+				{{ end }}
+				{{ else }}
+				{{ if eq .Params.schedule 1 }}
+				<img src="{{ "/images/beginner_0_en.png" | relURL }}" width=98>
+				{{ else if eq .Params.schedule 2 }}
+				<img src="{{ "/images/beginner_1_en.png" | relURL }}" width=98>
+				{{ else if eq .Params.schedule 3 }}
+				<img src="{{ "/images/beginner_2_en.png" | relURL }}" width=98>
+				{{ end }}
+				{{ end }}
 
 				{{ if .Params.Website }}
 				<a href="{{ .Params.Website }}" class="stretched-link" target="_blank"></a>
 				{{ else }}
+				{{ if ne .Params.schedule 1 }}
 				<a href="{{ .RelPermalink }}" class="stretched-link"></a>
+				{{ end }}
 				{{ end  }}
 			</div>
 		</div>

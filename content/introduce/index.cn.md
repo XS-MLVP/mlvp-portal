@@ -2,6 +2,7 @@
 title: "让每个开发者都能参与"
 slides:
   - title: "让每个开发者都能参与"
+    title_style: "padding-top: 4rem;"
     sub: "处理器验证"
     sub_icon: "/images/RISC-V.png"
     description: "“万众一芯”是一个开源开放的芯片验证平台，致力于用 AI 和软件的方式重构芯片验证。"
