@@ -8,7 +8,8 @@ status: "Completed"
 task_closed: true  
 home_page_show: true  
 Weight: 11  
-summary: "Learn the Microarchitecture Design of Xiangshan’s ITLB Through Verification"  
+summary: "Learn the Microarchitecture Design of Xiangshan's ITLB Through Verification"  
+image: "/images/UTyanzheng.png"  
 
 ---  
 

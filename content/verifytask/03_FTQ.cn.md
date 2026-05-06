@@ -11,6 +11,7 @@ Weight: 11
 summary: "在验证中学习香山FTQ的微架构设计"
 schedule: 4
 difficult: 5
+image: "/images/UTyanzheng.png"
 ---
 
 本期验证实战任务将帮助学习香山昆明湖架构中FTQ模块的设计，FTQ是取指目标队列，在处理器前端设计中承担着重要作用，负责前端分支预测单元BPU和取指令单元IFU之间的交互，以及前端与后端之间交互。

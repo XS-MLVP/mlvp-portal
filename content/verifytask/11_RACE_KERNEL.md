@@ -10,6 +10,7 @@ Weight: 11
 summary: "挑战RISC-V向量算子验证"
 schedule: 4
 difficult: 5
+image: "/images/suanziyanzheng.png"
 ---
 
 # 任务介绍

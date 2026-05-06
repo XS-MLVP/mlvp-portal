@@ -10,6 +10,7 @@ Weight: 11
 summary: "在验证中学习香山LSU-StoreUnit的微架构设计"
 schedule: 4
 difficult: 5
+image: "/images/UTyanzheng.png"
 ---
 在本期验证任务中，各位朋友将走近香山昆明湖架构的StoreUnit模块，了解香山存储地址执行单元的设计思路，加深对RISCV指令集架构的理解。欢迎各位报名参加！
 （报名链接点[这里](https://www.wjx.top/vm/wFtuJS6.aspx)，qq群：**600480230**）。

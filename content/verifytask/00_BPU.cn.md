@@ -8,6 +8,7 @@ status: "Completed"
 task_closed: true
 home_page_show: true
 summary: "通过验证来学习香山BPU的微架构设计"
+image: "/images/UTyanzheng.png"
 ---
 
 开源开放验证项目通过git进行任务分发和数据统计，本次活动链接如下：

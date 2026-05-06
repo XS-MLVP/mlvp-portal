@@ -10,6 +10,7 @@ Weight: 11
 summary: "Learning Xiangshan IFU Microarchitecture Design Through Verification"
 schedule: 4
 difficult: 5
+image: "/images/UTyanzheng.png"
 ---
 
 This verification hands-on task will help in learning the design of the IFU top module in Xiangshan's Kunming Lake architecture. Through hands-on verification, you will gain insights into the design ideas of Xiangshan's instruction fetch module and deepen your understanding of the RISC-V instruction set architecture. We welcome you to sign up for this task (registration questionnaire [here](https://www.wjx.top/vm/mKbmTqL.aspx#), QQ group: **600480230**).

@@ -11,6 +11,7 @@ Weight: 11
 summary: "在验证中学习香山LSQ的微架构设计"
 schedule: 4
 difficult: 5
+image: "/images/UTyanzheng.png"
 ---
 
 在本期验证任务中，各位朋友将走近香山昆明湖架构的 LSQ 模块，在验证实战中体会香山访存模块的设计思路，加深对 RISCV 指令集架构的理解。欢迎各位报名参加（报名填写[这里](https://www.wjx.top/vm/mB3EmwR.aspx)，qq 群：**902630176**。）！
