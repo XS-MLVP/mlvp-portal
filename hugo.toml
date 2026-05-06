@@ -84,7 +84,7 @@ defaultContentLanguageInSubdir = false
        identifier = "about"
        title = "About Us"
        name = "About Us"
-       url = "/beginner/understand/"
+       url = "/en/beginner/understand/"
        weight = 3
 
 [taxonomies]
