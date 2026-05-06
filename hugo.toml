@@ -47,7 +47,7 @@ defaultContentLanguageInSubdir = false
       weight = 2
     [[languages.cn.menu.main]]
       name = "关于我们"
-      url = "/about/"
+      url = "/beginner/understand/"
       weight = 3
 
     [languages.en]
@@ -84,7 +84,7 @@ defaultContentLanguageInSubdir = false
        identifier = "about"
        title = "About Us"
        name = "About Us"
-       url = "/en/about/"
+       url = "/beginner/understand/"
        weight = 3
 
 [taxonomies]
