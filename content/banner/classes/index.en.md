@@ -1,6 +1,6 @@
 ---
-title: 'Chip verification tasks are rich'
+title: 'Software Engineers Can Participate'
 is_page: true
 weight: 2
-intro: 'From Docs to Modules: A Path to High-Performance Processors'
+intro: 'With just one command, hardware circuits can be converted into software language packages'
 ---

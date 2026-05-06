@@ -1,6 +1,6 @@
 ---
-title: 'Annual bonus pool 50W+'
+title: 'Compatible with Traditional UVM Verification'
 is_page: true
 weight: 3
-intro: '70+ verification tasks rolling out with $50K+ prize pool'
+intro: 'Support traditional verification features while introducing new software ecosystem capabilities'
 ---
