@@ -74,7 +74,7 @@ weight: 1
 
 这种设计与验证的分离确保了两个团队能够独立理解规范，从而提高发现潜在错误的概率。
 
-<img src="./assets/flow.png" style="width: 60%" />
+<img src="/images/flow.png" style="width: 60%" />
 
 ## 完整的验证流程
 
@@ -386,11 +386,11 @@ weight: 1
 
 4. **众包验证平台**：建立专门的众包验证平台，连接芯片设计公司和验证人才，组织验证任务的分发和管理。
 
-<img src="./assets/opensource-chip-steps.png" style="width: 100%" />
+<img src="/images/opensource-chip-steps.png" style="width: 100%" />
 
 > 🚀 **未来展望**：我们的愿景是"打开传统验证模式的黑盒，让所有感兴趣的人可以随时随地的，用自己擅长的编程语言参与芯片验证"。这将极大地扩展验证人才池，降低芯片验证成本，加速芯片创新周期。
 >
-> <img src="./assets/ambitions.png" style="width: 100%" />
+> <img src="/images/ambitions.png" style="width: 100%" />
 
 # 9. 小结
 

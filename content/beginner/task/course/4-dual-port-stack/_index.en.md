@@ -211,13 +211,13 @@ To avoid these two situations, we stipulate:
 - `ready`: Determined by the receiver (output by receiver), informs the sender that it is prepared to receive the signal (input to sender).
 - `data`: The data the sender wants to transmit to the receiver.
 
-<center><img src="./assets/valid-ready-example.png" style="width: 90%;" alt="Diagram of valid-ready handshake protocol"></center>
+<center><img src="/images/valid-ready-example.png" style="width: 90%;" alt="Diagram of valid-ready handshake protocol"></center>
 
 #### Handshake in Dual-Port Stack
 
 You might find it strange that the dual-port stack clearly only has one module, so where do the sender and receiver come from? In fact, you can **abstract out an external device**. When interacting with the stack via the **request port**, it acts as the sender; when interacting with the stack via the **response port**, it acts as the receiver.
 
-<center><img src="./assets/fire-example.png" style="width: 90%"></center>
+<center><img src="/images/fire-example.png" style="width: 90%"></center>
 
 #### Why Specifically Discuss the Handshake Protocol
 
@@ -370,7 +370,7 @@ Using callback functions, we implement the dual-port stack's driving logic as a 
 
 #### State Machine Transition Diagram
 
-<center><img src="./assets/state-machine.png" alt="Dual-port stack state machine" style="width: 90%"/></center>
+<center><img src="/images/state-machine.png" alt="Dual-port stack state machine" style="width: 90%"/></center>
 
 | **Current State**      | **Transition Condition**       | **Next State**       | **Behavior Description**                           |
 | :-----------------: | :---------------------------: | :---------------: | :---------------------------------------------: |
@@ -599,7 +599,7 @@ For parallel execution in hardware verification, the concurrency characteristic 
 
   * Picker allows coroutines to use the `await AStep` function for this kind of waiting:
 
-<center><img src="./assets/timeline-diagram.png" alt="await AStep diagram" style="width: 90%" /></center>
+<center><img src="/images/timeline-diagram.png" alt="await AStep diagram" style="width: 90%" /></center>
 
 > From a macro perspective, coroutine 1 and coroutine 2 are concurrently executed, but this is actually achieved through coroutine switching
 

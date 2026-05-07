@@ -31,7 +31,8 @@ After completing 4 lectures of learning, you will conduct a hands-on practice on
 
 **After your results are reviewed and approved, you can receive a "Unity Chip" souvenir package worth 99 yuan. It includes 1 custom double-layer pencil case, 1 rotating metal phone stand, and 1 32GB dual-interface USB drive.**
 
-<center><img src="souvenir.png"/></center>
+<center><img src="/images/souvenir.png"/></center>
+
 
 ## 3. What Does the Beginner Tutorial Include?
 

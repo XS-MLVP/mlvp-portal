@@ -31,7 +31,7 @@ schedule: 2
 
 **您的成果经审核通过后，可获得价值99元的“万众一芯”周边礼包1份。包含1个定制双层笔袋，1个可旋转金属手机支架，1个32G双接口U盘。**
 
-<center><img src="souvenir.png"/></center>
+<center><img src="/images/souvenir.png"/></center>
 
 ## 3. 新手教程包含什么？
 

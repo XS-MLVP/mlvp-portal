@@ -74,7 +74,7 @@ The design team and the verification team usually start from the same specificat
 
 This separation of design and verification ensures that the two teams can independently understand the specification, thereby increasing the probability of discovering potential errors.
 
-<img src="./assets/flow.png" style="width: 60%" />
+<img src="/images/flow.png" style="width: 60%" />
 
 ## Complete Verification Process
 
@@ -386,11 +386,11 @@ Fueling silicon verification crowdsourcing progress predicates mapping encompass
 
 4. **Crowdsourcing Validation Platform**: Birthing consolidated testing portals intertwining silicon blueprint titans traversing validation virtuosos organizing test task dispatches coupled with management.
 
-<img src="./assets/opensource-chip-steps.png" style="width: 100%" />
+<img src="/images/opensource-chip-steps.png" style="width: 100%" />
 
 > 🚀 **Future Prospects**: Our vision decrees "Unsealing customary testing blackboxes ushering impassioned participants boundary-less hardware validations fueled via fluent programming proficiencies". Phenomenally augmenting validation talent tributaries clipping chip review tariffs coalescing swift computational permutations.
 >
-> <img src="./assets/ambitions.png" style="width: 100%" />
+> <img src="/images/ambitions.png" style="width: 100%" />
 
 # 9. Summary
 

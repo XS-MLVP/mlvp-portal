@@ -94,7 +94,7 @@ Once both line coverage and functional coverage reach 100%, the verification is 
 
 Nutshell Cache is the cache module used in the Nutshell processor. It adopts a three-stage pipeline design. When the third stage detects that the current request is an MMIO or a refill occurs, the pipeline will be stalled. At the same time, Nutshell Cache adopts a customizable modular design. By changing parameters, it can generate L1 Cache or L2 Cache with different storage sizes. Additionally, Nutshell Cache has a coherence interface and can handle coherence-related requests.
 
-<center><img src="./assets/nutshell-cache-frame.png" style="90%"/></center>
+<center><img src="/images/nutshell-cache-frame.png" style="90%"/></center>
 
 ## Chisel and Nutshell
 
@@ -302,7 +302,7 @@ When both line coverage and functional coverage reach 100%, the verification is 
 
 Nutshell Cache is the cache module used in the Nutshell processor. It adopts a three-stage pipeline design. When the third stage detects that the current request is MMIO or a refill occurs, the pipeline is stalled. At the same time, Nutshell Cache adopts a customizable modular design. By changing parameters, it can generate L1 Cache or L2 Cache with different storage sizes. In addition, Nutshell Cache has a coherence interface and can handle coherence-related requests.
 
-<center><img src="./assets/nutshell-cache-frame.png" style="90%"/></center>
+<center><img src="/images/nutshell-cache-frame.png" style="90%"/></center>
 
 ## Chisel and Nutshell
 

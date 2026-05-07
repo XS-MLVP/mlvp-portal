@@ -361,7 +361,7 @@ The workflow is as follows:
 
 The following schematic helps understand this switching process:
 
-![](/assets/coroutine.png)
+![](/images/coroutine.png)
 
 This diagram shows the execution flows of two coroutines (tasks A and B). Macroscopically, A and B seem to be parallel. Microscopically, when A needs to wait for an event, it yields control through `await`, and the Event Loop gives execution right to B. When B also encounters waiting, it might switch back to A (if A's event has completed). This cooperative switching is the core of coroutine concurrency.
 

@@ -117,7 +117,7 @@ First, check the Verilator version provided by the package management tool:
 apt show verilator
 ```
 
-<img src="./assets/verilator-apt.png" style="width: 40%" />
+<img src="/images/verilator-apt.png" style="width: 40%" />
 
 As shown in the figure above, if the version number (Version) is **≥ 4.218**, you can install it directly via the package manager:
 
@@ -161,7 +161,7 @@ sudo -E make install
 
 Then enter `verilator -version` in the command line. If similar content appears as shown below, the installation is successful:
 
-<img src="./assets/verilator-version.png" style="width: 40%; min-width: 550px"/>
+<img src="/images/verilator-version.png" style="width: 40%; min-width: 550px"/>
 
 ## Check Available Versions
 
@@ -171,7 +171,7 @@ First, check the Swig version provided by the package management tool:
 apt show swig
 ```
 
-<img src="./assets/swig-apt.png" style="width: 20%; min-width: 300px"/>
+<img src="/images/swig-apt.png" style="width: 20%; min-width: 300px"/>
 
 As shown in the figure above, if the version number (Version) is **≥ 4.2.0**, you can install it directly via the package manager:
 
@@ -191,7 +191,7 @@ sudo apt purge -y swig
 
 First, open the Swig source code download website https://www.swig.org/download.html
 
-<center><img src="./assets/swig-website.png" style="width: 90%"/></center>
+<center><img src="/images/swig-website.png" style="width: 90%"/></center>
 
 At the time of writing this tutorial, the link to the source code we got is `wget http://prdownloads.sourceforge.net/swig/swig-4.3.1.tar.gz`
 
@@ -217,7 +217,7 @@ First, check the Verilator version provided by the package management tool:
 apt show verilator
 ```
 
-<img src="./assets/verilator-apt.png" style="width: 40%" />
+<img src="/images/verilator-apt.png" style="width: 40%" />
 
 As shown in the figure above, if the version number (Version) is **≥ 4.218**, you can install it directly via the package manager:
 
@@ -261,7 +261,7 @@ sudo -E make install
 
 Then enter `verilator -version` in the command line. If similar content appears as shown below, the installation is successful:
 
-<img src="./assets/verilator-version.png" style="width: 40%; min-width: 550px"/>
+<img src="/images/verilator-version.png" style="width: 40%; min-width: 550px"/>
 
 ## Check Available Versions
 
@@ -271,7 +271,7 @@ First, check the Swig version provided by the package management tool:
 apt show swig
 ```
 
-<img src="./assets/swig-apt.png" style="width: 20%; min-width: 300px"/>
+<img src="/images/swig-apt.png" style="width: 20%; min-width: 300px"/>
 
 As shown in the figure above, if the version number (Version) is **≥ 4.2.0**, you can install it directly via the package manager:
 
@@ -291,7 +291,7 @@ sudo apt purge -y swig
 
 First, open the Swig source code download website https://www.swig.org/download.html
 
-<center><img src="./assets/swig-website.png" style="width: 90%"/></center>
+<center><img src="/images/swig-website.png" style="width: 90%"/></center>
 
 At the time of writing this tutorial, the link to the source code we got is `wget http://prdownloads.sourceforge.net/swig/swig-4.3.1.tar.gz`
 
@@ -318,7 +318,7 @@ sudo -E make install
 
 Execute the command `swig --version`. If output similar to the image below appears, the installation is successful:
 
-<img src="./assets/swig-version.png" style="width: 60%; min-width: 500px"/>
+<img src="/images/swig-version.png" style="width: 60%; min-width: 500px"/>
 
 ## Install Verible
 
@@ -352,7 +352,7 @@ If the output contains `bash`, it means you are using Bash Shell. The following 
 
 Then go to the folder where verible was extracted. Using the tutorial as an example, after entering the `ls` command, you can see the `verible-v0.0-3958-g7aae5c08-linux-static-x86_64` folder:
 
-<img src="./assets/verible-dir.png" style="width: 60%"/>
+<img src="/images/verible-dir.png" style="width: 60%"/>
 
 Next, add the environment variables:
 
@@ -364,7 +364,7 @@ source ~/.bashrc
 
 Execute `verible-verilog-format --version`. If output similar to the below image appears, it means the installation was successful:
 
-<img src="./assets/verible-version.png" style="width: 60%"/>
+<img src="/images/verible-version.png" style="width: 60%"/>
 
 ## Picker Installation
 
@@ -388,7 +388,7 @@ sudo -E make install # Install
 
 After installation, executing the `picker` command will yield the following output:
 
-<img src="./assets/picker-commands.png" style="width: 90%"/>
+<img src="/images/picker-commands.png" style="width: 90%"/>
 
 After completing the installation, run the following examples to verify if the installation is correct:
 
@@ -1037,7 +1037,7 @@ Picker's global options are used to get help information, view versions, and loc
 
 `--check`: Checks the installation paths and supported languages. This option helps you verify the installation status of Picker and all languages supported by the current environment.
 
-<img src="./assets/picker-help.png" style="width: 80%"/>
+<img src="/images/picker-help.png" style="width: 80%"/>
 
 ### Path Query Options
 
@@ -1057,7 +1057,7 @@ The following options are used to query various path information related to Pick
 
 `--show_xcom_lib_location_lua`: Displays the location of the Lua module xspcomm. Required when using Picker-generated code in a Lua environment.
 
-<img src="./assets/picker-check.png" style="30%"/>
+<img src="/images/picker-check.png" style="30%"/>
 
 ## `export` Subcommand Common Arguments
 
