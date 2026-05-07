@@ -26,7 +26,7 @@ In this task, a total of 6 subtasks are released, covering 6 submodules of LSQ (
     <center>	
     <img src="/crowdsourcing/activity_process.png"
          alt="Task Process"
-         style="zoom:26%"/>
+         style="zoom:19%"/>
     <br>		
     Task Process	
     </center>

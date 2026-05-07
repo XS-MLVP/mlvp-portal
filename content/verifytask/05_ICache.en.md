@@ -26,7 +26,7 @@ This task includes six subtasks and covers seven submodules of the ICache (IPref
     <center>	
     <img src="/crowdsourcing/activity_process.png"
          alt="Task Process"
-         style="zoom:26%"/>
+         style="zoom:19%"/>
     <br>		
     Task Process	
     </center>

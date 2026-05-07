@@ -28,7 +28,7 @@ The task participation process is as follows:
     <center>	
     <img src="/crowdsourcing/activity_process.png"
          alt="Task Process"
-         style="zoom:26%"/>
+         style="zoom:19%"/>
     <br>		
     Task Process	
     </center>
