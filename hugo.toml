@@ -60,24 +60,24 @@ defaultContentLanguageInSubdir = false
       text = "English"
 
     [[languages.en.menu.main]]
-       identifier = "registration_portal"
-       title = "Registration entrance summary"
-       name = "Registration entrance summary"
-       url = "/en/registration_portal/"
-       weight = 1
-
-    [[languages.en.menu.main]]
-       identifier = "news"
-       title = "News"
-       name = "News"
-       url = "/en/news/"
+       identifier = "ucagent"
+       title = "UCagent"
+       name = "UCagent"
+       url = "https://ucagent.open-verify.cc/content/00_index/"
        weight = 1
 
     [[languages.en.menu.main]]
        identifier = "learningresource"
        title = "Learning Resources"
        name = "Learning Resources"
-       url = "/en/learningresource/"
+       url = "https://open-verify.cc/mlvp/en/docs/"
+       weight = 2
+
+    [[languages.en.menu.main]]
+       identifier = "news"
+       title = "News"
+       name = "News"
+       url = "/en/news/"
        weight = 2
 
     [[languages.en.menu.main]]

@@ -7,7 +7,7 @@ slides:
     sub_icon: "/images/RISC-V.png"
     description: "The UnityChip initiative is an open-source and open verification platform dedicated to restructuring chip verification using AI and software methods."
     description_sub: "The platform has independently developed a series of open-source tools that can significantly improve verification efficiency, lower verification barriers, and crowdsource verification work. The open-source high-performance RISC-V processor core 'Xiangshan' is one of the first projects to use this platform."
-    description_sub2: "We look forward to working with you to transform chip verification from 'labor-intensive' to 'intelligent and efficient' through innovative verification technologies and open collaboration models, jointly building a new paradigm for AI-driven chip verification."
+
     quick_start_text: ""
     quick_start_url: "https://open-verify.cc/mlvp/docs/quick-start/"
     bg_image: "/images/intro_bg.jpg"

@@ -5,7 +5,7 @@ summary: "Guide you to use the 'Million Hearts One Chip' open verification platf
 weight: 2
 home_page_show: true
 schedule: 2
-Website: "/beginner/task/course/"
+Website: "/en/beginner/task/course/"
 ---
 
 **UCAgent is an automated chip verification AI agent launched by "Million Hearts One Chip" based on large language models.**
