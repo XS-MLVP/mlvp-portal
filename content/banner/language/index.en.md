@@ -1,6 +1,6 @@
 ---
-title: 'Software engineers can participate'
+title: 'AI-Driven Chip Verification'
 is_page: true
 weight: 1
-intro: 'Convert to your preferred language and verify with ease'
+intro: 'Achieve efficient and intelligent verification through UCAgent chip verification AI agent'
 ---

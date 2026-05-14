@@ -1,8 +1,9 @@
 baseURL = "https://www.example.com"
 languageCode = "zh-cn"
+hasCJKLanguage = true
 title = "UnityChip Verification"
 copyright = "MLVP Group ©"
-
+theme = "hugo-digital-garden-theme"
 defaultContentLanguage = 'cn'
 defaultContentLanguageInSubdir = false
 
@@ -32,18 +33,21 @@ defaultContentLanguageInSubdir = false
       initials = "首页"
 
     [[languages.cn.menu.main]]
-      name = "报名入口汇总"
-      url = "/registration_portal/"
+      name = "UCagent"
+      url = "https://ucagent.open-verify.cc/content/00_index/"
       weight = 1
 
     [[languages.cn.menu.main]]
       name = "学习资源"
-      url = "/learningresource/"
+      url = "https://open-verify.cc/mlvp/docs/"
       weight = 2
-
+    [[languages.cn.menu.main]]
+      name = "新闻动态"
+      url = "/news/"
+      weight = 2
     [[languages.cn.menu.main]]
       name = "关于我们"
-      url = "/about/"
+      url = "/beginner/understand/"
       weight = 3
 
     [languages.en]
@@ -56,24 +60,31 @@ defaultContentLanguageInSubdir = false
       text = "English"
 
     [[languages.en.menu.main]]
-       identifier = "registration_portal"
-       title = "Registration entrance summary"
-       name = "Registration entrance summary"
-       url = "/en/registration_portal/"
+       identifier = "ucagent"
+       title = "UCagent"
+       name = "UCagent"
+       url = "https://ucagent.open-verify.cc/content/00_index/"
        weight = 1
 
     [[languages.en.menu.main]]
        identifier = "learningresource"
        title = "Learning Resources"
        name = "Learning Resources"
-       url = "/en/learningresource/"
+       url = "https://open-verify.cc/mlvp/en/docs/"
+       weight = 2
+
+    [[languages.en.menu.main]]
+       identifier = "news"
+       title = "News"
+       name = "News"
+       url = "/en/news/"
        weight = 2
 
     [[languages.en.menu.main]]
        identifier = "about"
        title = "About Us"
        name = "About Us"
-       url = "/en/about/"
+       url = "/en/beginner/understand/"
        weight = 3
 
 [taxonomies]
@@ -97,6 +108,6 @@ defaultContentLanguageInSubdir = false
     # Choose from https://xyproto.github.io/splash/docs/all.html
     style = 'monokailight'
   [markup.tableOfContents]
-    endLevel = 3
-    ordered = false
-    startLevel = 1
+    endLevel = 4
+    ordered = true
+    startLevel = 2

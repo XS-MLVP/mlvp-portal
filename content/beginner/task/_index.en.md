@@ -1,53 +1,54 @@
 ---
-title: 'Beginner task'
-summary: 'Quickly understand the framework and tools of UnityChip and complete the whole verification process.'
-schedule: 2
-date: 2025-01-02T08:50:39+08:00
-resource_tags: ["Document", "Learning Materials"]
+title: 'Beginner Tasks'
+date: 2025-09-24T08:50:39+08:00
+draft: false
+resource_tags: ["Documentation", "Learning Materials"]
+status: "seeding"
+summary: "Learn the Unity Chip framework and tools through hands-on practice, and complete a full verification workflow"
 weight: 2
+task_closed: false
+home_page_show: true
+schedule: 2
 ---
 
-In this beginner's task, you will:
+**Welcome to the Unity Chip Beginner Village**. Whether you are a first or second-year computer science student, a hardware engineer looking to try innovative verification methods, or a software engineer curious about open-source chips, you can **formally enter the world of chip verification through this simple and easy-to-learn beginner task** and explore the world of open-source processors.
 
-——Gain a basic understanding and usage of the "UnityChip" verification tools.
+## 1. How to Participate in Beginner Tasks
 
-——Understand the fundamental knowledge of the entire hardware verification process.
++ **Step1**: [Click here](https://www.wjx.top/vm/P7MqjP0.aspx# ) to fill out the registration form.
 
-——Learn about environment setup and test case development based on the UnityChip framework.
++ **Step2**: Receive an email and join the Beginner Task discussion group (QQ Group: 1033196714).
 
-——Participate in hands-on practice: personally experience verifying the Xiangshan BPU module.
++ **Step3**: Follow the beginner tutorial and gradually start learning and hands-on tasks.
 
-## Learning Task 1: Basic Concepts and Tool Usage
++ **Step4**: Submit verification code and verification report to complete the beginner task.
 
-In this mission, you will establish a worldview and fundamental understanding of hardware verification through the study of basic verification theories, enabling you to better participate in the verification activities of UnityChip.
+## 2. What Does the Beginner Task Include?
 
-At the same time, you will learn the basic usage of the powerful tool, picker, provided by UnityChip. This tool supports the conversion of DUT in hardware language into commonly used software languages and exposes basic calling methods, thereby making pure software language verification possible.
+The beginner task **consists of learning + hands-on practice**.
 
-### Basic Concepts
+After completing 4 lectures of learning, you will conduct a hands-on practice on Nutshell Cache, and finally submit the corresponding verification code and verification report.
 
-For those participating in the "One Chip for All" open verification activity, some of you may have certain hardware verification experience, some may only have software testing experience, or some may simply be interested in the open-source verification of Xiangshan. Therefore, you might have some questions, such as:
+**After your results are reviewed and approved, you can receive a "Unity Chip" souvenir package worth 99 yuan. It includes 1 custom double-layer pencil case, 1 rotating metal phone stand, and 1 32GB dual-interface USB drive.**
 
-Why is hardware verification necessary?
+<center><img src="/images/souvenir.png"/></center>
 
-Why can Xiangshan conduct open-source hardware verification?
 
-What are the differences between hardware verification and software verification?
+## 3. What Does the Beginner Tutorial Include?
 
-……
+The beginner tutorial consists of 5 lectures in total, starting from the basic knowledge of chip verification, gradually explaining the installation and usage of tools, and finally guiding everyone through a hands-on case. **Through these 5 lectures of learning, you will be able to complete this beginner task and successfully enter the world of chip verification!**
 
-In this section, you will begin to learn about the foundational theories of hardware verification, including the background of chip verification, basic knowledge of digital circuits, and the processes of hardware verification. This will help you establish a worldview of hardware verification, enabling you to better understand the purpose and importance of the "UnityChip" initiative.
++ Lecture 1: Basic Knowledge of Chip Verification
 
-The learning tasks in this section are divided into the following parts:
++ Lecture 2: Picker Installation and Usage
 
-**Basic Knowledge of Chip Verification**: Understand the concepts, processes, metrics, management methods, current status of chip verification, and the feasibility basis for sub-package verification of the "UnityChip" project, etc. (<a href="/mlvp/docs/basic/ic_verify/" target="_blank">Tutorial Link</a>).
++ Lecture 3: Toffee Installation and Usage
 
-**Digital Circuits**: Understand the basic concepts of digital circuits, the necessity of studying digital circuits, commonly used hardware description languages, etc. (<a href="/mlvp/docs/basic/ic_base/" target="_blank">Tutorial Link</a>).
++ Lecture 4: Advanced Case: Dual-port Stack
 
-**Creating DUT**: Understand the concept of DUT, methods for converting Chisel to Verilog, and ways to compile Verilog, etc. (<a href="/mlvp/docs/basic/create_dut/" target="_blank">Tutorial Link</a>).
++ Lecture 5: Hands-on Case - Nutshell Cache
 
-**DUT Verification**: Understand the steps of DUT verification and complete a simple example—verification of the Guoke Cache. (Tutorial link: <a href="/mlvp/docs/basic/test_dut/" target="_blank">Tutorial Link</a>). You can skip the content related to the picker tool for now and learn it later.
-
-**Verification Report**: Understand the content of writing a verification report (<a href="/mlvp/docs/basic/report/" target="_blank">Tutorial Link</a>).
+Each beginner lecture includes **video explanations, text tutorials, and learning tasks**. You can check the specific content and start learning on the [Beginner Course Page](https://open-verify.cc/beginner/task/course/)~
 
 ### Basic Tools
 

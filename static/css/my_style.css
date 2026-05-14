@@ -1,1 +1,13 @@
 /* Custom styles go here */
+
+:root {
+  --title: Roboto, Helvetica, "Helvetica Neue", system-ui, -apple-system, sans-serif !important;
+  --summary: Roboto, Helvetica, "Helvetica Neue", system-ui, -apple-system, sans-serif !important;
+  --headings: Roboto, Helvetica, "Helvetica Neue", system-ui, -apple-system, sans-serif !important;
+  --bs-font-sans-serif: Roboto, Helvetica, "Helvetica Neue", system-ui, -apple-system, sans-serif !important;
+  --bs-body-font-family: Roboto, Helvetica, "Helvetica Neue", system-ui, -apple-system, sans-serif !important;
+}
+
+body, .serif, table, h1, h2, h3, h4, h5, h6, .display-2, p, a, span, div, li, ul, ol, th, td {
+  font-family: Roboto, Helvetica, "Helvetica Neue", system-ui, -apple-system, sans-serif !important;
+}

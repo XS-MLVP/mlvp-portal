@@ -11,6 +11,7 @@ Weight: 11
 summary: "Learning Xiangshan ICache Microarchitecture Design Through Verification"
 schedule: 4
 difficult: 5
+image: "/images/UTyanzheng.png"
 ---
 
 In this verification task, participants will explore the ICache module of the Xiangshan Kunming Lake architecture. Through hands-on verification, you will gain insights into the design ideas of Xiangshan's instruction cache module and deepen your understanding of the RISC-V instruction set architecture. We welcome you to sign up for this task (registration questionnaire [here](https://www.wjx.top/vm/e1nEX25.aspx#), QQ group: **600480230**).
@@ -25,7 +26,7 @@ This task includes six subtasks and covers seven submodules of the ICache (IPref
     <center>	
     <img src="/crowdsourcing/activity_process.png"
          alt="Task Process"
-         style="zoom:26%"/>
+         style="zoom:19%"/>
     <br>		
     Task Process	
     </center>

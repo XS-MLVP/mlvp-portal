@@ -9,6 +9,7 @@ task_closed: true
 home_page_show: true
 Weight: 11
 summary: "在验证中学习香山IFU的微架构设计"
+image: "/images/UTyanzheng.png"
 ---
 
 在本期验证任务中，各位朋友将走近香山昆明湖架构的IFU模块，在验证实战中体会香山取指模块的设计思路，加深对RISCV指令集架构的理解。欢迎各位报名参加（报名填写[这里](https://www.wjx.cn/vm/tUcQ4Fs.aspx#)，qq群：**600480230**。）！

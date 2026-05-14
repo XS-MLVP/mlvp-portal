@@ -9,6 +9,7 @@ task_closed: true
 home_page_show: true
 Weight: 11
 summary: "Learning the microarchitecture design of Xiangshan IFU during verification."
+image: "/images/UTyanzheng.png"
 ---
 
 In this verification task, participants will get close to the IFU module of the Xiangshan Kunming Lake architecture. Through practical verification, you will experience the design concepts of the Xiangshan instruction fetching module and deepen your understanding of the RISC-V instruction set architecture. Everyone is welcome to sign up (please fill out the registration here, QQ group: 600480230)!

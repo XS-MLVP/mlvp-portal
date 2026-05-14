@@ -9,6 +9,7 @@ task_closed: true
 home_page_show: true
 Weight: 11
 summary: "在验证中学习香山ITLB的微架构设计"
+image: "/images/UTyanzheng.png"
 ---
 
 本期验证实战任务将帮助学习香山昆明湖架构中TLB模块的设计，并接触MMU模块中除TLB外的其它内容，了解使用RISC-V指令架构设计模块的一般思路。[点击此处报名](https://www.wjx.top/vm/P4mhRDX.aspx# )填写报名表，报名提交后可加入QQ群（群号：<b>976081653</b>）以方便后续联系。

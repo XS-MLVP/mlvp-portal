@@ -8,6 +8,7 @@ status: "Completed"
 task_closed: true
 home_page_show: true
 summary: "Learning the microarchitecture design of the Xiangshan BPU through verification"
+image: "/images/UTyanzheng.png"
 ---
 
 The open-verify project distributes tasks and collect statistics data through git. The links of this activity is as follows：

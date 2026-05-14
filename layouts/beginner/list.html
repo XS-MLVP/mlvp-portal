@@ -1,0 +1,178 @@
+{{ define "main" }}
+
+<div class="container">
+    <div class="row gx-5">
+        <!-- 左侧内容区 -->
+        <div class="col-lg-9 col-md-12 bg-white shadow-sm p-4" style="border-radius: 20px;">
+            <!-- Title and summary -->
+            <div class="py-5 rounded-3">
+                <div class="container-fluid py-2">
+                    <h1 class="mb-4 text-center" style="font-size: 32px; font-weight: bold;">{{ .Params.Title }}</h1>
+                    {{ if .Params.Summary }}
+                    <p class="bio fs-4 serif text-center">{{ .Params.Summary }}</p>
+                    {{ end }}
+                </div>
+            </div>
+            
+            {{ if not .Params.filter }}
+            <div class="row justify-content-between mb-5 px-3">
+                <div class="col-12" style="text-align: right">
+                    {{ partial "status.html" . }}
+                </div>
+                <hr class="dropdown-divider mt-2">
+            </div>
+            {{ end }}
+            
+            <div class="container-fluid py-2">
+                <div class="serif main-content">
+                    {{ .Content | markdownify | safeHTML }}
+                </div>
+            </div>
+            <style>
+                .main-content {
+                    font-size: 16px;
+                }
+                .main-content h1 {
+                    font-size: 22px;
+                    margin-top: 1.5rem;
+                    margin-bottom: 1rem;
+                }
+                .main-content h2 {
+                    font-size: 20px;
+                    margin-top: 1.5rem;
+                    margin-bottom: 1rem;
+                }
+                .main-content h3 {
+                    font-size: 18px;
+                    margin-top: 1.25rem;
+                    margin-bottom: 0.75rem;
+                }
+                .main-content h4, .main-content h5, .main-content h6 {
+                    font-size: 16px;
+                    margin-top: 1rem;
+                    margin-bottom: 0.5rem;
+                }
+            </style>
+
+            <!-- Filter Buttons -->
+            <div class="container-fluid mb-5">
+                {{ if .Params.filter }}
+                <!-- Multiple checkboxes option -->
+                <div class="btn-toolbar mb-2 bio" role="toolbar" aria-label="Toolbar with button groups">
+                    <i class="fas fa-filter"></i>
+                    <div id="filters" class="button-group">
+                        {{ range $name, $taxonomy := .Site.Taxonomies.fenbao_tags }}
+                        {{ $btnid := $name | printf ".js-iso-%s"}}
+                        <input type="checkbox" class="btn-check" id="{{ $btnid }}" autocomplete="off" data-filter="{{ $btnid }}">
+                        <label class="button" for="{{ $btnid }}">{{ $name }}</label>
+                        {{ end }}
+                    </div>
+                </div>
+                {{ end }}
+            </div>
+
+            <!-- Garden Post Cards -->
+            <div class="container-fluid">
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-3 g-4 mb-3">
+                    {{ range .Pages.ByWeight }}
+                    {{ partial "card_garden.html" . }}
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+
+        <!-- 右侧目录区 -->
+        <div class="col-lg-3 d-none d-lg-block">
+            {{ if and (gt .WordCount 100 ) (.TableOfContents) }}
+            <div class="sticky-top" style="top: 2rem; max-height: calc(100vh - 4rem); overflow-y: auto; padding-top: 1.5rem;">
+                <div style="width: fit-content; margin: 0 auto; min-width: 60%;">
+                    <h5 class="border-bottom pb-2 mb-3" style="font-size: 16px; color: black;">本页内容</h5>
+                    <div class="toc-container">
+                        {{ .TableOfContents }}
+                    </div>
+                </div>
+            </div>
+            <style>
+                /* Scrollbar styling for TOC */
+                .sticky-top::-webkit-scrollbar {
+                    width: 4px;
+                }
+                .sticky-top::-webkit-scrollbar-track {
+                    background: transparent;
+                }
+                .sticky-top::-webkit-scrollbar-thumb {
+                    background: #dee2e6;
+                    border-radius: 4px;
+                }
+                .sticky-top:hover::-webkit-scrollbar-thumb {
+                    background: #adb5bd;
+                }
+
+                .toc-container nav ol, .toc-container nav ul {
+                    padding-left: 1.5rem;
+                    font-size: 0.9rem;
+                    color: #6c757d;
+                }
+                .toc-container nav > ol, .toc-container nav > ul {
+                    padding-left: 0;
+                    list-style-type: none;
+                }
+                .toc-container nav > ol > li, .toc-container nav > ul > li {
+                    display: flex;
+                    flex-direction: column;
+                }
+                .toc-container nav > ol > li > a, .toc-container nav > ul > li > a {
+                    font-weight: normal !important;
+                }
+                .toc-container nav ol ol, .toc-container nav ul ul {
+                    list-style-type: none;
+                    padding-left: 1rem;
+                    margin-top: 0.5rem;
+                }
+                .toc-container nav ol ol li, .toc-container nav ul ul li {
+                    position: relative;
+                    display: flex;
+                    flex-direction: column;
+                }
+                .toc-container nav ol li, .toc-container nav ul li {
+                    margin-bottom: 0.5rem;
+                }
+                .toc-container nav ol li a, .toc-container nav ul li a {
+                    text-decoration: none;
+                    color: #6c757d;
+                    display: inline-block;
+                    padding: 2px 0;
+                    transition: all 0.2s ease;
+                    line-height: 1.4;
+                }
+                .toc-container nav ol li a:hover, .toc-container nav ul li a:hover {
+                    color: rgb(32, 35, 41);
+                }
+                .toc-container nav ol li a.active {
+                    color: rgb(32, 35, 41);
+                    font-weight: bold !important;
+                }
+            </style>
+            <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    const observer = new IntersectionObserver(entries => {
+                        entries.forEach(entry => {
+                            const id = entry.target.getAttribute('id');
+                            if (entry.intersectionRatio > 0) {
+                                document.querySelectorAll(`.toc-container nav li a`).forEach(link => link.classList.remove('active'));
+                                document.querySelector(`.toc-container nav li a[href="#${id}"]`)?.classList.add('active');
+                            }
+                        });
+                    }, { rootMargin: "0px 0px -80% 0px" });
+                    
+                    document.querySelectorAll('h1[id], h2[id], h3[id], h4[id]').forEach((section) => {
+                        observer.observe(section);
+                    });
+                });
+            </script>
+            {{ end }}
+        </div>
+    </div>
+</div>
+
+{{ end }}

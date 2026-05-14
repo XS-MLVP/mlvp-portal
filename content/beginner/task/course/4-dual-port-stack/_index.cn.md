@@ -211,13 +211,13 @@ endmodule
 - `ready`：由接收方决定（由接收方输出），告知发送方自己准备好接收信号（输入发送方）。
 - `data`：发送方要发给接收方的数据。
 
-<center><img src="./assets/valid-ready-example.png" style="width: 90%;" alt="valid-ready握手协议示意图"></center>
+<center><img src="/images/valid-ready-example.png" style="width: 90%;" alt="valid-ready握手协议示意图"></center>
 
 ####  双端口栈中的握手
 
  你可能会奇怪，双端口栈明明只有一个模块呀，哪来的发送方和接受方？事实上，你可以**抽象出来一个外部设备**，与栈通过**请求端口**交互时，充当发送方；与栈通过**响应端口**交互时，充当接收方。
 
-<center><img src="./assets/fire-example.png" style="width: 90%"></center>
+<center><img src="/images/fire-example.png" style="width: 90%"></center>
 
 #### 为什么要专门讲握手协议
 
@@ -372,7 +372,7 @@ picker export --autobuild=true dual_port_stack.v -w dual_port_stack.fst --sname 
 
 #### 状态机切换过程图
 
-<center><img src="./assets/state-machine.png" alt="双端口栈状态机" style="width: 90%"/></center>
+<center><img src="/images/state-machine.png" alt="双端口栈状态机" style="width: 90%"/></center>
 
 | **当前状态**          | **跳转条件**              | **下一个状态**         | **行为说明**                |
 | :-----------------: | :---------------------: | :-----------------: | :-----------------------: |
@@ -601,7 +601,7 @@ Pop 104
 
   * picker 允许协程使用`await AStep`函数进行这种等待：
 
-<center><img src="./assets/timeline-diagram.png" alt="await AStep示意图" style="width: 90%" /></center>
+<center><img src="/images/timeline-diagram.png" alt="await AStep示意图" style="width: 90%" /></center>
 
 > 宏观上来看，协程 1，协程 2 属于并发执行，但实际上是通过协程切换实现的
 

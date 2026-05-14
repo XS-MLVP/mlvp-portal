@@ -2,24 +2,88 @@
 
 <div class="{{ if eq .Language.Lang "cn" }}chinese{{ else }}english{{ end }}">
 <!--introduce-->
-<div class="intro-container">
-	<div
-			class="intro-section bg-cover"
-			style="
-		    background-image: url('{{ "/images/intro_bg.jpg" | relURL }}');
-	"
-	>
+<div id="introCarousel" class="carousel slide intro-container" data-bs-ride="carousel">
+	<div class="carousel-inner" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
 	{{ with .Site.GetPage "section" "introduce" }}
-	<div class="intro-word" style="margin-top: 5rem">
-		<div class="intro-font fw-bold">{{ .Params.title }}</div>
-		<div class="d-flex align-items-center flex-wrap">
-			<img src="{{ "/images/RISC-V.png" | relURL }}" />
-			<span class="intro-font fw-bold">{{ .Params.sub }}</span>
-		</div>
-		{{ if .Params.Description }}
-		<div class="intro-text" style="margin-top: 1.5rem">
-			{{ .Params.Description }}
-		</div>
+		{{ if .Params.slides }}
+			{{ range $index, $slide := .Params.slides }}
+			<div class="carousel-item {{ if eq $index 0 }}active{{ end }} h-100">
+				<div class="intro-section bg-cover h-100" style="background-image: url('{{ $slide.bg_image | relURL }}'); {{ if $slide.bg_style }}{{ $slide.bg_style | safeCSS }}{{ end }}">
+					<div class="intro-word">
+						{{ if $slide.title }}
+						<div class="intro-font fw-bold" {{ if $slide.title_style }}style="{{ $slide.title_style | safeCSS }}"{{ end }}>{{ $slide.title | safeHTML }}</div>
+						{{ end }}
+						{{ if $slide.sub }}
+						<div class="d-flex align-items-center flex-wrap" {{ if $slide.sub_style }}style="{{ $slide.sub_style | safeCSS }}"{{ end }}>
+							{{ if $slide.sub_icon }}<img src="{{ $slide.sub_icon | relURL }}" />{{ end }}
+							<span class="intro-font fw-bold">{{ $slide.sub }}</span>
+						</div>
+						{{ end }}
+						{{ if $slide.description }}
+						<div class="intro-text" style="margin-top: 1.5rem; {{ if $slide.description_style }}{{ $slide.description_style | safeCSS }}{{ end }}">
+							{{ $slide.description }}
+						</div>
+						{{ end }}
+						{{ if $slide.description_sub }}
+						<div class="intro-text" style="margin-top: 1rem">
+							{{ $slide.description_sub }}
+						</div>
+						{{ end }}
+						{{ if $slide.description_sub2 }}
+						<div class="intro-text" style="margin-top: 1rem">
+							{{ $slide.description_sub2 }}
+						</div>
+						{{ end }}
+						{{ if $slide.quick_start_text }}
+						<a
+								href="{{ $slide.quick_start_url }}"
+								{{ if $slide.blank }}target="_blank"{{ end }}
+								class="quick-start d-flex align-items-center bg-cover"
+								style="background-image: url('{{ "/images/Btn_Frame.png" | relURL }}'); {{ if $slide.quick_start_style }}{{ $slide.quick_start_style | safeCSS }}{{ end }}"
+						>
+						{{ $slide.quick_start_text }}
+						</a>
+						{{ end }}
+					</div>
+				</div>
+			</div>
+			{{ end }}
+		{{ else }}
+			<div class="carousel-item active h-100">
+				<div class="intro-section bg-cover h-100" style="background-image: url('{{ "/images/intro_bg.jpg" | relURL }}');">
+					<div class="intro-word">
+						<div class="intro-font fw-bold">{{ .Params.title }}</div>
+						<div class="d-flex align-items-center flex-wrap">
+							<img src="{{ "/images/RISC-V.png" | relURL }}" />
+							<span class="intro-font fw-bold">{{ .Params.sub }}</span>
+						</div>
+						{{ if .Params.Description }}
+						<div class="intro-text" style="margin-top: 1.5rem">
+							{{ .Params.Description }}
+						</div>
+						{{ end }}
+						{{ if .Params.Description_sub }}
+						<div class="intro-text" style="margin-top: 1rem">
+							{{ .Params.Description_sub }}
+						</div>
+						{{ end }}
+						{{ if .Params.Description_sub2 }}
+						<div class="intro-text" style="margin-top: 1rem">
+							{{ .Params.Description_sub2 }}
+						</div>
+						{{ end }}
+						{{ if .Params.quick_start_text }}
+						<a
+								href="{{.Params.quick_start_url}}"
+								class="quick-start d-flex align-items-center bg-cover"
+								style="background-image: url('{{ "/images/Btn_Frame.png" | relURL }}');"
+						>
+						{{ .Params.quick_start_text }}
+						</a>
+						{{ end }}
+					</div>
+				</div>
+			</div>
 		{{ end }}
 		{{ if .Params.Description_sub }}
 			{{ if reflect.IsSlice .Params.Description_sub }}
@@ -34,18 +98,7 @@
 				</div>
 			{{ end }}
 		{{ end }}
-		{{ if .Params.quick_start_text }}
-		<a
-				href="{{.Params.quick_start_url}}"
-				class="quick-start d-flex align-items-center bg-cover"
-				style="background-image: url('{{ "/images/Btn_Frame.png" | relURL }}');"
-		>
-		{{ .Params.quick_start_text }}
-		</a>
-		{{ end }}
-	</div>
 	{{ end }}
-</div>
 </div>
 
 <!--banner-->
@@ -148,6 +201,68 @@ padding-bottom: 2rem"
 </div>
 
 <div style="margin-top: 5rem">
+	<!--opensource_tools 开源工具-->
+	{{ $section := .Site.GetPage "section" "opensource_tools" }}
+	{{ if $section }}
+	<div
+			class="section-bg d-flex flex-column align-items-center"
+			style="background-image: url('{{ "/images/title_decoration.png" | relURL }}')"
+	>
+		<div class="section-title">{{ $section.Params.title }}</div>
+		<div class="section-desc">{{ $section.Params.summary }}</div>
+	</div>
+	<div class="row">
+		{{ range $section.Pages.ByWeight }}
+		{{ $img := .Resources.GetMatch "img.png" }}
+		<div class="col-12 col-sm-6 col-md-4 mb-4">
+			<div
+					class="position-relative bg-all beginner-bg"
+					style="
+								{{ with $img }}
+								background-image: url('{{ .RelPermalink }}');
+								{{ end }}
+							"
+			>
+				{{ if .Params.title }}
+				<div class="beginner-title">{{ .Params.title }}</div>
+				{{ end }}
+				{{ if .Params.summary }}
+				<div class="beginner-desc">{{ .Params.summary }}</div>
+				{{ end }}
+				<!--1即将上线 2正在进行 3报名中-->
+				{{ if eq site.Language.Lang "cn" }}
+				{{ if eq .Params.schedule 1 }}
+				<img src="{{ "/images/beginner_0.png" | relURL }}" width=98>
+				{{ else if eq .Params.schedule 2 }}
+				<img src="{{ "/images/beginner_1.png" | relURL }}" width=98>
+				{{ else if eq .Params.schedule 3 }}
+				<img src="{{ "/images/beginner_2.png" | relURL }}" width=98>
+				{{ end }}
+				{{ else }}
+				{{ if eq .Params.schedule 1 }}
+				<img src="{{ "/images/beginner_0_en.png" | relURL }}" width=98>
+				{{ else if eq .Params.schedule 2 }}
+				<img src="{{ "/images/beginner_1_en.png" | relURL }}" width=98>
+				{{ else if eq .Params.schedule 3 }}
+				<img src="{{ "/images/beginner_2_en.png" | relURL }}" width=98>
+				{{ end }}
+				{{ end }}
+
+				{{ if .Params.Website }}
+				<a href="{{ .Params.Website }}" class="stretched-link" target="_blank"></a>
+				{{ else }}
+				{{ if ne .Params.schedule 1 }}
+				<a href="{{ .RelPermalink }}" class="stretched-link"></a>
+				{{ end }}
+				{{ end  }}
+			</div>
+		</div>
+		{{ end }}
+	</div>
+	{{ end }}
+</div>
+
+<div style="margin-top: 5rem">
 	{{ $section := .Site.GetPage "section" "verify_task_title" }}
 	<div
 			class="section-bg d-flex flex-column align-items-center"
@@ -189,6 +304,7 @@ padding-bottom: 3.5rem"
 >
 <div class="section-width">
 	<!--learningresource 学习资源-->
+	{{/*
 	{{ $section := .Site.GetPage "section" "learningresource" }}
 	<div style="margin-top: 5rem">
 		<div
@@ -227,6 +343,8 @@ padding-bottom: 3.5rem"
 	</div>
 	{{ end }}
 </div>
+</div>
+	*/}}
 
 <!--recruit 招募信息-->
 {{ $section := .Site.GetPage "section" "recruit" }}
@@ -284,7 +402,6 @@ padding-bottom: 3.5rem"
 		{{ end  }}
 	</div>
 	{{ end }}
-</div>
 </div>
 </div>
 </div>

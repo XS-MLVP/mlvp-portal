@@ -10,6 +10,7 @@ Weight: 11
 summary: "在验证中学习香山IFU的微架构设计"
 schedule: 4
 difficult: 5
+image: "/images/UTyanzheng.png"
 ---
 
 本期验证任务将会进一步了解IFUtop模块的设计思路，在验证实战中体会香山取指模块的设计思路，加深对RISCV指令集架构的理解。欢迎各位报名参加（报名填写[这里](https://www.wjx.top/vm/mKbmTqL.aspx#)，qq群：**600480230**。）！

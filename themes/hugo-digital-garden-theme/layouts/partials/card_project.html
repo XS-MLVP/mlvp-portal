@@ -3,7 +3,7 @@
 {{ $.Scratch.Add "project_tags_list" ( . | printf " js-iso-%s") }}
 {{ end }}
 <div class='col {{ $.Scratch.Get "project_tags_list" }}'>
-    <div class="card top-highlight">
+    <div class="card top-highlight h-100 d-flex flex-column">
         {{ $img := (.Resources.ByType "image").GetMatch "*featured*" }}
         {{ if .Params.cover_image }}
         {{ $img = (.Parent.Resources.ByType "image").GetMatch .Params.cover_image }}
@@ -15,23 +15,24 @@
         <img src="{{ .Permalink }}" alt="{{ $.Title }}" class="card-img-top p-5">
         {{ end }}
         {{ end }}
-        <div class="card-body">
+        <div class="card-body d-flex flex-column">
             {{ if .Summary }}
             <h4 class="card-title">{{ .Title }}</h4>
-            <p class="card-text pb-3">{{ .Summary }}.</p>
+            <p class="card-text pb-3 flex-grow-1">{{ .Summary }}.</p>
             {{ else }}
-            <h4 class="card-title pb-3">{{ .Title }}</h4>
+            <h4 class="card-title pb-3 flex-grow-1">{{ .Title }}</h4>
             {{ end }}
             {{ if .Params.Website }}
             <a href="{{ .Params.Website }}" class="stretched-link" tab="_blank"></a>
             {{ else }}
             <a href="{{ .Permalink }}" class="stretched-link"></a>
             {{ end  }}
-            {{range .Params.resource_tags}}
-            <span class="badge tag-badge">{{ . }}</span>
-            {{end}}
+            <div class="mt-auto">
+                {{range .Params.resource_tags}}
+                <span class="badge tag-badge">{{ . }}</span>
+                {{end}}
+            </div>
         </div>
     </div>
-    <br>
 </div>
 {{ .Scratch.Delete "project_tags_list" }}

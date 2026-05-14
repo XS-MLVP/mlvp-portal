@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="themes/hugo-digital-garden-theme/static/css/bootstrap.min.css" rel="stylesheet">
+<style>
+.intro-container { position: relative; width: 100%; background: red; }
+.intro-container::before { content: ""; display: block; padding-top: 50%; }
+.intro-section { background: blue; opacity: 0.5; }
+</style>
+</head>
+<body>
+<div id="introCarousel" class="carousel slide intro-container">
+  <div class="carousel-inner" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+    <div class="carousel-item active h-100">
+      <div class="intro-section h-100">
+        Content
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -10,6 +10,7 @@ Weight: 11
 summary: "在验证中学习香山L2TLB-bitmap的微架构设计"
 schedule: 4
 difficult: 5
+image: "/images/UTyanzheng.png"
 ---
 
 本期验证任务将会进一步了解L2TLB-bitmap模块，在验证实战中体会内存隔离的设计思路，加深对TLB和RISCV指令集架构的理解。欢迎各位报名参加（报名填写[这里](https://www.wjx.top/vm/hJJAnOJ.aspx#)，qq群：**600480230**。）！
