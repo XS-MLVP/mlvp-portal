@@ -301,6 +301,7 @@ code {
 
 .intro-word {
   margin-left: 14%;
+  padding-top: 6rem;
 }
 
 @media(min-width: 1800px) {

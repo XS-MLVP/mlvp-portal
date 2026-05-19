@@ -63,9 +63,17 @@
 						</div>
 						{{ end }}
 						{{ if .Params.Description_sub }}
-						<div class="intro-text" style="margin-top: 1rem">
-							{{ .Params.Description_sub }}
-						</div>
+							{{ if reflect.IsSlice .Params.Description_sub }}
+								{{ range .Params.Description_sub }}
+								<div class="intro-text" style="margin-top: 1rem">
+									{{ . }}
+								</div>
+								{{ end }}
+							{{ else }}
+								<div class="intro-text" style="margin-top: 1rem">
+									{{ .Params.Description_sub }}
+								</div>
+							{{ end }}
 						{{ end }}
 						{{ if .Params.Description_sub2 }}
 						<div class="intro-text" style="margin-top: 1rem">
@@ -84,19 +92,6 @@
 					</div>
 				</div>
 			</div>
-		{{ end }}
-		{{ if .Params.Description_sub }}
-			{{ if reflect.IsSlice .Params.Description_sub }}
-				{{ range .Params.Description_sub }}
-				<div class="intro-text" style="margin-top: 1rem">
-					{{ . }}
-				</div>
-				{{ end }}
-			{{ else }}
-				<div class="intro-text" style="margin-top: 1rem">
-					{{ .Params.Description_sub }}
-				</div>
-			{{ end }}
 		{{ end }}
 	{{ end }}
 	</div>
