@@ -236,23 +236,58 @@ code {
 }
 
 @media (max-width: 830px) {
-  .intro-text, .banner-img {
+  .banner-img {
     display: none;
   }
 
   .chinese .intro-font {
-    font-size: 3rem !important;
-  }
-
-  .english .intro-font {
     font-size: 2.5rem !important;
   }
 
+  .english .intro-font {
+    font-size: 2rem !important;
+  }
+
+  .chinese .intro-text,
+  .english .intro-text {
+    width: 90% !important;
+    font-size: 1rem !important;
+  }
+
+  .intro-container {
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  .intro-container::before {
+    padding-top: 0 !important;
+  }
+
+  .intro-section {
+    position: relative !important;
+    height: auto !important;
+  }
+
+  .carousel-inner {
+    position: relative !important;
+  }
+
+  .intro-word {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+    padding-right: 5% !important;
+  }
+
   .banner {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    max-width: 100% !important;
     background-size: cover !important;
     background-repeat: no-repeat;
     background-position: center;
-    padding: 3rem 1rem !important;
+    padding: 2rem 1rem !important;
     column-gap: 0.8rem;
   }
   .banner-title {
@@ -265,6 +300,33 @@ code {
 
   .navbar-brand-content {
     margin-right: 2rem !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .chinese .intro-font {
+    font-size: 1.8rem !important;
+  }
+
+  .english .intro-font {
+    font-size: 1.5rem !important;
+  }
+
+  .chinese .intro-text,
+  .english .intro-text {
+    width: 95% !important;
+    font-size: 0.9rem !important;
+  }
+
+  .intro-word {
+    margin-left: 5% !important;
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+    padding-right: 5% !important;
+  }
+
+  .intro-section {
+    background-position: right center !important;
   }
 }
 

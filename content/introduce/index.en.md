@@ -1,7 +1,8 @@
 ---
-title: "Empowering Every Developer to Contribute"
+title: "Empowering Every Developer to Participate in"
 sub: "Processor Verification"
-description: "The UnityChip initiative leverages the latest architecture of the open-source high-performance RISC-V processor core 'Xiangshan,' breaking down chip verification tasks into modular sub-tasks and inviting developers worldwide to collaborate."
+description: '"UnityChip" is an open-source chip verification platform dedicated to reinventing chip verification through AI and software.'
 description_sub:
-  - "Here, every developer can participate in chip verification using their preferred programming language—anytime, anywhere."
+  - 'The platform has independently developed a suite of open-source tools that significantly improve verification efficiency, lower the barrier to entry, and enable crowdsourced verification.'
+  - 'We look forward to working with you to transform chip verification from "labor-intensive" to "intelligent and efficient" through innovative verification technologies and an open collaboration model, jointly building a new AI-driven chip verification paradigm.'
 ---
