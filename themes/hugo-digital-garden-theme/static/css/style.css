@@ -235,6 +235,27 @@ code {
   margin-right: 5.9rem;
 }
 
+@media (min-width: 831px) and (max-width: 1400px) {
+  .chinese .intro-font {
+    font-size: 2.5rem !important;
+  }
+
+  .english .intro-font {
+    font-size: 2rem !important;
+  }
+
+  .chinese .intro-text,
+  .english .intro-text {
+    width: 48% !important;
+    font-size: 1rem !important;
+  }
+
+  .intro-word img {
+    height: 2.5rem !important;
+    width: auto !important;
+  }
+}
+
 @media (max-width: 830px) {
   .banner-img {
     display: none;
@@ -499,8 +520,8 @@ code {
 
 @media (min-width: 1350px) {
   .section-width {
-    min-width: 1350px;
-    width: 65%;
+    width: 85%;
+    max-width: 1400px;
   }
 }
 
