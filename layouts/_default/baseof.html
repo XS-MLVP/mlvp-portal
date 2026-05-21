@@ -5,7 +5,7 @@
         {{- partial "header.html" . -}}
         <div id="content">
             {{ if and (not .IsHome) (ne .Type "news") }}
-            <div class="container py-4">
+            <div class="container-fluid py-4" style="max-width: 92%; margin: 0 auto; padding-left: 2rem; padding-right: 2rem;">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb bg-transparent p-0 m-0 small custom-breadcrumb">
                         {{ range .Ancestors.Reverse }}

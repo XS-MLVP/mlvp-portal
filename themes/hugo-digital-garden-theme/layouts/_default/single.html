@@ -1,6 +1,6 @@
 {{ define "main" }}
 
-<div class="container">
+<div class="container-fluid" style="max-width: 92%; margin: 0 auto; padding: 0 2rem;">
     <div class="py-4 rounded-3">
         <div class="container-fluid py-2">
             <h1 class="display-2 mb-4 text-center">{{ .Title }}</h1>
@@ -55,10 +55,73 @@
     </div>
 
     <div class="container-fluid py-2 content">
-        <div class="serif main-content">
+        <div class="main-content">
             {{ .Content | safeHTML }}
         </div>
     </div>
+    <style>
+        .main-content {
+            font-size: 17px;
+            line-height: 1.8;
+            font-weight: 400;
+            color: #333;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+        .main-content p {
+            margin-bottom: 1.2em;
+        }
+        .main-content h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #eee;
+        }
+        .main-content h2 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+            padding-bottom: 0.4rem;
+            border-bottom: 1px solid #eee;
+        }
+        .main-content h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-top: 1.75rem;
+            margin-bottom: 0.75rem;
+            color: #1a1a1a;
+        }
+        .main-content h4, .main-content h5, .main-content h6 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+        .main-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+        .main-content blockquote {
+            border-left: 4px solid #0A94C8;
+            padding: 0.75rem 1.25rem;
+            background: #f8f9fa;
+            margin: 1.5rem 0;
+            color: #555;
+        }
+        .main-content ul, .main-content ol {
+            padding-left: 1.5em;
+            margin-bottom: 1.2em;
+        }
+        .main-content li {
+            margin-bottom: 0.4em;
+        }
+    </style>
 </div>
 
 {{ end }}

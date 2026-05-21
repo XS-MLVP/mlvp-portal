@@ -1,9 +1,9 @@
 {{ define "main" }}
 
-<div class="container">
-    <div class="row gx-5">
+<div class="container-fluid" style="max-width: 92%; margin: 0 auto; padding: 0 2rem;">
+    <div class="row gx-5 justify-content-center">
         <!-- 左侧内容区 -->
-        <div class="col-lg-9 col-md-12 bg-white shadow-sm p-4" style="border-radius: 20px;">
+        <div class="col-lg-9 col-md-12 bg-white shadow-sm p-4 p-md-5" style="border-radius: 20px;">
             <!-- Title and summary -->
             <div class="py-5 rounded-3">
                 <div class="container-fluid py-2">
@@ -24,33 +24,91 @@
             {{ end }}
             
             <div class="container-fluid py-2">
-                <div class="serif main-content">
+                <div class="main-content">
                     {{ .Content | markdownify | safeHTML }}
                 </div>
             </div>
             <style>
                 .main-content {
-                    font-size: 16px;
+                    font-size: 17px;
+                    line-height: 1.8;
+                    font-weight: 400;
+                    color: #333;
+                    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+                }
+                .main-content p {
+                    margin-bottom: 1.2em;
                 }
                 .main-content h1 {
-                    font-size: 22px;
-                    margin-top: 1.5rem;
+                    font-size: 28px;
+                    font-weight: 700;
+                    margin-top: 2.5rem;
                     margin-bottom: 1rem;
+                    color: #1a1a1a;
+                    padding-bottom: 0.5rem;
+                    border-bottom: 1px solid #eee;
                 }
                 .main-content h2 {
-                    font-size: 20px;
-                    margin-top: 1.5rem;
+                    font-size: 24px;
+                    font-weight: 700;
+                    margin-top: 2rem;
                     margin-bottom: 1rem;
+                    color: #1a1a1a;
+                    padding-bottom: 0.4rem;
+                    border-bottom: 1px solid #eee;
                 }
                 .main-content h3 {
-                    font-size: 18px;
-                    margin-top: 1.25rem;
+                    font-size: 20px;
+                    font-weight: 600;
+                    margin-top: 1.75rem;
                     margin-bottom: 0.75rem;
+                    color: #1a1a1a;
                 }
                 .main-content h4, .main-content h5, .main-content h6 {
-                    font-size: 16px;
-                    margin-top: 1rem;
+                    font-size: 18px;
+                    font-weight: 600;
+                    margin-top: 1.5rem;
                     margin-bottom: 0.5rem;
+                    color: #333;
+                }
+                .main-content img {
+                    max-width: 100%;
+                    height: auto;
+                    border-radius: 4px;
+                }
+                .main-content blockquote {
+                    border-left: 4px solid #0A94C8;
+                    padding: 0.75rem 1.25rem;
+                    background: #f8f9fa;
+                    margin: 1.5rem 0;
+                    color: #555;
+                }
+                .main-content code {
+                    font-size: 0.9em;
+                    background: #f5f5f5;
+                    padding: 2px 6px;
+                    border-radius: 3px;
+                }
+                .main-content pre {
+                    background: #f8f9fa;
+                    border-radius: 6px;
+                    padding: 1rem;
+                    overflow-x: auto;
+                }
+                .main-content pre code {
+                    background: none;
+                    padding: 0;
+                }
+                .main-content table {
+                    width: 100%;
+                    margin: 1.5rem 0;
+                }
+                .main-content ul, .main-content ol {
+                    padding-left: 1.5em;
+                    margin-bottom: 1.2em;
+                }
+                .main-content li {
+                    margin-bottom: 0.4em;
                 }
             </style>
 
@@ -155,6 +213,30 @@
             </style>
             <script>
                 document.addEventListener('DOMContentLoaded', () => {
+                    // Fix TOC entries that contain links from headings.
+                    document.querySelectorAll('.toc-container nav li').forEach(li => {
+                        const links = li.querySelectorAll(':scope > a');
+                        if (links.length > 1) {
+                            const tocLink = links[0];
+                            let fullText = '';
+                            const nodesToRemove = [];
+                            li.childNodes.forEach(node => {
+                                if (node.nodeType === Node.TEXT_NODE) {
+                                    fullText += node.textContent;
+                                    nodesToRemove.push(node);
+                                } else if (node.nodeType === Node.ELEMENT_NODE && node.tagName === 'A') {
+                                    fullText += node.textContent;
+                                    if (node !== tocLink) {
+                                        nodesToRemove.push(node);
+                                    }
+                                }
+                            });
+                            tocLink.textContent = fullText.trim();
+                            nodesToRemove.forEach(node => {
+                                if (node !== tocLink) node.remove();
+                            });
+                        }
+                    });
                     const observer = new IntersectionObserver(entries => {
                         entries.forEach(entry => {
                             const id = entry.target.getAttribute('id');
