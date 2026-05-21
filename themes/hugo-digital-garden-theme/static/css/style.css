@@ -266,6 +266,9 @@ code {
   .intro-section {
     position: relative !important;
     height: auto !important;
+    background-size: 35% auto !important;
+    background-position: bottom right !important;
+    background-repeat: no-repeat !important;
   }
 
   .carousel-inner {
@@ -273,9 +276,16 @@ code {
   }
 
   .intro-word {
-    padding-top: 3rem !important;
-    padding-bottom: 3rem !important;
-    padding-right: 5% !important;
+    padding: 3rem 5% 3rem 5% !important;
+    margin-left: 0 !important;
+    position: relative;
+    z-index: 1;
+    background: linear-gradient(to right, rgba(235, 244, 250, 0.95) 60%, rgba(235, 244, 250, 0.6) 85%, transparent 100%) !important;
+  }
+
+  .intro-word img {
+    height: 2.5rem !important;
+    width: auto !important;
   }
 
   .banner {
@@ -319,14 +329,18 @@ code {
   }
 
   .intro-word {
-    margin-left: 5% !important;
-    padding-top: 2rem !important;
-    padding-bottom: 2rem !important;
-    padding-right: 5% !important;
+    margin-left: 0 !important;
+    padding: 2rem 5% 2rem 5% !important;
+  }
+
+  .intro-word img {
+    height: 1.8rem !important;
   }
 
   .intro-section {
-    background-position: right center !important;
+    background-size: 50% auto !important;
+    background-position: bottom right !important;
+    min-height: auto !important;
   }
 }
 
